@@ -12,14 +12,121 @@ html, body {
   scroll-behavior: smooth;
 }
 
-img{
+button {
+  cursor: pointer;
+  background: transparent;
+}
+
+img {
   width: 100%;
 }
 
 .wrapper {
   min-height: 100vh;
+  background: #F9F9F9;
 }
 
 .header {
+  width: 100%;
+}
 
+.header__menu {
+  * {
+    font-family: Inter-Regular, sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+
+    color: #191919;
+  }
+}
+
+.menu__row {
+  display: flex;
+  align-items: center;
+  padding: 10px calc((100% - 1290px) / 2);
+  border-bottom: 1px solid #F0F0F0;
+  background: #ffffff;
+}
+
+.menu__row_top {
+  height: 40px;
+}
+
+.menu__row_bottom {
+  height: 64px;
+}
+
+.menu__location {
+  display: flex;
+  align-items: center;
+  width: 100px;
+  height: 20px;
+}
+
+.menu__location-select {
+  width: 72px;
+}
+
+.menu__check-address {
+  margin: 0 40px;
+  background: transparent;
+}
+
+.menu__average-delivery-time {
+  span {
+    font-weight: bold;
+  }
+}
+
+.menu__working-time {
+  margin-left: auto;
+}
+
+.menu__login {
+  display: flex;
+  align-items: center;
+  margin-left: 41px;
+
+  svg {
+    margin-right: 10px;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  svg {
+    margin-right: 12px;
+  }
+}
+
+.standard-btn {
+  display: flex;
+  align-items: center;
+
+  width: 150px;
+  height: 48px;
+  background: #FF7010;
+  border-radius: 6px;
+
+  font-family: SF-Pro-Display-Regular, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #FFFFFF;
+}
+
+.menu__cart {
+  width: auto;
+  margin-left: auto;
+  padding: 8px 16px;
+  height: 40px;
+
+  svg{
+    margin-right: 8px;
+  }
 }

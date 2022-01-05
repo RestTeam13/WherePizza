@@ -1,4 +1,59 @@
-@charset "UTF-8";
+@font-face {
+  font-family: "Inter-SemiBold";
+  font-display: swap;
+  src: url("../fonts/Inter-SemiBold.woff") format("woff"), url("../fonts/Inter-SemiBold.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Inter-Regular";
+  font-display: swap;
+  src: url("../fonts/Inter-Regular.woff") format("woff"), url("../fonts/Inter-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ProximaNova-Bold";
+  font-display: swap;
+  src: url("../fonts/ProximaNova-Bold.woff") format("woff"), url("../fonts/ProximaNova-Bold.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ProximaNova-Regular";
+  font-display: swap;
+  src: url("../fonts/ProximaNova-Regular.woff") format("woff"), url("../fonts/ProximaNova-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SF-Pro-Display-Medium";
+  font-display: swap;
+  src: url("../fonts/SF-Pro-Display-Medium.woff") format("woff"), url("../fonts/SF-Pro-Display-Medium.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SF-Pro-Display-Regular";
+  font-display: swap;
+  src: url("../fonts/SF-Pro-Display-Regular.woff") format("woff"), url("../fonts/SF-Pro-Display-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SF-Pro-Display-Semibold";
+  font-display: swap;
+  src: url("../fonts/SF-Pro-Display-Semibold.woff") format("woff"), url("../fonts/SF-Pro-Display-Semibold.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SF-Pro-Text-Bold";
+  font-display: swap;
+  src: url("../fonts/SF-Pro-Text-Bold.woff") format("woff"), url("../fonts/SF-Pro-Text-Bold.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
 *, *:before, *:after {
   padding: 0;
   margin: 0;
@@ -9,25 +64,119 @@
 html, body {
   height: 100%;
   background: #ffffff;
-  min-height: 100vh;
-  /*Чтобы прилипал футер к низу страницы*/
+  scroll-behavior: smooth;
 }
 
-@media (max-width: 767px) {
-  .wrapper {
-    background: #303030;
-  }
+button {
+  cursor: pointer;
+  background: transparent;
+}
+
+img {
+  width: 100%;
+}
+
+.wrapper {
+  min-height: 100vh;
+  background: #F9F9F9;
 }
 
 .header {
   width: 100%;
-  height: 100px;
-  display: flex;
 }
-@media (max-width: 767px) {
-  .header {
-    background: #303030;
-  }
+
+.header__menu * {
+  font-family: Inter-Regular, sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: #191919;
+}
+
+.menu__row {
+  display: flex;
+  align-items: center;
+  padding: 10px calc((100% - 1290px) / 2);
+  border-bottom: 1px solid #F0F0F0;
+  background: #ffffff;
+}
+
+.menu__row_top {
+  height: 40px;
+}
+
+.menu__row_bottom {
+  height: 64px;
+}
+
+.menu__location {
+  display: flex;
+  align-items: center;
+  width: 100px;
+  height: 20px;
+}
+
+.menu__location-select {
+  width: 72px;
+}
+
+.menu__check-address {
+  margin: 0 40px;
+  background: transparent;
+}
+
+.menu__average-delivery-time span {
+  font-weight: bold;
+}
+
+.menu__working-time {
+  margin-left: auto;
+}
+
+.menu__login {
+  display: flex;
+  align-items: center;
+  margin-left: 41px;
+}
+.menu__login svg {
+  margin-right: 10px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo svg {
+  margin-right: 12px;
+}
+
+.standard-btn {
+  display: flex;
+  align-items: center;
+  width: 150px;
+  height: 48px;
+  background: #FF7010;
+  border-radius: 6px;
+  font-family: SF-Pro-Display-Regular, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #FFFFFF;
+}
+
+.menu__cart {
+  width: auto;
+  margin-left: auto;
+  padding: 8px 16px;
+  height: 40px;
+}
+.menu__cart svg {
+  margin-right: 8px;
+}
+
+.dn {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
