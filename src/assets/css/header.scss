@@ -1,0 +1,25 @@
+*, *:before, *:after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  //transition: all ease-in-out 0.3s;
+}
+
+html, body {
+  height: 100%;
+  background: #ffffff;
+  scroll-behavior: smooth;
+}
+
+img{
+  width: 100%;
+}
+
+.wrapper {
+  min-height: 100vh;
+}
+
+.header {
+
+}
