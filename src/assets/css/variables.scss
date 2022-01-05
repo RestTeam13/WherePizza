@@ -1,7 +1,21 @@
 //Colors
 
-$example: #303030;
-$example2: #54ED39;
-$example3: #FBFE5D;
-$example4: #92F2FF;
-$example5: #F9FE7E;
+$gray-text: #A5A5A5;
+$line-gray: #F0F0F0;
+$background-gray: #F9F9F9;
+$light-primary: #FFEEE2;
+
+$black: #191919;
+$orange: #FF7010;
+$white: #ffffff;
+$red: #E23535;
+$green: #24D17E;
+
+
+//mixins
+
+@mixin orange-border-hover{
+  &:hover {
+    border-color: $orange;
+  }
+}

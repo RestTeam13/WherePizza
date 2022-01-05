@@ -3,12 +3,13 @@
   margin: 0;
   border: 0;
   box-sizing: border-box;
-  //transition: all ease-in-out 0.3s;
+  outline: none;
+  transition: all ease-in-out 0.3s;
 }
 
 html, body {
   height: 100%;
-  background: #ffffff;
+  background: $white;
   scroll-behavior: smooth;
 }
 
@@ -23,7 +24,7 @@ img {
 
 .wrapper {
   min-height: 100vh;
-  background: #F9F9F9;
+  background: $background-gray
 }
 
 .header {
@@ -37,7 +38,7 @@ img {
     font-size: 14px;
     line-height: 18px;
 
-    color: #191919;
+    color: $black;
   }
 }
 
@@ -45,8 +46,8 @@ img {
   display: flex;
   align-items: center;
   padding: 10px calc((100% - 1290px) / 2);
-  border-bottom: 1px solid #F0F0F0;
-  background: #ffffff;
+  border-bottom: 1px solid $line-gray;
+  background: $white;
 }
 
 .menu__row_top {
@@ -104,11 +105,12 @@ img {
 
 .standard-btn {
   display: flex;
+  justify-content: center;
   align-items: center;
 
   width: 150px;
   height: 48px;
-  background: #FF7010;
+  background: $orange;
   border-radius: 6px;
 
   font-family: SF-Pro-Display-Regular, sans-serif;
@@ -117,7 +119,18 @@ img {
   font-size: 16px;
   line-height: 22px;
 
-  color: #FFFFFF;
+  color: $white;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.standard-title{
+  font-family: Inter,sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  color: $black;
 }
 
 .menu__cart {
@@ -126,7 +139,7 @@ img {
   padding: 8px 16px;
   height: 40px;
 
-  svg{
+  svg {
     margin-right: 8px;
   }
 }
