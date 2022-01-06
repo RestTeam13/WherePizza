@@ -23,7 +23,9 @@ img {
 }
 
 .wrapper {
+  position: relative;
   min-height: 100vh;
+
   background: $background-gray
 }
 
