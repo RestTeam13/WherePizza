@@ -189,8 +189,13 @@ img {
   margin-right: 8px;
 }
 
+.block {
+  padding: 0 20px;
+}
+
 .block__content {
-  width: 1290px;
+  max-width: 1290px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -202,6 +207,11 @@ img {
   display: flex;
   flex-flow: wrap;
   justify-content: space-between;
+}
+@media (max-width: 1023px) {
+  .standalone-menu__list {
+    justify-content: center;
+  }
 }
 
 .standalone-menu__list-item {
@@ -229,6 +239,11 @@ img {
 .standalone-menu__list-item p {
   margin-top: 8px;
 }
+@media (max-width: 1023px) {
+  .standalone-menu__list-item {
+    margin: 0 3px 3px 0;
+  }
+}
 
 .standalone-menu__list-item-text_special {
   color: #E23535;
@@ -247,6 +262,7 @@ img {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  margin: 0 5px;
   background: #FF7010;
   border-radius: 12px;
 }
@@ -364,6 +380,11 @@ img {
   justify-content: space-between;
   column-gap: 30px;
   row-gap: 30px;
+}
+@media (max-width: 1023px) {
+  .catalog__list {
+    justify-content: space-around;
+  }
 }
 
 .item-card {
@@ -503,13 +524,14 @@ img {
 
 .background-blur {
   background: rgba(25, 25, 25, 0.4);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(0px);
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 5;
+  transition: 0.3s ease-in-out all;
 }
 
 .current-popup__table {
@@ -684,12 +706,23 @@ img {
   top: 0;
   color: #191919;
   font-family: Inter-Regular, sans-serif;
+  z-index: -1;
 }
 .filter-popup .block__content {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
+}
+.filter-popup.active {
+  z-index: unset;
+}
+.filter-popup.active .filter-popup__table {
+  transform: translateX(0);
+}
+.filter-popup.active .background-blur {
+  transform: scale(1);
+  backdrop-filter: blur(20px);
 }
 
 .filter-popup__table {
@@ -699,8 +732,10 @@ img {
   background: #FFFFFF;
   max-width: 520px;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   max-height: 945px;
+  transition: 0.5s ease-in-out all;
+  transform: translateX(100%);
 }
 
 .filter-popup__table-content {
