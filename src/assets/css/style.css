@@ -1036,6 +1036,13 @@ img {
   margin-top: 16px;
 }
 
+.content-data_settings {
+  justify-content: unset;
+  flex-wrap: wrap;
+  max-width: 786px;
+  margin-top: 0;
+}
+
 .content-data__name {
   width: 52px;
 }
@@ -1054,12 +1061,15 @@ img {
 
 .content-data_input {
   width: 246px;
+  margin: 10px 15px 0 0;
 }
 
 .input-text {
   background: #FFFFFF;
   border: 1px solid #F0F0F0;
   border-radius: 6px;
+  padding: 13px 16px;
+  width: 246px;
 }
 
 .content-data__list-title {
@@ -1071,6 +1081,7 @@ img {
 
 .content-data__button {
   width: 246px;
+  margin-top: 16px;
 }
 
 .footer {
