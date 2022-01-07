@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+
+    <title>Where pizza</title>
+
+    <link rel="stylesheet" href="assets/css/style.min.css">
+
+    <link href="favicon.ico" rel="icon" type="image/x-icon">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+</head>
+<body>
+<div class="wrapper">
+    @@include('_header.html')
+
+    <!-- Account - Order History -->
+    <section class="block account">
+        <div class="block__content">
+            <div class="account__top">
+                <h1 class="account__top-title">Мой аккаунт</h1>
+                <div>
+                    <button></button>
+                    <button></button>
+                </div>
+            </div>
+            <div class="account__order-list">
+                <div class="order-details">
+                    <div class="order-details__svg"><svg width="4" height="44" viewBox="0 0 4 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="4" height="44" rx="2" fill="#E23535"/>
+                    </svg></div>
+                    <div class="order-details__list">
+                        <p class="order-details__list-title">Заказ</p>
+                        <p class="order-details__list-text">№130312 <span>22.06.21</span></p>
+                    </div>
+                    <div class="order-details__list">
+                        <p class="order-details__list-title">Сумма заказа</p>
+                        <p class="order-details__list-text">399 ₽</p>
+                    </div>
+                    <div class="order-details__list">
+                        <p class="order-details__list-title">Статус</p>
+                        <p class="order-details__list-text">Обрабатывается</p>
+                    </div>
+                    <div class="order-details__list">
+                        <p class="order-details__list-title"> Оплачено</p>
+                        <p class="order-details__list-text">Картой</p>
+                    </div>
+                    <button class="order-details__svg-button">
+                        <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 1.35014C16 1.54195 15.9289 1.73395 15.7869 1.88038L8.5142 9.3803C8.23002 9.67336 7.76984 9.67336 7.48584 9.3803L0.213135 1.88038C-0.0710456 1.58732 -0.0710456 1.11276 0.213135 0.819893C0.497316 0.527021 0.957497 0.526833 1.2415 0.819893L8.00002 7.78957L14.7585 0.819892C15.0427 0.526833 15.5029 0.526833 15.7869 0.819892C15.9289 0.966328 16 1.15833 16 1.35014Z"
+                                  fill="#FF7010"/>
+                        </svg>
+                    </button>
+                    <hr class="order-details__line">
+                    <div class="order-details__list">
+                        <p class="order-details__list-title order-details__list-title_address">Адрес</p>
+                        <p class="order-details__list-text">ул. Львовская 48/2, офис 301, 2 этаж, домофон 4801#</p>
+                    </div>
+                    <div class="order-details__pizza-list">
+                        <div class="order-details__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza1.png" alt=""></div>
+                        <div class="order-details__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza2.png" alt=""></div>
+                        <div class="order-details__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza3.png" alt=""></div>
+                    </div>
+                </div>
+                <div class="order-products order-details">
+                    <div class="products-list">
+                        <div class="products-list__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza2.png" alt=""></div>
+                        <p class="products-list__title">Пепперони по-деревенски</p>
+                        <p class="products-list__size">Традиционное тесто, 23 см</p>
+                        <p class="products-list__quantity">1 товар</p>
+                        <p class="products-list__amount">399 ₽</p>
+                    </div>
+                    <div class="products-list">
+                        <div class="products-list__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza2.png" alt=""></div>
+                        <p class="products-list__title">Пепперони по-деревенски</p>
+                        <p class="products-list__size">Традиционное тесто, 23 см</p>
+                        <p class="products-list__quantity">1 товар</p>
+                        <p class="products-list__amount">399 ₽</p>
+                    </div>
+                    <div class="products-list">
+                        <div class="products-list__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza2.png" alt=""></div>
+                        <p class="products-list__title">Пепперони по-деревенски</p>
+                        <p class="products-list__size">Традиционное тесто, 23 см</p>
+                        <p class="products-list__quantity">1 товар</p>
+                        <p class="products-list__amount">399 ₽</p>
+                    </div>
+                    <hr class="order-details__line">
+                    <button class="order-replay">Повторить заказ</button>
+                </div>
+                <div class="order-details">
+                    <div class="order-details__svg"><svg width="4" height="44" viewBox="0 0 4 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="4" height="44" rx="2" fill="#FF7010"/>
+                    </svg>
+                    </div>
+                    <div class="order-details__list">
+                        <p class="order-details__list-title">Заказ</p>
+                        <p class="order-details__list-text">№130308 <span>21.06.21</span></p>
+                    </div>
+                    <div class="order-details__list">
+                        <p class="order-details__list-title">Сумма заказа</p>
+                        <p class="order-details__list-text">1 252 ₽</p>
+                    </div>
+                    <div class="order-details__list">
+                        <p class="order-details__list-title">Статус</p>
+                        <p class="order-details__list-text">Едет к вам (в 15:13)</p>
+                    </div>
+                    <div class="order-details__list">
+                        <p class="order-details__list-title"> Оплачено</p>
+                        <p class="order-details__list-text">Наличкой</p>
+                    </div>
+                    <button class="order-details__svg-button">
+                        <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 1.35014C16 1.54195 15.9289 1.73395 15.7869 1.88038L8.5142 9.3803C8.23002 9.67336 7.76984 9.67336 7.48584 9.3803L0.213135 1.88038C-0.0710456 1.58732 -0.0710456 1.11276 0.213135 0.819893C0.497316 0.527021 0.957497 0.526833 1.2415 0.819893L8.00002 7.78957L14.7585 0.819892C15.0427 0.526833 15.5029 0.526833 15.7869 0.819892C15.9289 0.966328 16 1.15833 16 1.35014Z"
+                                  fill="#FF7010"/>
+                        </svg>
+                    </button>
+                    <hr class="order-details__line">
+                    <div class="order-details__list">
+                        <p class="order-details__list-title order-details__list-title_address">Адрес</p>
+                        <p class="order-details__list-text">ул. Львовская 48/2, офис 301, 2 этаж, домофон 4801#</p>
+                    </div>
+                    <div class="order-details__pizza-list">
+                        <div class="order-details__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza2.png" alt=""></div>
+                        <div class="order-details__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza2.png" alt=""></div>
+                    </div>
+                </div>
+                <div class="order-details">
+                    <div class="order-details__svg"><svg width="4" height="44" viewBox="0 0 4 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="4" height="44" rx="2" fill="#24D17E"/>
+                    </svg>
+                    </div>
+                    <div class="order-details__list">
+                        <p class="order-details__list-title">Заказ</p>
+                        <p class="order-details__list-text">№130304 <span>20.06.21</span></p>
+                    </div>
+                    <div class="order-details__list">
+                        <p class="order-details__list-title">Сумма заказа</p>
+                        <p class="order-details__list-text">2 324 ₽</p>
+                    </div>
+                    <div class="order-details__list">
+                        <p class="order-details__list-title">Статус</p>
+                        <p class="order-details__list-text">Выполнен</p>
+                    </div>
+                    <div class="order-details__list">
+                        <p class="order-details__list-title"> Оплачено</p>
+                        <p class="order-details__list-text">ApplePay</p>
+                    </div>
+                    <button class="order-details__svg-button">
+                        <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 1.35014C16 1.54195 15.9289 1.73395 15.7869 1.88038L8.5142 9.3803C8.23002 9.67336 7.76984 9.67336 7.48584 9.3803L0.213135 1.88038C-0.0710456 1.58732 -0.0710456 1.11276 0.213135 0.819893C0.497316 0.527021 0.957497 0.526833 1.2415 0.819893L8.00002 7.78957L14.7585 0.819892C15.0427 0.526833 15.5029 0.526833 15.7869 0.819892C15.9289 0.966328 16 1.15833 16 1.35014Z"
+                                  fill="#FF7010"/>
+                        </svg>
+                    </button>
+                    <hr class="order-details__line">
+                    <div class="order-details__list">
+                        <p class="order-details__list-title order-details__list-title_address">Адрес</p>
+                        <p class="order-details__list-text">ул. Львовская 48/2, офис 301, 2 этаж, домофон 4801#</p>
+                    </div>
+                    <div class="order-details__pizza-list">
+                        <div class="order-details__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza3.png" alt=""></div>
+                    </div>
+                </div>
+                <div class="order-details order-details_archive">
+                    <div class="order-details__svg"><svg width="4" height="44" viewBox="0 0 4 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="4" height="44" rx="2" fill="#A5A5A5"/>
+                    </svg>
+                    </div>
+                    <div class="order-details__list">
+                        <p class="order-details__list-title">Заказ</p>
+                        <p class="order-details__list-text">№130312 19.06.21</p>
+                    </div>
+                    <div class="order-details__list">
+                        <p class="order-details__list-title">Сумма заказа</p>
+                        <p class="order-details__list-text">2 324 ₽</p>
+                    </div>
+                    <div class="order-details__list">
+                        <p class="order-details__list-title">Статус</p>
+                        <p class="order-details__list-text"><span>Отмена</span></p>
+                    </div>
+                    <div class="order-details__list">
+                        <p class="order-details__list-title"> Оплачено</p>
+                        <p class="order-details__list-text">Наличка</p>
+                    </div>
+                    <button class="order-details__svg-button">
+                        <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 1.35014C16 1.54195 15.9289 1.73395 15.7869 1.88038L8.5142 9.3803C8.23002 9.67336 7.76984 9.67336 7.48584 9.3803L0.213135 1.88038C-0.0710456 1.58732 -0.0710456 1.11276 0.213135 0.819893C0.497316 0.527021 0.957497 0.526833 1.2415 0.819893L8.00002 7.78957L14.7585 0.819892C15.0427 0.526833 15.5029 0.526833 15.7869 0.819892C15.9289 0.966328 16 1.15833 16 1.35014Z"
+                                  fill="#FF7010"/>
+                        </svg>
+                    </button>
+                    <hr class="order-details__line">
+                    <div class="order-details__list">
+                        <p class="order-details__list-title order-details__list-title_address">Адрес</p>
+                        <p class="order-details__list-text"><span>ул. Львовская 48/2, офис 301, 2 этаж, домофон 4801#</span></p>
+                    </div>
+                    <div class="order-details__pizza-list">
+                        <div class="order-details__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza1.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+            <div class="pagination">
+                <button class="pagination-arrow"><svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.84826 17.7272C8.64677 17.7272 8.44507 17.6497 8.29124 17.4948L0.412536 9.56093C0.104676 9.25091 0.104676 8.74889 0.412536 8.43908L8.29124 0.505217C8.5991 0.195201 9.09763 0.195201 9.40529 0.505217C9.71295 0.815232 9.71315 1.31725 9.40529 1.62706L2.08361 9L9.40529 16.3729C9.71315 16.683 9.71315 17.185 9.40529 17.4948C9.25146 17.6497 9.04976 17.7272 8.84826 17.7272Z" fill="white"/>
+                </svg>
+                </button>
+                <button class="pagination-number">1</button>
+                <button class="pagination-number">2</button>
+                <button class="pagination-number">105</button>
+                <button class="pagination-arrow"><svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.15174 17.7272C1.35323 17.7272 1.55493 17.6497 1.70876 17.4948L9.58746 9.56093C9.89532 9.25091 9.89532 8.74889 9.58746 8.43908L1.70876 0.505217C1.4009 0.195201 0.902375 0.195201 0.594711 0.505217C0.287048 0.815232 0.286851 1.31725 0.594711 1.62706L7.91639 9L0.594711 16.3729C0.286851 16.683 0.286851 17.185 0.594711 17.4948C0.748543 17.6497 0.950238 17.7272 1.15174 17.7272Z" fill="white"/>
+                </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- /Account - Order History -->
+
+    <!-- Account - Settings 1 -->
+    <section class="block account">
+        <div class="block__content">
+            <div class="account__top">
+                <h1 class="account__top-title">Мой аккаунт</h1>
+                <div>
+                    <button></button>
+                    <button></button>
+                </div>
+            </div>
+            <div class="account-data">
+                <div class="account-data__list">
+                    <div class="personal-data">
+                        <h2 class="personal-data__title">Личные данные</h2>
+                        <button class="personal-data__button-text">
+                            <svg class="personal-data__svg" width="21" height="20" viewBox="0 0 21 20" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.95905 14.4571C1.76201 14.4571 1.56535 14.3821 1.41488 14.2316C1.11431 13.931 1.11431 13.4438 1.41488 13.1433L13.4428 1.11532C13.743 0.814752 14.2306 0.814752 14.5312 1.11532C14.8317 1.41588 14.8317 1.90309 14.5312 2.20366L2.50322 14.2316C2.35313 14.3817 2.15609 14.4571 1.95905 14.4571Z"
+                                      fill="#FF7010"/>
+                                <path d="M0.770459 19.9999C0.716966 19.9999 0.662702 19.9942 0.608439 19.9826C0.192807 19.8933 -0.0719665 19.4842 0.0173175 19.0686L1.20649 13.5257C1.29577 13.1101 1.70679 12.8461 2.12049 12.9346C2.53613 13.0239 2.8009 13.4329 2.71162 13.8486L1.52245 19.3915C1.44509 19.7529 1.12567 19.9999 0.770459 19.9999Z"
+                                      fill="#FF7010"/>
+                                <path d="M6.31452 18.811C6.11747 18.811 5.92082 18.7359 5.77034 18.5855C5.46978 18.2849 5.46978 17.7977 5.77034 17.4971L17.7983 5.46956C18.0985 5.169 18.5861 5.169 18.8866 5.46956C19.1872 5.77013 19.1872 6.25734 18.8866 6.5579L6.85907 18.5855C6.7086 18.7359 6.51156 18.811 6.31452 18.811Z"
+                                      fill="#FF7010"/>
+                                <path d="M0.76919 20.0001C0.413978 20.0001 0.094942 19.753 0.0172034 19.3916C-0.0716958 18.976 0.192693 18.5669 0.608325 18.4776L6.15125 17.2884C6.56726 17.2003 6.97635 17.4643 7.06525 17.8796C7.15415 18.2952 6.88976 18.7043 6.47413 18.7936L0.93121 19.9827C0.876947 19.9947 0.822683 20.0001 0.76919 20.0001Z"
+                                      fill="#FF7010"/>
+                                <path d="M16.1624 8.95993C15.9654 8.95993 15.7683 8.88488 15.6182 8.73441L11.2645 4.38066C10.9639 4.08009 10.9639 3.59288 11.2645 3.29232C11.5647 2.99175 12.0526 2.99175 12.3528 3.29232L16.7066 7.64607C17.0071 7.94663 17.0071 8.43384 16.7066 8.73441C16.5565 8.88488 16.3594 8.95993 16.1624 8.95993Z"
+                                      fill="#FF7010"/>
+                                <path d="M18.3429 6.78327C18.1458 6.78327 17.9488 6.70823 17.7983 6.55775C17.4977 6.25719 17.4977 5.76998 17.7983 5.46903C18.2266 5.0407 18.4625 4.46074 18.4625 3.83652C18.4625 3.2123 18.2266 2.63234 17.7983 2.20401C17.3696 1.77529 16.7896 1.53938 16.1654 1.53938C15.5412 1.53938 14.9612 1.77529 14.5329 2.20401C14.2327 2.50457 13.7455 2.50496 13.4442 2.20401C13.1436 1.90344 13.1436 1.41623 13.4442 1.11528C14.1631 0.396005 15.1294 0 16.1654 0C17.201 0 18.1678 0.396005 18.8866 1.11528C19.6059 1.83417 20.0019 2.80052 20.0019 3.83652C20.0019 4.87252 19.6059 5.83887 18.8866 6.55775C18.7369 6.70784 18.5399 6.78327 18.3429 6.78327Z"
+                                      fill="#FF7010"/>
+                            </svg>
+                            Изменить
+                        </button>
+                    </div>
+                    <div class="content-data">
+                        <div class="content-data__name">
+                            <p class="content-data__list-title">Имя*</p>
+                            <p class="checkbox-text">Вадим</p>
+                        </div>
+                        <div class="content-data__number">
+                            <p class="content-data__list-title">Номер телефона*</p>
+                            <p class="checkbox-text">+7 (926) 223-10-11</p>
+                        </div>
+                        <div class="content-data__mail">
+                            <p class="content-data__list-title">Почта</p>
+                           <p class="checkbox-text">mail@gmail.com</p>
+                        </div>
+                        <div class="content-data__birth">
+                            <p class="content-data__list-title">Дата рождения</p>
+                           <p class="checkbox-text">13.02.1996</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="account-data__list">
+                    <div class="personal-data ">
+                        <h2 class="personal-data__title">Пароль</h2>
+                        <button class="personal-data__button-text">
+                            <svg class="personal-data__svg" width="21" height="20" viewBox="0 0 21 20" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.95905 14.4571C1.76201 14.4571 1.56535 14.3821 1.41488 14.2316C1.11431 13.931 1.11431 13.4438 1.41488 13.1433L13.4428 1.11532C13.743 0.814752 14.2306 0.814752 14.5312 1.11532C14.8317 1.41588 14.8317 1.90309 14.5312 2.20366L2.50322 14.2316C2.35313 14.3817 2.15609 14.4571 1.95905 14.4571Z"
+                                      fill="#FF7010"/>
+                                <path d="M0.770459 19.9999C0.716966 19.9999 0.662702 19.9942 0.608439 19.9826C0.192807 19.8933 -0.0719665 19.4842 0.0173175 19.0686L1.20649 13.5257C1.29577 13.1101 1.70679 12.8461 2.12049 12.9346C2.53613 13.0239 2.8009 13.4329 2.71162 13.8486L1.52245 19.3915C1.44509 19.7529 1.12567 19.9999 0.770459 19.9999Z"
+                                      fill="#FF7010"/>
+                                <path d="M6.31452 18.811C6.11747 18.811 5.92082 18.7359 5.77034 18.5855C5.46978 18.2849 5.46978 17.7977 5.77034 17.4971L17.7983 5.46956C18.0985 5.169 18.5861 5.169 18.8866 5.46956C19.1872 5.77013 19.1872 6.25734 18.8866 6.5579L6.85907 18.5855C6.7086 18.7359 6.51156 18.811 6.31452 18.811Z"
+                                      fill="#FF7010"/>
+                                <path d="M0.76919 20.0001C0.413978 20.0001 0.094942 19.753 0.0172034 19.3916C-0.0716958 18.976 0.192693 18.5669 0.608325 18.4776L6.15125 17.2884C6.56726 17.2003 6.97635 17.4643 7.06525 17.8796C7.15415 18.2952 6.88976 18.7043 6.47413 18.7936L0.93121 19.9827C0.876947 19.9947 0.822683 20.0001 0.76919 20.0001Z"
+                                      fill="#FF7010"/>
+                                <path d="M16.1624 8.95993C15.9654 8.95993 15.7683 8.88488 15.6182 8.73441L11.2645 4.38066C10.9639 4.08009 10.9639 3.59288 11.2645 3.29232C11.5647 2.99175 12.0526 2.99175 12.3528 3.29232L16.7066 7.64607C17.0071 7.94663 17.0071 8.43384 16.7066 8.73441C16.5565 8.88488 16.3594 8.95993 16.1624 8.95993Z"
+                                      fill="#FF7010"/>
+                                <path d="M18.3429 6.78327C18.1458 6.78327 17.9488 6.70823 17.7983 6.55775C17.4977 6.25719 17.4977 5.76998 17.7983 5.46903C18.2266 5.0407 18.4625 4.46074 18.4625 3.83652C18.4625 3.2123 18.2266 2.63234 17.7983 2.20401C17.3696 1.77529 16.7896 1.53938 16.1654 1.53938C15.5412 1.53938 14.9612 1.77529 14.5329 2.20401C14.2327 2.50457 13.7455 2.50496 13.4442 2.20401C13.1436 1.90344 13.1436 1.41623 13.4442 1.11528C14.1631 0.396005 15.1294 0 16.1654 0C17.201 0 18.1678 0.396005 18.8866 1.11528C19.6059 1.83417 20.0019 2.80052 20.0019 3.83652C20.0019 4.87252 19.6059 5.83887 18.8866 6.55775C18.7369 6.70784 18.5399 6.78327 18.3429 6.78327Z"
+                                      fill="#FF7010"/>
+                            </svg>
+                            Изменить
+                        </button>
+                    </div>
+                </div>
+                <div class="account-data__list">
+                    <div class="personal-data personal-data_subscriptions">
+                        <h2 class="personal-data__title">Подписки</h2>
+                        <div class="checkbox">
+                            <input class="personal-data__checkbox-input" id="checkbox" type="checkbox">
+                            <label for="checkbox" class="checkbox-text">
+                                Получать предложения и акции<span/>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- /Account - Settings 1 -->
+
+    <!-- Account - Settings 2 -->
+    <section class="block account">
+        <div class="block__content">
+            <div class="account__top">
+                <h1 class="account__top-title">Мой аккаунт</h1>
+                <div>
+                    <button></button>
+                    <button></button>
+                </div>
+            </div>
+            <div class="account-data">
+                <div class="account-data__list">
+                    <div class="personal-data">
+                        <h2 class="personal-data__title">Личные данные</h2>
+                        <button class="personal-data__button-text personal-data__button-text_unset">
+                            <svg class="personal-data__svg" width="21" height="20" viewBox="0 0 21 20" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.95905 14.4571C1.76201 14.4571 1.56535 14.3821 1.41488 14.2316C1.11431 13.931 1.11431 13.4438 1.41488 13.1433L13.4428 1.11532C13.743 0.814752 14.2306 0.814752 14.5312 1.11532C14.8317 1.41588 14.8317 1.90309 14.5312 2.20366L2.50322 14.2316C2.35313 14.3817 2.15609 14.4571 1.95905 14.4571Z"
+                                      fill="#FF7010"/>
+                                <path d="M0.770459 19.9999C0.716966 19.9999 0.662702 19.9942 0.608439 19.9826C0.192807 19.8933 -0.0719665 19.4842 0.0173175 19.0686L1.20649 13.5257C1.29577 13.1101 1.70679 12.8461 2.12049 12.9346C2.53613 13.0239 2.8009 13.4329 2.71162 13.8486L1.52245 19.3915C1.44509 19.7529 1.12567 19.9999 0.770459 19.9999Z"
+                                      fill="#FF7010"/>
+                                <path d="M6.31452 18.811C6.11747 18.811 5.92082 18.7359 5.77034 18.5855C5.46978 18.2849 5.46978 17.7977 5.77034 17.4971L17.7983 5.46956C18.0985 5.169 18.5861 5.169 18.8866 5.46956C19.1872 5.77013 19.1872 6.25734 18.8866 6.5579L6.85907 18.5855C6.7086 18.7359 6.51156 18.811 6.31452 18.811Z"
+                                      fill="#FF7010"/>
+                                <path d="M0.76919 20.0001C0.413978 20.0001 0.094942 19.753 0.0172034 19.3916C-0.0716958 18.976 0.192693 18.5669 0.608325 18.4776L6.15125 17.2884C6.56726 17.2003 6.97635 17.4643 7.06525 17.8796C7.15415 18.2952 6.88976 18.7043 6.47413 18.7936L0.93121 19.9827C0.876947 19.9947 0.822683 20.0001 0.76919 20.0001Z"
+                                      fill="#FF7010"/>
+                                <path d="M16.1624 8.95993C15.9654 8.95993 15.7683 8.88488 15.6182 8.73441L11.2645 4.38066C10.9639 4.08009 10.9639 3.59288 11.2645 3.29232C11.5647 2.99175 12.0526 2.99175 12.3528 3.29232L16.7066 7.64607C17.0071 7.94663 17.0071 8.43384 16.7066 8.73441C16.5565 8.88488 16.3594 8.95993 16.1624 8.95993Z"
+                                      fill="#FF7010"/>
+                                <path d="M18.3429 6.78327C18.1458 6.78327 17.9488 6.70823 17.7983 6.55775C17.4977 6.25719 17.4977 5.76998 17.7983 5.46903C18.2266 5.0407 18.4625 4.46074 18.4625 3.83652C18.4625 3.2123 18.2266 2.63234 17.7983 2.20401C17.3696 1.77529 16.7896 1.53938 16.1654 1.53938C15.5412 1.53938 14.9612 1.77529 14.5329 2.20401C14.2327 2.50457 13.7455 2.50496 13.4442 2.20401C13.1436 1.90344 13.1436 1.41623 13.4442 1.11528C14.1631 0.396005 15.1294 0 16.1654 0C17.201 0 18.1678 0.396005 18.8866 1.11528C19.6059 1.83417 20.0019 2.80052 20.0019 3.83652C20.0019 4.87252 19.6059 5.83887 18.8866 6.55775C18.7369 6.70784 18.5399 6.78327 18.3429 6.78327Z"
+                                      fill="#FF7010"/>
+                            </svg>
+                            Изменить
+                        </button>
+                    </div>
+                    <div class="content-data">
+                        <div class="content-data__name content-data_input">
+                            <p class="content-data__list-title">Имя*</p>
+                            <input class="input-text" type="text">
+                        </div>
+                        <div class="content-data__number content-data_input">
+                            <p class="content-data__list-title">Номер телефона*</p>
+                            <input class="input-text" type="text">
+                        </div>
+                        <div class="content-data__mail content-data_input">
+                            <p class="content-data__list-title">Почта</p>
+                            <input class="input-text" type="text">
+                        </div>
+                        <div class="content-data__birth content-data_input">
+                            <p class="content-data__list-title">Дата рождения</p>
+                            <input class="input-text" type="text">
+                        </div>
+                        <button class="content-data__button standard-btn">Сохранить изменения</button>
+                    </div>
+                </div>
+                <div class="account-data__list">
+                    <div class="personal-data ">
+                        <h2 class="personal-data__title">Пароль</h2>
+                        <button class="personal-data__button-text">
+                            <svg class="personal-data__svg" width="21" height="20" viewBox="0 0 21 20" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.95905 14.4571C1.76201 14.4571 1.56535 14.3821 1.41488 14.2316C1.11431 13.931 1.11431 13.4438 1.41488 13.1433L13.4428 1.11532C13.743 0.814752 14.2306 0.814752 14.5312 1.11532C14.8317 1.41588 14.8317 1.90309 14.5312 2.20366L2.50322 14.2316C2.35313 14.3817 2.15609 14.4571 1.95905 14.4571Z"
+                                      fill="#FF7010"/>
+                                <path d="M0.770459 19.9999C0.716966 19.9999 0.662702 19.9942 0.608439 19.9826C0.192807 19.8933 -0.0719665 19.4842 0.0173175 19.0686L1.20649 13.5257C1.29577 13.1101 1.70679 12.8461 2.12049 12.9346C2.53613 13.0239 2.8009 13.4329 2.71162 13.8486L1.52245 19.3915C1.44509 19.7529 1.12567 19.9999 0.770459 19.9999Z"
+                                      fill="#FF7010"/>
+                                <path d="M6.31452 18.811C6.11747 18.811 5.92082 18.7359 5.77034 18.5855C5.46978 18.2849 5.46978 17.7977 5.77034 17.4971L17.7983 5.46956C18.0985 5.169 18.5861 5.169 18.8866 5.46956C19.1872 5.77013 19.1872 6.25734 18.8866 6.5579L6.85907 18.5855C6.7086 18.7359 6.51156 18.811 6.31452 18.811Z"
+                                      fill="#FF7010"/>
+                                <path d="M0.76919 20.0001C0.413978 20.0001 0.094942 19.753 0.0172034 19.3916C-0.0716958 18.976 0.192693 18.5669 0.608325 18.4776L6.15125 17.2884C6.56726 17.2003 6.97635 17.4643 7.06525 17.8796C7.15415 18.2952 6.88976 18.7043 6.47413 18.7936L0.93121 19.9827C0.876947 19.9947 0.822683 20.0001 0.76919 20.0001Z"
+                                      fill="#FF7010"/>
+                                <path d="M16.1624 8.95993C15.9654 8.95993 15.7683 8.88488 15.6182 8.73441L11.2645 4.38066C10.9639 4.08009 10.9639 3.59288 11.2645 3.29232C11.5647 2.99175 12.0526 2.99175 12.3528 3.29232L16.7066 7.64607C17.0071 7.94663 17.0071 8.43384 16.7066 8.73441C16.5565 8.88488 16.3594 8.95993 16.1624 8.95993Z"
+                                      fill="#FF7010"/>
+                                <path d="M18.3429 6.78327C18.1458 6.78327 17.9488 6.70823 17.7983 6.55775C17.4977 6.25719 17.4977 5.76998 17.7983 5.46903C18.2266 5.0407 18.4625 4.46074 18.4625 3.83652C18.4625 3.2123 18.2266 2.63234 17.7983 2.20401C17.3696 1.77529 16.7896 1.53938 16.1654 1.53938C15.5412 1.53938 14.9612 1.77529 14.5329 2.20401C14.2327 2.50457 13.7455 2.50496 13.4442 2.20401C13.1436 1.90344 13.1436 1.41623 13.4442 1.11528C14.1631 0.396005 15.1294 0 16.1654 0C17.201 0 18.1678 0.396005 18.8866 1.11528C19.6059 1.83417 20.0019 2.80052 20.0019 3.83652C20.0019 4.87252 19.6059 5.83887 18.8866 6.55775C18.7369 6.70784 18.5399 6.78327 18.3429 6.78327Z"
+                                      fill="#FF7010"/>
+                            </svg>
+                            Изменить
+                        </button>
+                    </div>
+                </div>
+                <div class="account-data__list">
+                    <div class="personal-data personal-data_subscriptions">
+                        <h2 class="personal-data__title">Подписки</h2>
+                        <div class="checkbox">
+                            <input class="personal-data__checkbox-input" id="checkbox" type="checkbox">
+                            <label for="checkbox" class="checkbox-text">
+                                Получать предложения и акции<span/>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- /Account - Settings 2 -->
+
+
+
+    @@include('_footer.html')
+</div>
+</body>
+</html>
