@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     filterBtn()
     handlerSwitch()
     openPopup()
+    openMobileMenu()
 })
 
 function filterBtn() {
@@ -48,5 +49,11 @@ function openPopup() {
 
     })
 
+}
+function openMobileMenu() {
+    document.querySelector(".menu__burger").addEventListener("click", evt => {
+        document.querySelector(".menu__burger").classList.toggle("active")
+        document.querySelector(".mobile-menu").classList.toggle("active")
+    })
 }
 
