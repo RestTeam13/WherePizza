@@ -1055,10 +1055,29 @@ img {
   margin: 48px 0 16px 0;
 }
 
+.account .block__content {
+  max-width: 850px;
+}
+
+.account__top {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0 24px;
+}
+
+.account__switch-row {
+  width: 360px;
+  background: #FFFFFF;
+  border: 1px solid #F0F0F0;
+  display: flex;
+}
+.account__switch-row .switch__btn {
+  width: 50%;
+}
+
 .account__top-title {
   font-family: Inter, sans-serif;
   font-size: 40px;
-  margin-top: 40px;
 }
 
 .order-list__item {
@@ -1275,7 +1294,7 @@ img {
 
 .personal-data_subscriptions {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .personal-data__title {
@@ -1285,11 +1304,41 @@ img {
 
 .checkbox {
   margin-top: 16px;
+  position: relative;
 }
 
-.checkbox-text {
+.checkbox__input {
+  position: absolute;
+  visibility: hidden;
+}
+.checkbox__input:checked + label {
+  background: #FF7010;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.checkbox__input:checked + label:before {
+  content: "";
+  width: 12px;
+  height: 8px;
+  -webkit-mask: url(../img/2.content/arrow.svg) center no-repeat;
+  background: #FFFFFF;
+  -webkit-mask-size: contain;
+  display: block;
+}
+
+.checkbox__text {
   font-family: SF-Pro-Display-Regular, sans-serif;
-  font-size: 16px;
+  margin: 15px 0 0 12px;
+}
+
+.checkbox__label {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #A5A5A5;
+  border-radius: 2px;
+  display: block;
+  cursor: pointer;
 }
 
 .personal-data__button-text {
@@ -1309,9 +1358,6 @@ img {
 
 .content-data {
   display: flex;
-  max-width: 526px;
-  width: 100%;
-  justify-content: space-between;
   margin-top: 16px;
 }
 
@@ -1322,20 +1368,12 @@ img {
   margin-top: 0;
 }
 
-.content-data__name {
-  width: 52px;
-}
-
 .content-data__number {
-  width: 150px;
-}
-
-.content-data__mail {
-  width: 123px;
+  margin: 0 32px 0 32px;
 }
 
 .content-data__birth {
-  width: 107px;
+  margin-left: 32px;
 }
 
 .content-data_input {
@@ -1356,6 +1394,10 @@ img {
   font-family: Inter, sans-serif;
   font-size: 14px;
   margin-bottom: 5px;
+}
+
+.checkbox-text {
+  font-family: SF-Pro-Display-Regular, sans-serif;
 }
 
 .content-data__button {
