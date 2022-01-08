@@ -815,39 +815,67 @@ img {
   margin-top: 40px;
 }
 
-.order-details {
-  max-width: 850px;
-  width: 100%;
+.order-list__item {
   background: #fff;
   border: 1px solid #f0f0f0;
   border-radius: 12px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   padding: 16px 20px 16px 20px;
-  align-items: center;
+  max-width: 850px;
+  width: 100%;
   margin-bottom: 20px;
-  position: relative;
 }
-
-.order-details_archive .order-details__pizza-list {
+.order-list__item[data-processed] .order-details__svg rect {
+  fill: #e23535;
+}
+.order-list__item[data-delivery] .order-details__svg rect {
+  fill: #FF7010;
+}
+.order-list__item[data-done] .order-details__svg rect {
+  fill: #24D17E;
+}
+.order-list__item[data-archive] .order-details__svg rect {
+  fill: #A5A5A5;
+}
+.order-list__item[data-archive] .order-details__pizza-list {
   filter: grayscale(1);
 }
-.order-details_archive p {
+.order-list__item[data-archive] p {
   color: #A5A5A5;
 }
-.order-details_archive .order-details__list-text span {
+.order-list__item[data-archive] .order-details__list-text span {
   color: #191919;
 }
 
-.order-details__list {
-  margin-left: 10px;
+.order-list__item-details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.order-products {
+  border-top: 1px solid #F0F0F0;
+  padding-top: 12px;
+  margin-top: 12px;
+}
+
+.order-details__list_num {
+  width: 30%;
+}
+
+.order-details__list_sum {
+  width: 21%;
+}
+
+.order-details__list_status {
+  width: 25%;
+}
+
+.order-details__svg-button {
+  margin-left: auto;
 }
 
 .order-details__svg {
-  position: absolute;
-  top: 14px;
-  left: 16px;
+  margin-right: 16px;
 }
 
 .order-details__list-title {
@@ -882,6 +910,9 @@ img {
   font-size: 16px;
   margin: 16px 320px 0 359px;
 }
+.order-replay:hover {
+  opacity: 0.8;
+}
 
 .order-details__wrapper-img {
   width: 40px;
@@ -898,6 +929,7 @@ img {
 .order-details__pizza-list {
   display: flex;
   margin-top: 22px;
+  margin-left: auto;
 }
 
 .pagination {
@@ -936,20 +968,21 @@ img {
 .products-list__wrapper-img {
   width: 40px;
   height: 40px;
-  margin-left: 5px;
-  margin-right: 16px;
+  margin-right: 18px;
 }
 
 .products-list__title {
   font-family: Inter, sans-serif;
   font-weight: 600;
   font-size: 16px;
+  width: 37%;
+  padding-right: 10px;
 }
 
 .products-list__size {
   font-family: Inter, sans-serif;
   font-size: 14px;
-  margin: 0 68px 0 68px;
+  width: 30%;
 }
 
 .products-list__quantity {
@@ -964,7 +997,6 @@ img {
   align-items: center;
   justify-content: center;
   font-weight: 600;
-  margin-right: 67px;
 }
 
 .products-list__amount {
@@ -972,6 +1004,7 @@ img {
   font-family: Inter, sans-serif;
   font-weight: 600;
   font-size: 16px;
+  margin-left: auto;
 }
 
 .account-data {

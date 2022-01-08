@@ -29,160 +29,222 @@
                     <button></button>
                 </div>
             </div>
-            <div class="account__order-list">
-                <div class="order-details">
-                    <div class="order-details__svg"><svg width="4" height="44" viewBox="0 0 4 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="4" height="44" rx="2" fill="#E23535"/>
-                    </svg></div>
-                    <div class="order-details__list">
-                        <p class="order-details__list-title">Заказ</p>
-                        <p class="order-details__list-text">№130312 <span>22.06.21</span></p>
+            <div class="account__order-list order-list">
+                <div class="order-list__item" data-processed>
+                   <div class="order-list__item-details">
+                       <div class="order-details__svg">
+                           <svg width="4" height="44" viewBox="0 0 4 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                               <rect width="4" height="44" rx="2"/>
+                           </svg>
+                       </div>
+                       <div class="order-details__list order-details__list_num">
+                           <p class="order-details__list-title">Заказ</p>
+                           <p class="order-details__list-text">№130312 <span>22.06.21</span></p>
+                       </div>
+                       <div class="order-details__list order-details__list_sum">
+                           <p class="order-details__list-title">Сумма заказа</p>
+                           <p class="order-details__list-text">399 ₽</p>
+                       </div>
+                       <div class="order-details__list order-details__list_status">
+                           <p class="order-details__list-title">Статус</p>
+                           <p class="order-details__list-text">Обрабатывается</p>
+                       </div>
+                       <div class="order-details__list order-details__list_pay">
+                           <p class="order-details__list-title"> Оплачено</p>
+                           <p class="order-details__list-text">Картой</p>
+                       </div>
+                       <button class="order-details__svg-button">
+                           <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                               <path d="M16 1.35014C16 1.54195 15.9289 1.73395 15.7869 1.88038L8.5142 9.3803C8.23002 9.67336 7.76984 9.67336 7.48584 9.3803L0.213135 1.88038C-0.0710456 1.58732 -0.0710456 1.11276 0.213135 0.819893C0.497316 0.527021 0.957497 0.526833 1.2415 0.819893L8.00002 7.78957L14.7585 0.819892C15.0427 0.526833 15.5029 0.526833 15.7869 0.819892C15.9289 0.966328 16 1.15833 16 1.35014Z"
+                                     fill="#FF7010"/>
+                           </svg>
+                       </button>
+                       <hr class="order-details__line">
+                       <div class="order-details__list">
+                           <p class="order-details__list-title order-details__list-title_address">Адрес</p>
+                           <p class="order-details__list-text">ул. Львовская 48/2, офис 301, 2 этаж, домофон 4801#</p>
+                       </div>
+                       <div class="order-details__pizza-list">
+                           <div class="order-details__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza1.png" alt=""></div>
+                           <div class="order-details__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza2.png" alt=""></div>
+                           <div class="order-details__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza3.png" alt=""></div>
+                       </div>
+                   </div>
+                   <div class="order-products">
+                       <div class="products-list">
+                           <div class="products-list__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza2.png" alt=""></div>
+                           <p class="products-list__title">Пепперони по-деревенски</p>
+                           <p class="products-list__size">Традиционное тесто, 23 см</p>
+                           <p class="products-list__quantity">1 товар</p>
+                           <p class="products-list__amount">399 ₽</p>
+                       </div>
+                       <div class="products-list">
+                           <div class="products-list__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza2.png" alt=""></div>
+                           <p class="products-list__title">Пепперони по-деревенски</p>
+                           <p class="products-list__size">Традиционное тесто, 23 см</p>
+                           <p class="products-list__quantity">1 товар</p>
+                           <p class="products-list__amount">399 ₽</p>
+                       </div>
+                       <div class="products-list">
+                           <div class="products-list__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza2.png" alt=""></div>
+                           <p class="products-list__title">Пепперони по-деревенски</p>
+                           <p class="products-list__size">Традиционное тесто, 23 см</p>
+                           <p class="products-list__quantity">1 товар</p>
+                           <p class="products-list__amount">399 ₽</p>
+                       </div>
+                       <hr class="order-details__line">
+                       <button class="order-replay">Повторить заказ</button>
+                   </div>
+               </div>
+                <div class="order-list__item" data-delivery>
+                    <div class="order-list__item-details">
+                        <div class="order-details__svg">
+                            <svg width="4" height="44" viewBox="0 0 4 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="4" height="44" rx="2"/>
+                            </svg>
+                        </div>
+                        <div class="order-details__list order-details__list_num">
+                            <p class="order-details__list-title">Заказ</p>
+                            <p class="order-details__list-text">№130308 <span>21.06.21</span></p>
+                        </div>
+                        <div class="order-details__list order-details__list_sum">
+                            <p class="order-details__list-title">Сумма заказа</p>
+                            <p class="order-details__list-text">1 252 ₽</p>
+                        </div>
+                        <div class="order-details__list order-details__list_status">
+                            <p class="order-details__list-title">Статус</p>
+                            <p class="order-details__list-text">Едет к вам (в 15:13)</p>
+                        </div>
+                        <div class="order-details__list order-details__list_pay">
+                            <p class="order-details__list-title"> Оплачено</p>
+                            <p class="order-details__list-text">Наличкой</p>
+                        </div>
+                        <button class="order-details__svg-button">
+                            <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 1.35014C16 1.54195 15.9289 1.73395 15.7869 1.88038L8.5142 9.3803C8.23002 9.67336 7.76984 9.67336 7.48584 9.3803L0.213135 1.88038C-0.0710456 1.58732 -0.0710456 1.11276 0.213135 0.819893C0.497316 0.527021 0.957497 0.526833 1.2415 0.819893L8.00002 7.78957L14.7585 0.819892C15.0427 0.526833 15.5029 0.526833 15.7869 0.819892C15.9289 0.966328 16 1.15833 16 1.35014Z"
+                                      fill="#FF7010"/>
+                            </svg>
+                        </button>
+                        <hr class="order-details__line">
+                        <div class="order-details__list">
+                            <p class="order-details__list-title order-details__list-title_address">Адрес</p>
+                            <p class="order-details__list-text">ул. Львовская 48/2, офис 301, 2 этаж, домофон 4801#</p>
+                        </div>
+                        <div class="order-details__pizza-list">
+                            <div class="order-details__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza2.png" alt=""></div>
+                            <div class="order-details__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza2.png" alt=""></div>
+                        </div>
                     </div>
-                    <div class="order-details__list">
-                        <p class="order-details__list-title">Сумма заказа</p>
-                        <p class="order-details__list-text">399 ₽</p>
-                    </div>
-                    <div class="order-details__list">
-                        <p class="order-details__list-title">Статус</p>
-                        <p class="order-details__list-text">Обрабатывается</p>
-                    </div>
-                    <div class="order-details__list">
-                        <p class="order-details__list-title"> Оплачено</p>
-                        <p class="order-details__list-text">Картой</p>
-                    </div>
-                    <button class="order-details__svg-button">
-                        <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16 1.35014C16 1.54195 15.9289 1.73395 15.7869 1.88038L8.5142 9.3803C8.23002 9.67336 7.76984 9.67336 7.48584 9.3803L0.213135 1.88038C-0.0710456 1.58732 -0.0710456 1.11276 0.213135 0.819893C0.497316 0.527021 0.957497 0.526833 1.2415 0.819893L8.00002 7.78957L14.7585 0.819892C15.0427 0.526833 15.5029 0.526833 15.7869 0.819892C15.9289 0.966328 16 1.15833 16 1.35014Z"
-                                  fill="#FF7010"/>
-                        </svg>
-                    </button>
-                    <hr class="order-details__line">
-                    <div class="order-details__list">
-                        <p class="order-details__list-title order-details__list-title_address">Адрес</p>
-                        <p class="order-details__list-text">ул. Львовская 48/2, офис 301, 2 этаж, домофон 4801#</p>
-                    </div>
-                    <div class="order-details__pizza-list">
-                        <div class="order-details__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza1.png" alt=""></div>
-                        <div class="order-details__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza2.png" alt=""></div>
-                        <div class="order-details__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza3.png" alt=""></div>
+                    <div class="order-products">
+                        <div class="products-list">
+                            <div class="products-list__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza2.png" alt=""></div>
+                            <p class="products-list__title">Пепперони по-деревенски</p>
+                            <p class="products-list__size">Традиционное тесто, 23 см</p>
+                            <p class="products-list__quantity">1 товар</p>
+                            <p class="products-list__amount">399 ₽</p>
+                        </div>
+                        <div class="products-list">
+                            <div class="products-list__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza2.png" alt=""></div>
+                            <p class="products-list__title">Пепперони по-деревенски</p>
+                            <p class="products-list__size">Традиционное тесто, 23 см</p>
+                            <p class="products-list__quantity">1 товар</p>
+                            <p class="products-list__amount">399 ₽</p>
+                        </div>
+                        <div class="products-list">
+                            <div class="products-list__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza2.png" alt=""></div>
+                            <p class="products-list__title">Пепперони по-деревенски</p>
+                            <p class="products-list__size">Традиционное тесто, 23 см</p>
+                            <p class="products-list__quantity">1 товар</p>
+                            <p class="products-list__amount">399 ₽</p>
+                        </div>
+                        <hr class="order-details__line">
+                        <button class="order-replay">Повторить заказ</button>
                     </div>
                 </div>
-                <div class="order-products order-details">
-                    <div class="products-list">
-                        <div class="products-list__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza2.png" alt=""></div>
-                        <p class="products-list__title">Пепперони по-деревенски</p>
-                        <p class="products-list__size">Традиционное тесто, 23 см</p>
-                        <p class="products-list__quantity">1 товар</p>
-                        <p class="products-list__amount">399 ₽</p>
+                <div class="order-list__item" data-done>
+                    <div class="order-list__item-details">
+                        <div class="order-details__svg">
+                            <svg width="4" height="44" viewBox="0 0 4 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="4" height="44" rx="2"/>
+                            </svg>
+                        </div>
+                        <div class="order-details__list order-details__list_num">
+                            <p class="order-details__list-title">Заказ</p>
+                            <p class="order-details__list-text">№130304 <span>20.06.21</span></p>
+                        </div>
+                        <div class="order-details__list order-details__list_sum">
+                            <p class="order-details__list-title">Сумма заказа</p>
+                            <p class="order-details__list-text">2 324 ₽</p>
+                        </div>
+                        <div class="order-details__list order-details__list_status">
+                            <p class="order-details__list-title">Статус</p>
+                            <p class="order-details__list-text">Выполнен</p>
+                        </div>
+                        <div class="order-details__list order-details__list_pay">
+                            <p class="order-details__list-title"> Оплачено</p>
+                            <p class="order-details__list-text">ApplePay</p>
+                        </div>
+                        <button class="order-details__svg-button">
+                            <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 1.35014C16 1.54195 15.9289 1.73395 15.7869 1.88038L8.5142 9.3803C8.23002 9.67336 7.76984 9.67336 7.48584 9.3803L0.213135 1.88038C-0.0710456 1.58732 -0.0710456 1.11276 0.213135 0.819893C0.497316 0.527021 0.957497 0.526833 1.2415 0.819893L8.00002 7.78957L14.7585 0.819892C15.0427 0.526833 15.5029 0.526833 15.7869 0.819892C15.9289 0.966328 16 1.15833 16 1.35014Z"
+                                      fill="#FF7010"/>
+                            </svg>
+                        </button>
+                        <hr class="order-details__line">
+                        <div class="order-details__list">
+                            <p class="order-details__list-title order-details__list-title_address">Адрес</p>
+                            <p class="order-details__list-text">ул. Львовская 48/2, офис 301, 2 этаж, домофон 4801#</p>
+                        </div>
+                        <div class="order-details__pizza-list">
+                            <div class="order-details__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza3.png" alt=""></div>
+                        </div>
                     </div>
-                    <div class="products-list">
-                        <div class="products-list__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza2.png" alt=""></div>
-                        <p class="products-list__title">Пепперони по-деревенски</p>
-                        <p class="products-list__size">Традиционное тесто, 23 см</p>
-                        <p class="products-list__quantity">1 товар</p>
-                        <p class="products-list__amount">399 ₽</p>
+                    <div class="order-products">
+                        <div class="products-list">
+                            <div class="products-list__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza2.png" alt=""></div>
+                            <p class="products-list__title">Пепперони по-деревенски</p>
+                            <p class="products-list__size">Традиционное тесто, 23 см</p>
+                            <p class="products-list__quantity">1 товар</p>
+                            <p class="products-list__amount">399 ₽</p>
+                        </div>
+                        <div class="products-list">
+                            <div class="products-list__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza2.png" alt=""></div>
+                            <p class="products-list__title">Пепперони по-деревенски</p>
+                            <p class="products-list__size">Традиционное тесто, 23 см</p>
+                            <p class="products-list__quantity">1 товар</p>
+                            <p class="products-list__amount">399 ₽</p>
+                        </div>
+                        <div class="products-list">
+                            <div class="products-list__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza2.png" alt=""></div>
+                            <p class="products-list__title">Пепперони по-деревенски</p>
+                            <p class="products-list__size">Традиционное тесто, 23 см</p>
+                            <p class="products-list__quantity">1 товар</p>
+                            <p class="products-list__amount">399 ₽</p>
+                        </div>
+                        <hr class="order-details__line">
+                        <button class="order-replay">Повторить заказ</button>
                     </div>
-                    <div class="products-list">
-                        <div class="products-list__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza2.png" alt=""></div>
-                        <p class="products-list__title">Пепперони по-деревенски</p>
-                        <p class="products-list__size">Традиционное тесто, 23 см</p>
-                        <p class="products-list__quantity">1 товар</p>
-                        <p class="products-list__amount">399 ₽</p>
-                    </div>
-                    <hr class="order-details__line">
-                    <button class="order-replay">Повторить заказ</button>
                 </div>
-                <div class="order-details">
-                    <div class="order-details__svg"><svg width="4" height="44" viewBox="0 0 4 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="4" height="44" rx="2" fill="#FF7010"/>
+                <div class="order-list__item" data-archive>
+                    <div class="order-list__item-details">
+                    <div class="order-details__svg">
+                        <svg width="4" height="44" viewBox="0 0 4 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="4" height="44" rx="2"/>
                     </svg>
                     </div>
-                    <div class="order-details__list">
-                        <p class="order-details__list-title">Заказ</p>
-                        <p class="order-details__list-text">№130308 <span>21.06.21</span></p>
-                    </div>
-                    <div class="order-details__list">
-                        <p class="order-details__list-title">Сумма заказа</p>
-                        <p class="order-details__list-text">1 252 ₽</p>
-                    </div>
-                    <div class="order-details__list">
-                        <p class="order-details__list-title">Статус</p>
-                        <p class="order-details__list-text">Едет к вам (в 15:13)</p>
-                    </div>
-                    <div class="order-details__list">
-                        <p class="order-details__list-title"> Оплачено</p>
-                        <p class="order-details__list-text">Наличкой</p>
-                    </div>
-                    <button class="order-details__svg-button">
-                        <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16 1.35014C16 1.54195 15.9289 1.73395 15.7869 1.88038L8.5142 9.3803C8.23002 9.67336 7.76984 9.67336 7.48584 9.3803L0.213135 1.88038C-0.0710456 1.58732 -0.0710456 1.11276 0.213135 0.819893C0.497316 0.527021 0.957497 0.526833 1.2415 0.819893L8.00002 7.78957L14.7585 0.819892C15.0427 0.526833 15.5029 0.526833 15.7869 0.819892C15.9289 0.966328 16 1.15833 16 1.35014Z"
-                                  fill="#FF7010"/>
-                        </svg>
-                    </button>
-                    <hr class="order-details__line">
-                    <div class="order-details__list">
-                        <p class="order-details__list-title order-details__list-title_address">Адрес</p>
-                        <p class="order-details__list-text">ул. Львовская 48/2, офис 301, 2 этаж, домофон 4801#</p>
-                    </div>
-                    <div class="order-details__pizza-list">
-                        <div class="order-details__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza2.png" alt=""></div>
-                        <div class="order-details__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza2.png" alt=""></div>
-                    </div>
-                </div>
-                <div class="order-details">
-                    <div class="order-details__svg"><svg width="4" height="44" viewBox="0 0 4 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="4" height="44" rx="2" fill="#24D17E"/>
-                    </svg>
-                    </div>
-                    <div class="order-details__list">
-                        <p class="order-details__list-title">Заказ</p>
-                        <p class="order-details__list-text">№130304 <span>20.06.21</span></p>
-                    </div>
-                    <div class="order-details__list">
-                        <p class="order-details__list-title">Сумма заказа</p>
-                        <p class="order-details__list-text">2 324 ₽</p>
-                    </div>
-                    <div class="order-details__list">
-                        <p class="order-details__list-title">Статус</p>
-                        <p class="order-details__list-text">Выполнен</p>
-                    </div>
-                    <div class="order-details__list">
-                        <p class="order-details__list-title"> Оплачено</p>
-                        <p class="order-details__list-text">ApplePay</p>
-                    </div>
-                    <button class="order-details__svg-button">
-                        <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16 1.35014C16 1.54195 15.9289 1.73395 15.7869 1.88038L8.5142 9.3803C8.23002 9.67336 7.76984 9.67336 7.48584 9.3803L0.213135 1.88038C-0.0710456 1.58732 -0.0710456 1.11276 0.213135 0.819893C0.497316 0.527021 0.957497 0.526833 1.2415 0.819893L8.00002 7.78957L14.7585 0.819892C15.0427 0.526833 15.5029 0.526833 15.7869 0.819892C15.9289 0.966328 16 1.15833 16 1.35014Z"
-                                  fill="#FF7010"/>
-                        </svg>
-                    </button>
-                    <hr class="order-details__line">
-                    <div class="order-details__list">
-                        <p class="order-details__list-title order-details__list-title_address">Адрес</p>
-                        <p class="order-details__list-text">ул. Львовская 48/2, офис 301, 2 этаж, домофон 4801#</p>
-                    </div>
-                    <div class="order-details__pizza-list">
-                        <div class="order-details__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza3.png" alt=""></div>
-                    </div>
-                </div>
-                <div class="order-details order-details_archive">
-                    <div class="order-details__svg"><svg width="4" height="44" viewBox="0 0 4 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="4" height="44" rx="2" fill="#A5A5A5"/>
-                    </svg>
-                    </div>
-                    <div class="order-details__list">
+                    <div class="order-details__list order-details__list_num">
                         <p class="order-details__list-title">Заказ</p>
                         <p class="order-details__list-text">№130312 19.06.21</p>
                     </div>
-                    <div class="order-details__list">
+                    <div class="order-details__list order-details__list_sum">
                         <p class="order-details__list-title">Сумма заказа</p>
                         <p class="order-details__list-text">2 324 ₽</p>
                     </div>
-                    <div class="order-details__list">
+                    <div class="order-details__list order-details__list_status">
                         <p class="order-details__list-title">Статус</p>
                         <p class="order-details__list-text"><span>Отмена</span></p>
                     </div>
-                    <div class="order-details__list">
+                    <div class="order-details__list order-details__list_pay">
                         <p class="order-details__list-title"> Оплачено</p>
                         <p class="order-details__list-text">Наличка</p>
                     </div>
@@ -199,6 +261,32 @@
                     </div>
                     <div class="order-details__pizza-list">
                         <div class="order-details__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza1.png" alt=""></div>
+                    </div>
+                </div>
+                    <div class="order-products">
+                        <div class="products-list">
+                            <div class="products-list__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza2.png" alt=""></div>
+                            <p class="products-list__title">Пепперони по-деревенски</p>
+                            <p class="products-list__size">Традиционное тесто, 23 см</p>
+                            <p class="products-list__quantity">1 товар</p>
+                            <p class="products-list__amount">399 ₽</p>
+                        </div>
+                        <div class="products-list">
+                            <div class="products-list__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza2.png" alt=""></div>
+                            <p class="products-list__title">Пепперони по-деревенски</p>
+                            <p class="products-list__size">Традиционное тесто, 23 см</p>
+                            <p class="products-list__quantity">1 товар</p>
+                            <p class="products-list__amount">399 ₽</p>
+                        </div>
+                        <div class="products-list">
+                            <div class="products-list__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza2.png" alt=""></div>
+                            <p class="products-list__title">Пепперони по-деревенски</p>
+                            <p class="products-list__size">Традиционное тесто, 23 см</p>
+                            <p class="products-list__quantity">1 товар</p>
+                            <p class="products-list__amount">399 ₽</p>
+                        </div>
+                        <hr class="order-details__line">
+                        <button class="order-replay">Повторить заказ</button>
                     </div>
                 </div>
             </div>
