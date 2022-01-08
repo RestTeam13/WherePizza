@@ -81,6 +81,7 @@ img {
 .wrapper {
   position: relative;
   min-height: 100vh;
+  overflow: hidden;
   background: #F9F9F9;
 }
 
@@ -356,7 +357,7 @@ img {
 }
 
 .mobile-menu {
-  display: flex;
+  display: none;
   flex-flow: column;
   background: #ffffff;
   position: absolute;
@@ -372,6 +373,11 @@ img {
 }
 .mobile-menu.active {
   transform: translateX(0);
+}
+@media (max-width: 767px) {
+  .mobile-menu {
+    display: flex;
+  }
 }
 
 .mobile-menu__row {
