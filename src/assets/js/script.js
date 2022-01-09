@@ -5,8 +5,27 @@ document.addEventListener('DOMContentLoaded', function () {
     openMobileMenu()
     togglingBtn()
     resettingBtn()
+    openCart()
 })
+function openCart() {
+    let cartPopup = document.querySelector(".cart-popup")
+    document.querySelector(".menu__cart ").addEventListener("click", evt =>  {
+        cartPopup.classList.add("active")
+        document.querySelector(".background-blur").classList.add("active")
+    })
+    document.querySelector(".cart-popup").querySelector('.filter-popup__title-cross').addEventListener("click", evt =>  {
+        cartPopup.classList.remove("active")
+        document.querySelector(".background-blur").classList.remove("active")
+    })
+    document.querySelectorAll(".current-popup__cross_mobile").forEach(mobileCross => {
+        mobileCross.addEventListener("click", evt => {
+            cartPopup.classList.remove("active")
+            document.querySelector(".background-blur").classList.remove("active")
+        })
+    })
 
+
+}
 function filterBtn() {
     function closeFilter() {
         document.querySelector(".filter-popup").classList.remove("active")
