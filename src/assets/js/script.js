@@ -24,8 +24,10 @@ function openCart() {
             document.querySelector(".background-blur").classList.remove("active")
         })
     })
+}
 
-    function filterBtn() {
+function filterBtn() {
+    function closeFilter() {
         document.querySelector(".filter-popup").classList.remove("active")
         document.querySelector(".background-blur").classList.remove("active")
     }
@@ -90,41 +92,41 @@ function openPopup() {
 
         })
     }
-    }
+}
 
-    function openMobileMenu() {
-        if (document.querySelector(".menu__burger")) {
-            document.querySelector(".menu__burger").addEventListener("click", evt => {
-                document.querySelector(".menu__burger").classList.toggle("active")
-                document.querySelector(".mobile-menu").classList.toggle("active")
-                document.querySelector(".background-blur").classList.toggle("active")
-            })
-        }
-    }
-
-    function openMobileMenu() {
+function openMobileMenu() {
+    if (document.querySelector(".menu__burger")) {
         document.querySelector(".menu__burger").addEventListener("click", evt => {
             document.querySelector(".menu__burger").classList.toggle("active")
             document.querySelector(".mobile-menu").classList.toggle("active")
             document.querySelector(".background-blur").classList.toggle("active")
-            document.querySelector(".header__menu").classList.toggle("active")
         })
     }
+}
 
-    function togglingBtn() {
-        let toggleBtn = document.querySelectorAll(".toggle-btn").forEach(currentToggleBtn => {
-            currentToggleBtn.addEventListener("click", evt => {
-                currentToggleBtn.classList.toggle("active")
-            })
+function openMobileMenu() {
+    document.querySelector(".menu__burger").addEventListener("click", evt => {
+        document.querySelector(".menu__burger").classList.toggle("active")
+        document.querySelector(".mobile-menu").classList.toggle("active")
+        document.querySelector(".background-blur").classList.toggle("active")
+        document.querySelector(".header__menu").classList.toggle("active")
+    })
+}
+
+function togglingBtn() {
+    let toggleBtn = document.querySelectorAll(".toggle-btn").forEach(currentToggleBtn => {
+        currentToggleBtn.addEventListener("click", evt => {
+            currentToggleBtn.classList.toggle("active")
         })
+    })
 
-    }
+}
 
-    function resettingBtn() {
-        document.querySelector(".filter-popup__button_orange").addEventListener("click", evt => {
-            document.querySelectorAll(".filter-popup__block-item.active").forEach(activeBtns => {
-                activeBtns.classList.remove("active")
-            })
+function resettingBtn() {
+    document.querySelector(".filter-popup__button_orange").addEventListener("click", evt => {
+        document.querySelectorAll(".filter-popup__block-item.active").forEach(activeBtns => {
+            activeBtns.classList.remove("active")
         })
-    }
+    })
+}
 
