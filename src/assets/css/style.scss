@@ -807,11 +807,52 @@
   align-items: center;
   max-width: 105px;
   width: 100%;
+  position: relative;
 
   &:hover {
     .current-popup__btn-img {
       transform: scale(1.05);
+      @media (max-width: 767px) {
+        transform: scale(1)
+      }
     }
+  }
+  &.disabled {
+    .current-popup__btn-name {
+      color: $gray-text;
+    }
+    .current-popup__btn-img {
+      svg {
+        path {
+          fill: $gray-text;
+        }
+      }
+    }
+    .current-popup__status_cross {
+      display: unset;
+      z-index: 2;
+    }
+  }
+  &.active {
+    .current-popup__btn-img {
+      border: 1px solid $orange;
+    }
+    .current-popup__status_apply {
+      display: unset;
+    }
+
+  }
+  .current-popup__status {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 1;
+  }
+  .current-popup__status_cross {
+    display: none;
+  }
+  .current-popup__status_apply {
+    display: none;
   }
 
   @media (max-width: 1023px) {
