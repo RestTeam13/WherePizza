@@ -99,6 +99,9 @@ img {
   line-height: 18px;
   color: #191919;
 }
+.header__menu.active {
+  z-index: 11;
+}
 
 .menu__row {
   display: flex;
@@ -107,7 +110,6 @@ img {
   border-bottom: 1px solid #F0F0F0;
   background: #ffffff;
   position: relative;
-  z-index: 11;
 }
 
 .menu__row_top {
@@ -249,7 +251,6 @@ img {
     padding: 0;
     display: flex;
     justify-content: center;
-    z-index: 8;
     align-items: center;
   }
   .menu__cart svg {
@@ -1050,8 +1051,8 @@ img {
   }
 }
 
-.current-popup__cross_mobile:after {
-  content: "";
+.current-popup__cross_mobile {
+  display: none;
   width: 134px;
   height: 5px;
   background: #F5F5F5;
@@ -1061,6 +1062,11 @@ img {
   top: -17px;
   right: 50%;
   transform: translateX(50%);
+}
+@media (max-width: 767px) {
+  .current-popup__cross_mobile {
+    display: unset;
+  }
 }
 
 .current-popup__cross_pc {
@@ -1351,6 +1357,13 @@ img {
 .filter-popup.active {
   transform: translateX(0);
 }
+@media (max-width: 767px) {
+  .filter-popup {
+    top: 40px;
+    max-width: 530px;
+    border-radius: 16px 16px 0 0;
+  }
+}
 
 .filter-popup__table-content {
   padding: 15px 20px;
@@ -1365,6 +1378,11 @@ img {
 .filter-popup__title p {
   font-size: 30px;
   font-family: Inter-SemiBold, sans-serif;
+}
+@media (max-width: 767px) {
+  .filter-popup__title {
+    display: none;
+  }
 }
 
 .filter-popup__title-cross {
@@ -1387,6 +1405,11 @@ img {
   font-size: 16px;
   color: #A5A5A5;
   font-family: SF-Pro-Display-Regular, sans-serif;
+}
+@media (max-width: 767px) {
+  .filter-popup__block-title {
+    font-size: 14px;
+  }
 }
 
 .filter-popup__block-row {
@@ -1411,6 +1434,22 @@ img {
 .filter-popup__block-item:hover {
   transform: scale(1.05);
 }
+.filter-popup__block-item p {
+  transition: ease-in-out all 0.1s;
+}
+@media (max-width: 767px) {
+  .filter-popup__block-item {
+    font-size: 12px;
+    padding: 0 16px;
+  }
+}
+.filter-popup__block-item.active {
+  background: #FF7010;
+  border: 1px solid #FF7010;
+}
+.filter-popup__block-item.active p {
+  color: #ffffff;
+}
 
 .filter-popup__btns-group {
   padding: 12px 20px;
@@ -1429,6 +1468,12 @@ img {
 
 .filter-popup__button {
   width: 48%;
+}
+@media (max-width: 767px) {
+  .filter-popup__button {
+    font-size: 14px;
+    height: 44px;
+  }
 }
 
 .footer {
