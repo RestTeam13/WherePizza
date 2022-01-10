@@ -190,6 +190,7 @@ img {
   position: relative;
 
 
+
   svg {
     margin-right: 8px;
   }
@@ -205,6 +206,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 5;
     svg {
       margin-right: 0;
     }
