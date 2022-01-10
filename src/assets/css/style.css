@@ -196,9 +196,6 @@ img {
   display: flex;
   align-items: center;
 }
-.logo svg {
-  margin-right: 12px;
-}
 @media (max-width: 767px) {
   .logo {
     margin-left: 20px;

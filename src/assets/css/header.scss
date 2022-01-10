@@ -142,13 +142,8 @@ img {
   display: flex;
   align-items: center;
 
-  svg {
-    margin-right: 12px;
-  }
-
   @media (max-width: 767px) {
     margin-left: 20px;
-
   }
 }
 
