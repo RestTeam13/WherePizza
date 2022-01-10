@@ -3024,6 +3024,9 @@ img {
   }
 }
 
+.logo_footer {
+  width: 150px;
+}
 @media (max-width: 767px) {
   .logo_footer {
     margin-bottom: 24px;
