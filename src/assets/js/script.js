@@ -7,18 +7,23 @@ document.addEventListener('DOMContentLoaded', function () {
     resettingBtn()
     openCart()
     select()
+    startSlider()
+    swipeForm()
+
+
 })
+
 function select() {
-    if ( document.querySelectorAll(".custom-select")) {
+    if (document.querySelectorAll(".custom-select")) {
         document.querySelectorAll(".custom-select").forEach(currentSelect => {
             let headerSelect = currentSelect.querySelector('.custom-select__header')
             let itemSelects = currentSelect.querySelectorAll(".custom-select__list-item > p")
             headerSelect.addEventListener('click', evt => {
                 headerSelect.classList.toggle('active')
-                itemSelects.forEach(select =>{
-                    select.parentElement.style.display=''
+                itemSelects.forEach(select => {
+                    select.parentElement.style.display = ''
                     if (select.textContent === headerSelect.querySelector('p').textContent) {
-                        select.parentElement.style.display='none'
+                        select.parentElement.style.display = 'none'
                     }
                 })
             })
@@ -145,12 +150,46 @@ function togglingBtn() {
 }
 
 function resettingBtn() {
-    if (document.querySelector(".filter-popup__button_orange")) {document.querySelector(".filter-popup__button_orange").addEventListener("click", evt => {
-        document.querySelectorAll(".filter-popup__block-item.active").forEach(activeBtns => {
-            activeBtns.classList.remove("active")
+    if (document.querySelector(".filter-popup__button_orange")) {
+        document.querySelector(".filter-popup__button_orange").addEventListener("click", evt => {
+            document.querySelectorAll(".filter-popup__block-item.active").forEach(activeBtns => {
+                activeBtns.classList.remove("active")
+            })
         })
-    })
     }
 }
+
+function startSlider() {
+        $('.slick-slider').slick(
+            {
+                arrows: true,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                infinite:false
+            }
+        )
+}
+
+function swipeForm() {
+    if (document.querySelectorAll(".swipe-btn")) {
+        document.querySelector(".swipe-btn").addEventListener("click", evt => {
+                let formBlocks = document.querySelectorAll(".swiping-form")
+                document.querySelectorAll(".switch__btn").forEach((currentBtn, index) =>{
+                    if(currentBtn.classList.contains("active")){
+                        formBlocks.forEach((currentForm, indexForm) =>{
+                            currentForm.classList.remove("active")
+                            if (indexForm === index){
+                                currentForm.classList.add("active")
+                            }
+                        })
+                    }
+                })
+        })
+    }
+}
+
+
+
+
 
 

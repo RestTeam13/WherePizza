@@ -18,9 +18,9 @@
 <body>
 <div class="wrapper">
     @@include('_header.html')
-    <div class="block payment">
+    <form action="#" class="block payment">
         <div class="block__content">
-            <form action="#" class="payment__form">
+            <div  class="payment__form">
                 <p class="payment__title_big standard-title">Ваш заказ</p>
                 <div class="cart-popup__list">
                     <div class="cart-popup__item">
@@ -105,9 +105,11 @@
                     <p class="payment__promo-cost">Итого: 2 379 ₽</p>
                 </div>
                 <p class="payment__title standard-title">Добавить к заказу?</p>
-                <!--            slider-->
-                <div class="slider__payment">
-                    <div class="slider__payment-item">
+            </div>
+        </div>
+        <div class="block__content block__content_slider">
+                <div class="slick-slider slider__payment">
+                    <div class="slider__item slider__payment-item">
                         <div class="slider__payment-img">
                             <img src="assets/img/2.content/snacks1.png" alt="">
                         </div>
@@ -117,7 +119,7 @@
                              <button type="button"class="slider__payment-btn standard-btn">179 ₽</button>
                         </div>
                     </div>
-                    <div class="slider__payment-item">
+                    <div class="slider__item slider__payment-item">
                         <div class="slider__payment-img">
                             <img src="assets/img/2.content/snacks2.png" alt="">
                         </div>
@@ -127,7 +129,7 @@
                             <button type="button"class="slider__payment-btn standard-btn">179 ₽</button>
                         </div>
                     </div>
-                    <div class="slider__payment-item">
+                    <div class="slider__item slider__payment-item">
                         <div class="slider__payment-img">
                             <img src="assets/img/2.content/snacks3.png" alt="">
                         </div>
@@ -137,7 +139,7 @@
                             <button type="button"class="slider__payment-btn standard-btn">179 ₽</button>
                         </div>
                     </div>
-                    <div class="slider__payment-item">
+                    <div class="slider__item slider__payment-item">
                         <div class="slider__payment-img">
                             <img src="assets/img/2.content/snacks4.png" alt="">
                         </div>
@@ -147,22 +149,54 @@
                             <button type="button"class="slider__payment-btn standard-btn">179 ₽</button>
                         </div>
                     </div>
-                    <div class="slider__payment-arrow">
-                        <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.3738 15.2728C7.20588 15.2728 7.0378 15.2081 6.90961 15.079L0.344024 8.46748C0.0874738 8.20913 0.0874738 7.79079 0.344024 7.53261L6.90961 0.921055C7.16616 0.662708 7.5816 0.662708 7.83799 0.921055C8.09437 1.1794 8.09454 1.59775 7.83799 1.85593L1.73658 8.00004L7.83799 14.1442C8.09454 14.4025 8.09454 14.8209 7.83799 15.079C7.70979 15.2081 7.54171 15.2728 7.3738 15.2728Z" fill="white"/>
-                        </svg>
+                    <div class="slider__item slider__payment-item">
+                        <div class="slider__payment-img">
+                            <img src="assets/img/2.content/snacks1.png" alt="">
+                        </div>
+                        <div class="slider__payment-text">
+                            <div class="item-card__title">Картофель из печи</div>
+                            <div class="item-card__composition">Порция 95 г</div>
+                            <button type="button"class="slider__payment-btn standard-btn">179 ₽</button>
+                        </div>
                     </div>
-                    <div class="slider__payment-arrow slider__payment-arrow_right">
-                        <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.3738 15.2728C7.20588 15.2728 7.0378 15.2081 6.90961 15.079L0.344024 8.46748C0.0874738 8.20913 0.0874738 7.79079 0.344024 7.53261L6.90961 0.921055C7.16616 0.662708 7.5816 0.662708 7.83799 0.921055C8.09437 1.1794 8.09454 1.59775 7.83799 1.85593L1.73658 8.00004L7.83799 14.1442C8.09454 14.4025 8.09454 14.8209 7.83799 15.079C7.70979 15.2081 7.54171 15.2728 7.3738 15.2728Z" fill="white"/>
-                        </svg>
+                    <div class="slider__item slider__payment-item">
+                        <div class="slider__payment-img">
+                            <img src="assets/img/2.content/snacks2.png" alt="">
+                        </div>
+                        <div class="slider__payment-text">
+                            <div class="item-card__title">Филадельфия крем-брюле</div>
+                            <div class="item-card__composition">Порция 95 г</div>
+                            <button type="button"class="slider__payment-btn standard-btn">179 ₽</button>
+                        </div>
+                    </div>
+                    <div class="slider__item slider__payment-item">
+                        <div class="slider__payment-img">
+                            <img src="assets/img/2.content/snacks3.png" alt="">
+                        </div>
+                        <div class="slider__payment-text">
+                            <div class="item-card__title">Супер Филадельфия</div>
+                            <div class="item-card__composition">Порция 95 г</div>
+                            <button type="button"class="slider__payment-btn standard-btn">179 ₽</button>
+                        </div>
+                    </div>
+                    <div class="slider__item slider__payment-item">
+                        <div class="slider__payment-img">
+                            <img src="assets/img/2.content/snacks4.png" alt="">
+                        </div>
+                        <div class="slider__payment-text">
+                            <div class="item-card__title">Тигр мама</div>
+                            <div class="item-card__composition">Порция 95 г</div>
+                            <button type="button"class="slider__payment-btn standard-btn">179 ₽</button>
+                        </div>
                     </div>
                 </div>
-
-                <p class="payment__title standard-title">Соусы</p>
-                <!--            slider-->
-                <div class="slider__payment">
-                    <div class="slider__payment-item">
+        </div>
+        <div class="block__content">
+            <p class="payment__title standard-title">Соусы</p>
+        </div>
+        <div class="block__content block__content_slider">
+                <div class="slick-slider slider__payment">
+                    <div class="slider__item slider__payment-item">
                         <div class="slider__payment-img">
                             <img src="assets/img/2.content/sauce1.png" alt="">
                         </div>
@@ -172,7 +206,7 @@
                             <button type="button"class="slider__payment-btn standard-btn">179 ₽</button>
                         </div>
                     </div>
-                    <div class="slider__payment-item">
+                    <div class="slider__item slider__payment-item">
                         <div class="slider__payment-img">
                             <img src="assets/img/2.content/sauce2.png" alt="">
                         </div>
@@ -181,7 +215,7 @@
                             <button type="button"class="slider__payment-btn standard-btn">179 ₽</button>
                         </div>
                     </div>
-                    <div class="slider__payment-item">
+                    <div class="slider__item slider__payment-item">
                         <div class="slider__payment-img">
                             <img src="assets/img/2.content/sauce3.png" alt="">
                         </div>
@@ -190,7 +224,7 @@
                             <button type="button"class="slider__payment-btn standard-btn">179 ₽</button>
                         </div>
                     </div>
-                    <div class="slider__payment-item">
+                    <div class="slider__item slider__payment-item">
                         <div class="slider__payment-img">
                             <img src="assets/img/2.content/sauce4.png" alt="">
                         </div>
@@ -199,17 +233,47 @@
                             <button type="button"class="slider__payment-btn standard-btn">179 ₽</button>
                         </div>
                     </div>
-                    <div class="slider__payment-arrow">
-                        <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.3738 15.2728C7.20588 15.2728 7.0378 15.2081 6.90961 15.079L0.344024 8.46748C0.0874738 8.20913 0.0874738 7.79079 0.344024 7.53261L6.90961 0.921055C7.16616 0.662708 7.5816 0.662708 7.83799 0.921055C8.09437 1.1794 8.09454 1.59775 7.83799 1.85593L1.73658 8.00004L7.83799 14.1442C8.09454 14.4025 8.09454 14.8209 7.83799 15.079C7.70979 15.2081 7.54171 15.2728 7.3738 15.2728Z" fill="white"/>
-                        </svg>
+                    <div class="slider__item slider__payment-item">
+                        <div class="slider__payment-img">
+                            <img src="assets/img/2.content/sauce1.png" alt="">
+                        </div>
+                        <div class="slider__payment-text">
+                            <div class="item-card__title">Сырный соус</div>
+
+                            <button type="button"class="slider__payment-btn standard-btn">179 ₽</button>
+                        </div>
                     </div>
-                    <div class="slider__payment-arrow slider__payment-arrow_right">
-                        <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.3738 15.2728C7.20588 15.2728 7.0378 15.2081 6.90961 15.079L0.344024 8.46748C0.0874738 8.20913 0.0874738 7.79079 0.344024 7.53261L6.90961 0.921055C7.16616 0.662708 7.5816 0.662708 7.83799 0.921055C8.09437 1.1794 8.09454 1.59775 7.83799 1.85593L1.73658 8.00004L7.83799 14.1442C8.09454 14.4025 8.09454 14.8209 7.83799 15.079C7.70979 15.2081 7.54171 15.2728 7.3738 15.2728Z" fill="white"/>
-                        </svg>
+                    <div class="slider__item slider__payment-item">
+                        <div class="slider__payment-img">
+                            <img src="assets/img/2.content/sauce2.png" alt="">
+                        </div>
+                        <div class="slider__payment-text">
+                            <div class="item-card__title">Барбекю</div>
+                            <button type="button"class="slider__payment-btn standard-btn">179 ₽</button>
+                        </div>
+                    </div>
+                    <div class="slider__item slider__payment-item">
+                        <div class="slider__payment-img">
+                            <img src="assets/img/2.content/sauce3.png" alt="">
+                        </div>
+                        <div class="slider__payment-text">
+                            <div class="item-card__title">Ранч</div>
+                            <button type="button"class="slider__payment-btn standard-btn">179 ₽</button>
+                        </div>
+                    </div>
+                    <div class="slider__item slider__payment-item">
+                        <div class="slider__payment-img">
+                            <img src="assets/img/2.content/sauce4.png" alt="">
+                        </div>
+                        <div class="slider__payment-text">
+                            <div class="item-card__title">Сгущёнка</div>
+                            <button type="button"class="slider__payment-btn standard-btn">179 ₽</button>
+                        </div>
                     </div>
                 </div>
+        </div>
+        <div class="block__content">
+            <div class="payment__form">
                 <div class="payment__form-main">
                     <p class="payment__form-title standard-title">О вас</p>
                     <div class="payment__form-part payment__form-part_trio">
@@ -228,7 +292,7 @@
                     </div>
                     <div class="payment__form-title-group">
                         <p class="payment__form-title standard-title">Доставка</p>
-                        <div class="current-popup__switch-row switch">
+                        <div class="current-popup__switch-row switch swipe-btn">
                             <div class="switch__bg"></div>
                              <button type="button" class="current-popup__switch switch__btn active">Доставка</button>
                              <button type="button" class="current-popup__switch switch__btn">Самовывоз</button>
@@ -236,13 +300,14 @@
                     </div>
                     <div class="payment__form-part">
 
-                        <div class="payment__form-delivery">
-                            <div class="payment__form-item">
-                                <label for="address" class="payment__form-label">Улица*</label>
-                                <input type="text" class="payment__input" id="address" placeholder="Пушкина">
-                            </div>
+                        <div class="payment__form-delivery swiping-form active">
+
                             <div class="payment__form-delivery-row">
-                                <div class="payment__form-item">
+                                <div class="payment__form-item payment__form-item_address">
+                                    <label for="address" class="payment__form-label">Улица*</label>
+                                    <input type="text" class="payment__input " id="address" placeholder="Пушкина">
+                                </div>
+                                <div class="payment__form-item payment__form-item_short">
                                     <label for="house" class="payment__form-label">Дом</label>
                                     <input type="text" class="payment__input" id="house" placeholder="1a">
                                 </div>
@@ -265,9 +330,9 @@
                             </div>
                         </div>
 
-                        <div class="payment__form-pickup" hidden>
+                        <div class="payment__form-pickup swiping-form">
                             <div class="payment__form-item">
-                                <div class="payment__form-item-title">Ресторан*</div>
+                                <div class="payment__form-label">Ресторан*</div>
                                 <div class="custom-select custom-select_payment">
                                     <div class="custom-select__header custom-select__header_payment">
                                         <p>Выберите ресторан</p>
@@ -369,7 +434,7 @@
                                 <input type="radio" class="payment__form-radio" id="remains">
                                 <label class="payment__form-radio-label" for="remains">Сдача с</label>
                             </div>
-                            <div class="payment__form-radio-item payment__form-radio-item_input">
+                            <div class="payment__form-radio-item payment__form-radio-item_input payment__form-radio-item_input-long">
                                 <input type="text" class="payment__input payment__input_short" id="remains-number"
                                        placeholder="0">
                                 <p class="payment__input-p">₽</p>
@@ -381,19 +446,25 @@
                     <div class="payment__form-part">
                         <textarea class="payment__form-comment" placeholder="Есть уточнения?"></textarea>
                     </div>
-                    <div class="payment__form-final-row">
-                        <p class="payment__promo-cost">Итого: 2 379 ₽</p>
-                         <button type="submit" class="payment__form-final-btn standard-btn">Оформить заказ</button>
-                    </div>
                 </div>
-            </form>
+            </div>
         </div>
-    </div>
+        <div class="block__content block__content_white">
+            <div class="payment__form-final-row">
+                <p class="payment__promo-cost">Итого: 2 379 ₽</p>
+                <button type="submit" class="payment__form-final-btn standard-btn">Оформить заказ</button>
+            </div>
+        </div>
+    </form>
+</div>
 
-
-    @@include('_footer.html')
+@@include('_footer.html')
 
 </div>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/slick.min.js"></script>
 <script src="assets/js/script.min.js"></script>
+
+
 </body>
 </html>
