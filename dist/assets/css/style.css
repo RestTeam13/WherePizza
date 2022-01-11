@@ -193,10 +193,6 @@ img {
           align-items: center;
 }
 
-.logo svg {
-  margin-right: 12px;
-}
-
 .standard-btn {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2645,7 +2641,7 @@ img {
 
 .footer__copyright,
 .footer__link {
-  font-family: SF-Pro-Display-Regular,sans-serif;
+  font-family: SF-Pro-Display-Regular, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -2678,6 +2674,10 @@ img {
   font-weight: 600;
   font-size: 20px;
   line-height: 28px;
+}
+
+.logo_footer {
+  width: 150px;
 }
 
 .footer__link-list {
