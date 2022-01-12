@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     startSlider()
     swipeForm()
     openText()
+    summary()
 })
 
 function select() {
@@ -147,7 +148,12 @@ function openMobileMenu() {
             document.querySelector(".menu__burger").classList.toggle("active")
             document.querySelector(".mobile-menu").classList.toggle("active")
             document.querySelector(".background-blur").classList.toggle("active")
-            document.querySelector(".header__menu").classList.toggle("active")
+            document.querySelector(".header__menu").classList.add("active")
+            if (!document.querySelector(".menu__burger.active")){
+                setTimeout(function () {document.querySelector(".header__menu").classList.remove("active")
+
+                }, 300)
+            }
         })
     }
 }
@@ -219,6 +225,19 @@ function openText() {
         deliveryBtn.addEventListener("click", evt =>{
             deliveryBtn.classList.add("active")
             deliveryText.classList.toggle("active")
+        })
+    }
+}
+
+function summary() {
+    if(document.querySelector(".order-list__item")){
+        document.querySelectorAll(".order-list__item").forEach(currentOrder =>{
+            currentOrder.querySelectorAll(".order-details__svg-button").forEach(currentBtn =>{
+                currentBtn.addEventListener("click", evt =>{
+                    currentBtn.classList.toggle("active")
+                    currentOrder.querySelector(".order-products").classList.toggle("active")
+                })
+            })
         })
     }
 }

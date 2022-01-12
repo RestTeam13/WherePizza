@@ -233,9 +233,25 @@ img {
   line-height: 22px;
 
   color: $white;
+  border: 1px solid $orange;
 
   &:hover {
-    opacity: 0.8;
+    background:$white ;
+    color: $orange;
+    p {
+      color: $orange;
+    }
+    span {
+      color: $orange;
+    }
+    svg {
+      fill: $orange;
+      path {
+       fill: $orange;
+      }
+    }
+
+
   }
 }
 

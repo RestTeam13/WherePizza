@@ -1550,6 +1550,10 @@
   border-top: 1px solid $line-gray;
   padding-top: 12px;
   margin-top: 12px;
+  display: none;
+  &.active {
+    display: block;
+  }
 
 }
 
@@ -1584,6 +1588,9 @@
 
 .order-details__svg-button {
   margin-left: auto;
+  &.active{
+    transform: rotate(180deg);
+  }
   @media(max-width: 767px) {
     display: none;
   }

@@ -286,9 +286,23 @@ img {
   font-size: 16px;
   line-height: 22px;
   color: #ffffff;
+  border: 1px solid #FF7010;
 }
 .standard-btn:hover {
-  opacity: 0.8;
+  background: #ffffff;
+  color: #FF7010;
+}
+.standard-btn:hover p {
+  color: #FF7010;
+}
+.standard-btn:hover span {
+  color: #FF7010;
+}
+.standard-btn:hover svg {
+  fill: #FF7010;
+}
+.standard-btn:hover svg path {
+  fill: #FF7010;
 }
 
 .standard-title {
@@ -1992,6 +2006,10 @@ img {
   border-top: 1px solid #F0F0F0;
   padding-top: 12px;
   margin-top: 12px;
+  display: none;
+}
+.order-products.active {
+  display: block;
 }
 
 .order-details__list_num {
@@ -2031,6 +2049,9 @@ img {
 
 .order-details__svg-button {
   margin-left: auto;
+}
+.order-details__svg-button.active {
+  transform: rotate(180deg);
 }
 @media (max-width: 767px) {
   .order-details__svg-button {
