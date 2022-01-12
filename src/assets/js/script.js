@@ -59,8 +59,11 @@ function openCart() {
 }
 
 function closeFilter() {
-    document.querySelector(".filter-popup").classList.remove("active")
-    document.querySelector(".background-blur").classList.remove("active")
+    if (document.querySelector(".filter-popup")) {
+        document.querySelector(".filter-popup").classList.remove("active")
+        document.querySelector(".background-blur").classList.remove("active")
+    }
+
 }
 
 function filterBtn() {
@@ -124,6 +127,14 @@ function openPopup() {
                     document.querySelector(".background-blur").classList.remove("active")
                 })
             })
+            document.querySelector('.current-popup__result-btn').addEventListener('click', evt => {
+                document.querySelector(".current-popup").classList.remove("active")
+                document.querySelector(".background-blur").classList.remove("active")
+                document.querySelector(".menu__cart-popup").classList.add("active")
+                setTimeout(function (){document.querySelector(".menu__cart-popup").classList.remove("active")},3000)
+
+
+            })
 
         })
     }
@@ -160,30 +171,41 @@ function resettingBtn() {
 }
 
 function startSlider() {
-        $('.slick-slider').slick(
-            {
-                arrows: true,
-                slidesToShow: 4,
-                slidesToScroll: 1,
-                infinite:false
-            }
-        )
+    $('.slick-slider').slick(
+        {
+            arrows: true,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            infinite: false,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+
+                        arrows: false,
+                        slidesToShow: 1,
+                        variableWidth: true
+                    }
+                }
+            ]
+        }
+    )
 }
 
 function swipeForm() {
     if (document.querySelectorAll(".swipe-btn")) {
         document.querySelector(".swipe-btn").addEventListener("click", evt => {
-                let formBlocks = document.querySelectorAll(".swiping-form")
-                document.querySelectorAll(".switch__btn").forEach((currentBtn, index) =>{
-                    if(currentBtn.classList.contains("active")){
-                        formBlocks.forEach((currentForm, indexForm) =>{
-                            currentForm.classList.remove("active")
-                            if (indexForm === index){
-                                currentForm.classList.add("active")
-                            }
-                        })
-                    }
-                })
+            let formBlocks = document.querySelectorAll(".swiping-form")
+            document.querySelectorAll(".switch__btn").forEach((currentBtn, index) => {
+                if (currentBtn.classList.contains("active")) {
+                    formBlocks.forEach((currentForm, indexForm) => {
+                        currentForm.classList.remove("active")
+                        if (indexForm === index) {
+                            currentForm.classList.add("active")
+                        }
+                    })
+                }
+            })
         })
     }
 }
