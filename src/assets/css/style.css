@@ -1907,7 +1907,7 @@ img {
 }
 
 .order-details__list_address {
-  margin-top: 12px;
+  margin-top: 15px;
 }
 
 .order-details__list-title_address {
@@ -1950,7 +1950,7 @@ img {
   color: #FF7010;
   font-family: SF-Pro-Display-Regular, sans-serif;
   font-size: 16px;
-  margin: 16px auto;
+  margin: 16px auto 0;
   width: 100%;
 }
 .order-replay:hover {
@@ -1977,7 +1977,7 @@ img {
 
 .order-details__pizza-list {
   display: flex;
-  margin-top: 22px;
+  margin-top: 12px;
   margin-left: auto;
 }
 @media (max-width: 767px) {
@@ -2005,6 +2005,9 @@ img {
   border-radius: 6px;
   width: 48px;
   height: 48px;
+}
+.pagination-arrow:hover {
+  opacity: 0.4;
 }
 @media (max-width: 767px) {
   .pagination-arrow {
@@ -2256,6 +2259,9 @@ img {
   display: block;
   cursor: pointer;
 }
+.checkbox__label:hover {
+  border: none;
+}
 
 .personal-data__button-text {
   color: #FF7010;
@@ -2263,6 +2269,9 @@ img {
   font-size: 16px;
   display: flex;
   align-items: center;
+}
+.personal-data__button-text:hover {
+  opacity: 0.4;
 }
 .personal-data__button-text svg {
   margin-right: 12px;
@@ -2498,6 +2507,7 @@ img {
 }
 .code .authorization-content__input-data {
   width: 48px;
+  padding: 13px 19px;
 }
 
 .authorization-content__send-button {
