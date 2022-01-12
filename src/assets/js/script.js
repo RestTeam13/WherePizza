@@ -9,8 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     select()
     startSlider()
     swipeForm()
-
-
+    openText()
 })
 
 function select() {
@@ -131,7 +130,9 @@ function openPopup() {
                 document.querySelector(".current-popup").classList.remove("active")
                 document.querySelector(".background-blur").classList.remove("active")
                 document.querySelector(".menu__cart-popup").classList.add("active")
-                setTimeout(function (){document.querySelector(".menu__cart-popup").classList.remove("active")},3000)
+                setTimeout(function () {
+                    document.querySelector(".menu__cart-popup").classList.remove("active")
+                }, 3000)
 
 
             })
@@ -193,7 +194,8 @@ function startSlider() {
 }
 
 function swipeForm() {
-    if (document.querySelectorAll(".swipe-btn")) {
+    if (document.querySelector(".swipe-btn")) {
+        console.log(1)
         document.querySelector(".swipe-btn").addEventListener("click", evt => {
             let formBlocks = document.querySelectorAll(".swiping-form")
             document.querySelectorAll(".switch__btn").forEach((currentBtn, index) => {
@@ -206,6 +208,17 @@ function swipeForm() {
                     })
                 }
             })
+        })
+    }
+}
+
+function openText() {
+    if (document.querySelector(".about-delivery__show-more-btn")){
+        let deliveryBtn = document.querySelector(".about-delivery__show-more-btn")
+        let deliveryText = document.querySelector(".about-delivery__text")
+        deliveryBtn.addEventListener("click", evt =>{
+            deliveryBtn.classList.add("active")
+            deliveryText.classList.toggle("active")
         })
     }
 }

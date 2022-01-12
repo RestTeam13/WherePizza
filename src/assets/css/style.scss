@@ -525,6 +525,14 @@
 
 
   }
+  &.active {
+    overflow: visible;
+    max-height: unset;
+    &::after {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
 
   @media (max-width: 767px) {
     margin-top: 7px;
@@ -550,13 +558,16 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
-
   color: $orange;
+  &:hover {
+    transform: scale(0.95);
+  }
   @media (max-width: 767px) {
     font-size: 14px;
     line-height: normal;
 
   }
+
 }
 
 //<!-- Popup current product Block -->

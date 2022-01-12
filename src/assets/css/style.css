@@ -1060,6 +1060,14 @@ img {
   right: 0;
   background: linear-gradient(180deg, transparent, #f9f9f9);
 }
+.about-delivery__text.active {
+  overflow: visible;
+  max-height: unset;
+}
+.about-delivery__text.active::after {
+  opacity: 0;
+  visibility: hidden;
+}
 @media (max-width: 767px) {
   .about-delivery__text {
     margin-top: 7px;
@@ -1083,6 +1091,9 @@ img {
   font-size: 16px;
   line-height: 20px;
   color: #FF7010;
+}
+.about-delivery__show-more-btn:hover {
+  transform: scale(0.95);
 }
 @media (max-width: 767px) {
   .about-delivery__show-more-btn {
