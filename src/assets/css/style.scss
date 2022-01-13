@@ -17,6 +17,10 @@
   padding: 0 20px;
 }
 
+.block_first-on-page{
+  margin-top: 130px!important;
+}
+
 .block__content {
   max-width: 1290px;
   width: 100%;
@@ -940,6 +944,7 @@
 
 .switch {
   position: relative;
+  background: #ffffff;
 }
 
 .current-popup__switch {
@@ -949,9 +954,7 @@
   @media (max-width: 767px) {
     font-size: 14px;
     line-height: 16px;
-
   }
-
 }
 
 .switch__btn {
@@ -1481,6 +1484,7 @@
   display: flex;
   justify-content: space-between;
   margin: 40px 0 24px;
+
   @media(max-width: 767px) {
     display: none;
   }
@@ -1500,8 +1504,8 @@
 .account__top-title {
   font-family: Inter, sans-serif;
   font-size: 40px;
-
 }
+
 
 .account-popup__title_pc {
   display: none;
@@ -1757,9 +1761,11 @@
   border-radius: 6px;
   width: 48px;
   height: 48px;
-  &:hover{
+
+  &:hover {
     opacity: .4;
   }
+
   @media(max-width: 767px) {
     width: 44px;
     height: 44px;
@@ -1997,10 +2003,9 @@
   border-radius: 2px;
   display: block;
   cursor: pointer;
-&:hover{
-  border: none;
-}
 
+  &:hover {
+  }
 }
 
 .personal-data__button-text {
@@ -2009,7 +2014,8 @@
   font-size: 16px;
   display: flex;
   align-items: center;
-  &:hover{
+
+  &:hover {
     opacity: .4;
   }
 
@@ -2417,15 +2423,10 @@
 }
 
 .payment__title_big {
-  margin-top: 40px;
   font-size: 40px;
   @media (max-width: 767px) {
     font-size: 18px;
-    margin-top: 20px;
-
-
   }
-
 }
 
 .payment__promo {
@@ -2857,14 +2858,11 @@
   max-width: 160px;
   margin-left: 16px;
   @media (max-width: 767px) {
-
   }
-
 }
 
 .custom-select__arrow {
   position: absolute;
-
 }
 
 .custom-select__arrow_payment {

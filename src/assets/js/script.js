@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     handlerSwitch()
     openPopup()
     openMobileMenu()
-    togglingBtn()
+    openMiniPopups()
     resettingBtn()
     openCart()
     select()
@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     summary()
     openHistory()
     changeForm()
+    hideFirstHeaderRow()
 })
 
 function select() {
@@ -69,7 +70,6 @@ function closeFilter() {
 }
 
 function filterBtn() {
-
     if (document.querySelector(".catalog__filters")) {
         document.querySelector(".catalog__filters").addEventListener("click", evt => {
             document.querySelector(".filter-popup").classList.add("active")
@@ -161,8 +161,8 @@ function openMobileMenu() {
     }
 }
 
-function togglingBtn() {
-    let toggleBtn = document.querySelectorAll(".toggle-btn").forEach(currentToggleBtn => {
+function openMiniPopups() {
+    document.querySelectorAll(".toggle-btn").forEach(currentToggleBtn => {
         currentToggleBtn.addEventListener("click", evt => {
             currentToggleBtn.classList.toggle("active")
         })
@@ -191,7 +191,6 @@ function startSlider() {
                 {
                     breakpoint: 768,
                     settings: {
-
                         arrows: false,
                         slidesToShow: 1,
                         variableWidth: true
@@ -281,7 +280,7 @@ function changeForm() {
                 currentBlock.querySelector(".personal-data__button-text").classList.add("active")
                 currentBlock.querySelector(".account-data__list-btn").classList.add("active")
                 currentBlock.querySelector(".personal-data__title").classList.add("active")
-                currentBlock.querySelectorAll(".input-text__wrapper").forEach(wrapperInput =>{
+                currentBlock.querySelectorAll(".input-text__wrapper").forEach(wrapperInput => {
                     wrapperInput.classList.add("active")
                 })
 
@@ -294,7 +293,7 @@ function changeForm() {
                 currentBlock.querySelector(".personal-data__button-text").classList.remove("active")
                 currentBlock.querySelector(".account-data__list-btn").classList.remove("active")
                 currentBlock.querySelector(".personal-data__title").classList.remove("active")
-                currentBlock.querySelectorAll(".input-text__wrapper").forEach(wrapperInput =>{
+                currentBlock.querySelectorAll(".input-text__wrapper").forEach(wrapperInput => {
                     wrapperInput.classList.remove("active")
                 })
 
@@ -305,5 +304,14 @@ function changeForm() {
 
 }
 
-// console.log(document.querySelector('.input-text_test').removeAttribute("disabled"))
-
+function hideFirstHeaderRow() {
+    const headerTopRow = document.querySelector('.menu__row_top')
+    window.addEventListener('scroll', () => {
+        const isTop = window.scrollY < 100
+        if (!isTop) {
+            headerTopRow.classList.add('hidden')
+        } else {
+            headerTopRow.classList.remove('hidden')
+        }
+    });
+}
