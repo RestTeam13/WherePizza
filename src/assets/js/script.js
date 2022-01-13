@@ -71,10 +71,14 @@ function closeFilter() {
 
 function filterBtn() {
     if (document.querySelector(".catalog__filters")) {
-        document.querySelector(".catalog__filters").addEventListener("click", evt => {
-            document.querySelector(".filter-popup").classList.add("active")
-            document.querySelector(".background-blur").classList.add("active")
+
+        document.querySelectorAll(".catalog__filters").forEach(catalogBtn=>{
+            catalogBtn.addEventListener("click", evt => {
+                document.querySelector(".filter-popup").classList.add("active")
+                document.querySelector(".background-blur").classList.add("active")
+            })
         })
+
         document.querySelector(".filter-popup__title-cross").addEventListener("click", evt => {
             closeFilter()
 

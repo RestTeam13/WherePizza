@@ -363,11 +363,11 @@
                         <div class="payment__form-item-title">Когда выполнить заказ?</div>
                         <div class="payment__form-radio-row">
                             <div class="payment__form-radio-item">
-                                <input type="radio" class="payment__form-radio" id="first">
+                                <input type="radio" class="payment__form-radio" name="time" id="first">
                                 <label class="payment__form-radio-label" for="first">Как можно скорее</label>
                             </div>
                             <div class="payment__form-radio-item">
-                                <input type="radio" class="payment__form-radio" id="time">
+                                <input type="radio" class="payment__form-radio" name="time" id="time">
                                 <label class="payment__form-radio-label" for="time">По времени</label>
                             </div>
                             <div class="payment__form-radio-item payment__form-radio-item_input">
@@ -392,9 +392,6 @@
                                         </span>
                                 </div>
                                 <div class="custom-select__list custom-select__list_payment">
-                                    <div class="custom-select__list-item custom-select__list-item_payment">
-                                        <p>Время</p>
-                                    </div>
                                     <div class="custom-select__list-item custom-select__list-item_payment">
                                         <p>11:00</p>
                                     </div>
@@ -424,14 +421,13 @@
                     </div>
                     <p class="payment__form-title standard-title">Сдача</p>
                     <div class="payment__form-part">
-
                         <div class="payment__form-radio-row">
                             <div class="payment__form-radio-item">
-                                <input type="radio" class="payment__form-radio" id="no-remains">
+                                <input type="radio" class="payment__form-radio" name="remains" id="no-remains">
                                 <label class="payment__form-radio-label" for="no-remains">Без сдачи</label>
                             </div>
                             <div class="payment__form-radio-item">
-                                <input type="radio" class="payment__form-radio" id="remains">
+                                <input type="radio" class="payment__form-radio" name="remains" id="remains">
                                 <label class="payment__form-radio-label" for="remains">Сдача с</label>
                             </div>
                             <div class="payment__form-radio-item payment__form-radio-item_input payment__form-radio-item_input-long">
@@ -439,7 +435,6 @@
                                        placeholder="0">
                                 <p class="payment__input-p">₽</p>
                             </div>
-
                         </div>
                     </div>
                     <p class="payment__form-title standard-title">Комментарий</p>
