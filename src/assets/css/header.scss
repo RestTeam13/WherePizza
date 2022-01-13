@@ -175,7 +175,8 @@ img {
   text-align: left;
 
   &:hover {
-    background: $light-primary;
+    color:$gray-text;
+
   }
 }
 
@@ -314,6 +315,8 @@ img {
   color: $white;
   border: 1px solid $orange;
 
+  cursor: pointer;
+
   &:hover {
     background: $white;
     color: $orange;
@@ -392,11 +395,24 @@ img {
   p {
     font-family: Inter-SemiBold, sans-serif;
     font-size: 14px;
+    @media (max-width: 767px) {
+      color: #FFFFFF;
+      font-family: Inter-Regular, sans-serif;
+    }
   }
 
   &.active {
     opacity: 1;
     visibility: visible;
+  }
+  @media (max-width: 767px) {
+    top: 120px;
+    background: $orange;
+    right: 50%;
+    transform: translateX(50%);
+
+    height: 42px;
+
   }
 
 

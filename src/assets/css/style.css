@@ -229,7 +229,7 @@ img {
   text-align: left;
 }
 .mini-popup__btn:hover {
-  background: #FFEEE2;
+  color: #A5A5A5;
 }
 
 .mini-popup__close {
@@ -358,6 +358,7 @@ img {
   line-height: 22px;
   color: #ffffff;
   border: 1px solid #FF7010;
+  cursor: pointer;
 }
 .standard-btn:hover {
   background: #ffffff;
@@ -431,9 +432,24 @@ img {
   font-family: Inter-SemiBold, sans-serif;
   font-size: 14px;
 }
+@media (max-width: 767px) {
+  .menu__cart-popup p {
+    color: #FFFFFF;
+    font-family: Inter-Regular, sans-serif;
+  }
+}
 .menu__cart-popup.active {
   opacity: 1;
   visibility: visible;
+}
+@media (max-width: 767px) {
+  .menu__cart-popup {
+    top: 120px;
+    background: #FF7010;
+    right: 50%;
+    transform: translateX(50%);
+    height: 42px;
+  }
 }
 
 .menu__cart-cost {
@@ -805,6 +821,8 @@ img {
   padding: 16px 32px;
   background: #ffffff;
   position: relative;
+  border: 1px solid #F0F0F0;
+  border-radius: 8px;
 }
 @media (max-width: 767px) {
   .check-address-form {
@@ -1976,7 +1994,7 @@ img {
 }
 
 .basket {
-  margin: 182px 0 0;
+  margin: 202px 0 200px;
 }
 .basket .block__content {
   max-width: 380px;
@@ -2110,6 +2128,17 @@ img {
   .order-list__item {
     max-width: 350px;
   }
+}
+
+.order-details__btn {
+  cursor: pointer;
+  outline: none;
+  text-align: center;
+  color: #FF7010;
+  font-family: Inter-Regular, sans-serif;
+  width: 100%;
+  font-size: 14px;
+  margin-top: 25px;
 }
 
 .order-list__item-details {
@@ -2253,7 +2282,23 @@ img {
   .order-details__line {
     position: absolute;
     bottom: 50px;
-    max-width: 324px;
+    max-width: 315px;
+  }
+}
+
+@media (max-width: 767px) {
+  .order-details__line_middle {
+    bottom: 95px;
+  }
+}
+
+.order-details__line_bottom {
+  display: none;
+}
+@media (max-width: 767px) {
+  .order-details__line_bottom {
+    display: block;
+    bottom: 30px;
   }
 }
 
@@ -2536,6 +2581,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid #FF7010;
 }
 .checkbox__input:checked + label:before {
   content: "";
