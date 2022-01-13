@@ -7,18 +7,25 @@ document.addEventListener('DOMContentLoaded', function () {
     resettingBtn()
     openCart()
     select()
+    startSlider()
+    swipeForm()
+    openText()
+    summary()
+    openHistory()
+    changeForm()
 })
+
 function select() {
-    if ( document.querySelectorAll(".custom-select")) {
+    if (document.querySelectorAll(".custom-select")) {
         document.querySelectorAll(".custom-select").forEach(currentSelect => {
             let headerSelect = currentSelect.querySelector('.custom-select__header')
             let itemSelects = currentSelect.querySelectorAll(".custom-select__list-item > p")
             headerSelect.addEventListener('click', evt => {
                 headerSelect.classList.toggle('active')
-                itemSelects.forEach(select =>{
-                    select.parentElement.style.display=''
+                itemSelects.forEach(select => {
+                    select.parentElement.style.display = ''
                     if (select.textContent === headerSelect.querySelector('p').textContent) {
-                        select.parentElement.style.display='none'
+                        select.parentElement.style.display = 'none'
                     }
                 })
             })
@@ -54,8 +61,11 @@ function openCart() {
 }
 
 function closeFilter() {
-    document.querySelector(".filter-popup").classList.remove("active")
-    document.querySelector(".background-blur").classList.remove("active")
+    if (document.querySelector(".filter-popup")) {
+        document.querySelector(".filter-popup").classList.remove("active")
+        document.querySelector(".background-blur").classList.remove("active")
+    }
+
 }
 
 function filterBtn() {
@@ -119,6 +129,16 @@ function openPopup() {
                     document.querySelector(".background-blur").classList.remove("active")
                 })
             })
+            document.querySelector('.current-popup__result-btn').addEventListener('click', evt => {
+                document.querySelector(".current-popup").classList.remove("active")
+                document.querySelector(".background-blur").classList.remove("active")
+                document.querySelector(".menu__cart-popup").classList.add("active")
+                setTimeout(function () {
+                    document.querySelector(".menu__cart-popup").classList.remove("active")
+                }, 3000)
+
+
+            })
 
         })
     }
@@ -130,7 +150,13 @@ function openMobileMenu() {
             document.querySelector(".menu__burger").classList.toggle("active")
             document.querySelector(".mobile-menu").classList.toggle("active")
             document.querySelector(".background-blur").classList.toggle("active")
-            document.querySelector(".header__menu").classList.toggle("active")
+            document.querySelector(".header__menu").classList.add("active")
+            if (!document.querySelector(".menu__burger.active")) {
+                setTimeout(function () {
+                    document.querySelector(".header__menu").classList.remove("active")
+
+                }, 300)
+            }
         })
     }
 }
@@ -145,12 +171,139 @@ function togglingBtn() {
 }
 
 function resettingBtn() {
-    if (document.querySelector(".filter-popup__button_orange")) {document.querySelector(".filter-popup__button_orange").addEventListener("click", evt => {
-        document.querySelectorAll(".filter-popup__block-item.active").forEach(activeBtns => {
-            activeBtns.classList.remove("active")
+    if (document.querySelector(".filter-popup__button_orange")) {
+        document.querySelector(".filter-popup__button_orange").addEventListener("click", evt => {
+            document.querySelectorAll(".filter-popup__block-item.active").forEach(activeBtns => {
+                activeBtns.classList.remove("active")
+            })
         })
-    })
     }
 }
 
+function startSlider() {
+    $('.slick-slider').slick(
+        {
+            arrows: true,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            infinite: false,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+
+                        arrows: false,
+                        slidesToShow: 1,
+                        variableWidth: true
+                    }
+                }
+            ]
+        }
+    )
+}
+
+function swipeForm() {
+    if (document.querySelector(".swipe-btn")) {
+        document.querySelector(".swipe-btn").addEventListener("click", evt => {
+            let formBlocks = document.querySelectorAll(".swiping-form")
+            document.querySelectorAll(".switch__btn").forEach((currentBtn, index) => {
+                if (currentBtn.classList.contains("active")) {
+                    formBlocks.forEach((currentForm, indexForm) => {
+                        currentForm.classList.remove("active")
+                        if (indexForm === index) {
+                            currentForm.classList.add("active")
+                        }
+                    })
+                }
+            })
+        })
+    }
+}
+
+function openText() {
+    if (document.querySelector(".about-delivery__show-more-btn")) {
+        let deliveryBtn = document.querySelector(".about-delivery__show-more-btn")
+        let deliveryText = document.querySelector(".about-delivery__text")
+        deliveryBtn.addEventListener("click", evt => {
+            deliveryBtn.classList.add("active")
+            deliveryText.classList.toggle("active")
+        })
+    }
+}
+
+function summary() {
+    if (document.querySelector(".order-list__item")) {
+        document.querySelectorAll(".order-list__item").forEach(currentOrder => {
+            currentOrder.querySelectorAll(".order-details__svg-button").forEach(currentBtn => {
+                currentBtn.addEventListener("click", evt => {
+                    currentBtn.classList.toggle("active")
+                    currentOrder.querySelector(".order-products").classList.toggle("active")
+                })
+            })
+        })
+    }
+}
+
+function openHistory() {
+    if (document.querySelectorAll(".order-list__item")) {
+        if (window.matchMedia("(max-width: 767px)").matches) {
+            let listItem = document.querySelectorAll(".order-list__item")
+            let popup = document.querySelector(".account-popup")
+            let content = document.querySelector(".block__content_account")
+            listItem.forEach(currentItem => {
+                currentItem.addEventListener("click", evt => {
+                    popup.classList.add("active")
+                    content.classList.add("active")
+                    content.style.height = getComputedStyle(popup).height
+
+                })
+            })
+            document.querySelector('.account-popup__title-back').addEventListener("click", evt => {
+                popup.classList.remove("active")
+                content.classList.remove("active")
+                content.style.height = "unset"
+            })
+        }
+    }
+
+
+}
+
+function changeForm() {
+    if (document.querySelector(".personal-data__button-text")) {
+        let blocks = document.querySelectorAll(".account-data__list")
+        blocks.forEach(currentBlock => {
+            currentBlock.querySelector(".personal-data__button-text").addEventListener("click", event => {
+                currentBlock.querySelectorAll(".input-text").forEach(currentInput => {
+                    currentInput.removeAttribute("disabled")
+                    currentInput.classList.add("active")
+                })
+                currentBlock.querySelector(".personal-data__button-text").classList.add("active")
+                currentBlock.querySelector(".account-data__list-btn").classList.add("active")
+                currentBlock.querySelector(".personal-data__title").classList.add("active")
+                currentBlock.querySelectorAll(".input-text__wrapper").forEach(wrapperInput =>{
+                    wrapperInput.classList.add("active")
+                })
+
+            })
+            currentBlock.querySelector(".account-data__list-btn").addEventListener("click", evt => {
+                currentBlock.querySelectorAll(".input-text").forEach(currentInput => {
+                    currentInput.getAttribute("disabled")
+                    currentInput.classList.remove("active")
+                })
+                currentBlock.querySelector(".personal-data__button-text").classList.remove("active")
+                currentBlock.querySelector(".account-data__list-btn").classList.remove("active")
+                currentBlock.querySelector(".personal-data__title").classList.remove("active")
+                currentBlock.querySelectorAll(".input-text__wrapper").forEach(wrapperInput =>{
+                    wrapperInput.classList.remove("active")
+                })
+
+            })
+        })
+
+    }
+
+}
+
+// console.log(document.querySelector('.input-text_test').removeAttribute("disabled"))
 
