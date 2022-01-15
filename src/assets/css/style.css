@@ -1964,14 +1964,14 @@ img {
   }
 }
 
-.authorization-content__bottom-text {
+.authorization-content__bottom-text_code {
   color: #191919;
   opacity: 1;
 }
-.authorization-content__bottom-text span {
+.authorization-content__bottom-text_code span {
   color: #A5A5A5;
 }
-.authorization-content__bottom-text button {
+.authorization-content__bottom-text_code button {
   color: #EF2B51;
 }
 

@@ -336,7 +336,7 @@ function timerHandler() {
     }
 
     timerTextBlock.addEventListener('startTimer', () => {
-        timerId = setInterval(updateTimer, 100)
+        timerId = setInterval(updateTimer, 1000)
     })
     timerTextBlock.addEventListener('endTimer', () => {
         timerTextBlock.innerHTML = `Отправить код ещё раз через: <button>Отправить</button>`
