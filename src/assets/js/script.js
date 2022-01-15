@@ -1,24 +1,59 @@
 document.addEventListener('DOMContentLoaded', function () {
     select()
     handlerSwitch()
-
     openMobileMenu()
-    openCart()
     resetBtnHandler()
     startSlider()
-    swipeForm()
+    addTabsHandler()
     openText()
     summary()
     openHistory()
-    changeForm()
+    changeAccountForm()
     headerHandler()
     addTimeInputs()
     auth()
-
-    addFilterBtnsHandler()
-
+    timerHandler()
+    addInputCountersHandler()
+    addToggleBtnsHandler()
     popupsHandler()
+    closePopupOnClickBlur()
 })
+
+
+function headerHandler() {
+    const header = document.querySelector('.header'),
+        headerTopRow = document.querySelector('.menu__row_top'),
+        headerBottomRow = headerTopRow.nextElementSibling
+
+    if (document.querySelector('.standalone-menu')) {
+        const standaloneMenu = document.querySelector('.standalone-menu')
+        window.addEventListener('scroll', () => {
+            if (standaloneMenu.getBoundingClientRect().bottom < 0) {
+                header.classList.add('fixed')
+                headerTopRow.classList.add('hidden')
+                headerBottomRow.querySelector('.menu__nav').classList.add('active')
+            } else {
+                header.classList.remove('fixed')
+                headerTopRow.classList.remove('hidden')
+                headerBottomRow.querySelector('.menu__nav').classList.remove('active')
+            }
+        })
+    } else {
+        headerBottomRow.querySelector('.menu__nav').classList.add('active')
+        header.classList.add('fixed')
+
+        window.addEventListener('scroll', () => {
+            const isTop = window.scrollY < 100
+            if (!isTop) {
+                headerTopRow.classList.add('hidden')
+            } else {
+                headerTopRow.classList.remove('hidden')
+            }
+        });
+    }
+
+
+}
 
 function select() {
     if (document.querySelectorAll(".custom-select")) {
@@ -94,26 +129,6 @@ function openMobileMenu() {
     }
 }
 
-function openCart() {
-    if (document.querySelector(".menu__cart")) {
-        let cartPopup = document.querySelector(".cart-popup")
-        document.querySelector(".menu__cart ").addEventListener("click", evt => {
-            cartPopup.classList.add("active")
-            document.querySelector(".background-blur").classList.add("active")
-        })
-        document.querySelector(".cart-popup").querySelector('.filter-popup__title-cross').addEventListener("click", evt => {
-            cartPopup.classList.remove("active")
-            document.querySelector(".background-blur").classList.remove("active")
-        })
-        document.querySelectorAll(".choose-item-popup__cross_mobile").forEach(mobileCross => {
-            mobileCross.addEventListener("click", evt => {
-                cartPopup.classList.remove("active")
-                document.querySelector(".background-blur").classList.remove("active")
-            })
-        })
-    }
-}
-
 function resetBtnHandler() {
     if (!document.querySelector(".standard-btn[data-reset]")) return
     document.querySelector(".standard-btn[data-reset]").addEventListener("click", () => {
@@ -145,22 +160,21 @@ function startSlider() {
     )
 }
 
-function swipeForm() {
-    if (document.querySelector(".swipe-btn")) {
-        document.querySelector(".swipe-btn").addEventListener("click", evt => {
-            let formBlocks = document.querySelectorAll(".swiping-form")
-            document.querySelectorAll(".switch__btn").forEach((currentBtn, index) => {
-                if (currentBtn.classList.contains("active")) {
-                    formBlocks.forEach((currentForm, indexForm) => {
-                        currentForm.classList.remove("active")
-                        if (indexForm === index) {
-                            currentForm.classList.add("active")
-                        }
-                    })
+function addTabsHandler() {
+    if (!document.querySelector("[data-open-tab]")) return
+    const openTabsBtn = document.querySelectorAll("[data-open-tab]"),
+        allTabs = document.querySelectorAll("[data-tab]")
+
+    openTabsBtn.forEach(openTabBtn => {
+        openTabBtn.addEventListener("click", () => {
+            allTabs.forEach(tab => {
+                tab.classList.remove('active')
+                if (openTabBtn.getAttribute('data-open-tab') === tab.getAttribute('data-tab')) {
+                    tab.classList.add('active')
                 }
             })
         })
-    }
+    })
 }
 
 function openText() {
@@ -212,7 +226,7 @@ function openHistory() {
 
 }
 
-function changeForm() {
+function changeAccountForm() {
     if (document.querySelector(".personal-data__button-text")) {
         let blocks = document.querySelectorAll(".account-data__list")
         blocks.forEach(currentBlock => {
@@ -243,44 +257,7 @@ function changeForm() {
 
             })
         })
-
     }
-
-}
-
-function headerHandler() {
-    const header = document.querySelector('.header'),
-        headerTopRow = document.querySelector('.menu__row_top'),
-        headerBottomRow = headerTopRow.nextElementSibling
-
-    if (document.querySelector('.standalone-menu')) {
-        const standaloneMenu = document.querySelector('.standalone-menu')
-        window.addEventListener('scroll', () => {
-            if (standaloneMenu.getBoundingClientRect().bottom < 0) {
-                header.classList.add('fixed')
-                headerTopRow.classList.add('hidden')
-                headerBottomRow.querySelector('.menu__nav').classList.add('active')
-            } else {
-                header.classList.remove('fixed')
-                headerTopRow.classList.remove('hidden')
-                headerBottomRow.querySelector('.menu__nav').classList.remove('active')
-            }
-        })
-    } else {
-        headerBottomRow.querySelector('.menu__nav').classList.add('active')
-        header.classList.add('fixed')
-
-        window.addEventListener('scroll', () => {
-            const isTop = window.scrollY < 100
-            if (!isTop) {
-                headerTopRow.classList.add('hidden')
-            } else {
-                headerTopRow.classList.remove('hidden')
-            }
-        });
-    }
-
-
 }
 
 function addTimeInputs() {
@@ -297,57 +274,94 @@ function addTimeInputs() {
 
 function auth() {
     if (document.querySelector('.menu__login')) {
-        const loginBtn = document.querySelector('.menu__login'),
-            loginPopup = document.querySelector(".authorization-popup"),
-            blur = document.querySelector(".background-blur"),
-            contentBlocks = loginPopup.querySelectorAll('.block__content')
+        const loginPopup = document.querySelector(".authorization-popup"),
+            contentBlocks = loginPopup.querySelectorAll('.authorization-content__block')
+        let timerStartEvent = new Event('startTimer')
 
-        if (loginBtn.hasAttribute('data-login')) {
-            loginBtn.addEventListener('click', () => {
-                loginPopup.classList.add("active")
-                blur.classList.add("active")
-            })
-            loginPopup.querySelector('.choose-item-popup__cross_pc').addEventListener('click', () => {
-                loginPopup.classList.remove('active')
-            })
-
-            loginPopup.querySelector('.authorization-content__button-text.standard-btn').addEventListener('click', () => {
-                contentBlocks[0].setAttribute('hidden', true)
-                contentBlocks[1].removeAttribute('hidden')
-            })
-        }
+        loginPopup.querySelector('.authorization-content__button.standard-btn').addEventListener('click', () => {
+            contentBlocks[0].classList.remove('active')
+            contentBlocks[1].classList.add('active')
+            document.querySelector('[data-start-timer]').dispatchEvent(timerStartEvent)
+        })
     }
-
 }
 
-function addFilterBtnsHandler() {
-    if (!document.querySelector('.filter-popup')) return
-    document.querySelector('.filter-popup').querySelectorAll('.filter-popup__filter-btn.toggle-btn').forEach(filterBtn => {
-        filterBtn.addEventListener('click', ()=>{
-            filterBtn.classList.toggle('active')
+function addToggleBtnsHandler() {
+    if (!document.querySelector('.toggle-btn')) return
+    document.querySelectorAll('.toggle-btn').forEach(toggleBtn => {
+        toggleBtn.addEventListener('click', () => {
+            toggleBtn.classList.toggle('active')
         })
+    })
+}
+
+function addInputCountersHandler() {
+    if (!document.querySelector('.input-counter')) return
+
+    const allInputCounters = document.querySelectorAll('.input-counter')
+
+    allInputCounters.forEach(inputCounter => {
+        const btnMinus = inputCounter.querySelector('[data-input-minus]'),
+            btnPlus = inputCounter.querySelector('[data-input-plus]')
+        let counter = inputCounter.querySelector('.input-counter__num')
+
+        btnMinus.addEventListener('click', () => {
+            let num = +counter.textContent
+            num > 0 ? counter.textContent = --num : null
+        })
+        btnPlus.addEventListener('click', () => {
+            let num = +counter.textContent
+            counter.textContent = ++num
+        })
+    })
+}
+
+function timerHandler() {
+    if (!document.querySelector('[data-start-timer]')) return
+    const timerTextBlock = document.querySelector('[data-start-timer]')
+    let time = 59,
+        timerId = null,
+        timerEndEvent = new Event('endTimer')
+
+    function updateTimer() {
+        if (time <= 0) {
+            timerTextBlock.dispatchEvent(timerEndEvent)
+            clearInterval(timerId);
+            return
+        }
+        timerTextBlock.querySelector('span').textContent = `${time}`
+        time--
+    }
+
+    timerTextBlock.addEventListener('startTimer', () => {
+        timerId = setInterval(updateTimer, 100)
+    })
+    timerTextBlock.addEventListener('endTimer', () => {
+        timerTextBlock.innerHTML = `Отправить код ещё раз через: <button>Отправить</button>`
     })
 }
 
 //popups
 
 function popupsHandler() {
-    if (document.querySelector('[data-popup-name]')) {
-        let openPopupElements = document.querySelectorAll('[data-popup-name]'),
-            blur = document.querySelector('.background-blur')
+    if (!document.querySelector('[data-popup-name]')) return
 
-        openPopupElements.forEach(currentOpenPopupElement => {
-            let popup = getPopup(currentOpenPopupElement)
-            handlerClosePopupElements(popup)
+    let openPopupEvent = new Event('openPopup')
 
-            currentOpenPopupElement.addEventListener('click', event => {
-                event.preventDefault()
-                popup.classList.add('active')
-                currentOpenPopupElement.hasAttribute('data-open-blur') ?
-                    blur.classList.add('active') : null
-            })
+    let openPopupElements = document.querySelectorAll('[data-popup-name]'),
+        blur = document.querySelector('.background-blur')
+
+    openPopupElements.forEach(currentOpenPopupElement => {
+        let popup = getPopup(currentOpenPopupElement)
+        handlerClosePopupElements(popup)
+
+        currentOpenPopupElement.addEventListener('click', event => {
+            event.preventDefault()
+            popup.classList.add('active')
+            popup.dispatchEvent(openPopupEvent)
+            currentOpenPopupElement.hasAttribute('data-open-blur') ? blur.classList.add('active') : null
         })
-    }
+    })
 }
 
 function getPopup(openPopupElement) {
@@ -356,21 +370,34 @@ function getPopup(openPopupElement) {
 }
 
 function handlerClosePopupElements(popup) {
-    if (popup.querySelectorAll('[data-popup-close]')) {
-        let allClosePopupElements = popup.querySelectorAll('[data-popup-close]')
+    if (!popup.querySelector('[data-popup-close]')) return
+    let allClosePopupElements = popup.querySelectorAll('[data-popup-close]')
 
-        allClosePopupElements.forEach(popupCloseElement => {
-            popupCloseElement.addEventListener('click', event => {
-                event.preventDefault()
-                popup.classList.remove('active')
-                document.querySelector('.background-blur').classList.remove('active')
+    allClosePopupElements.forEach(popupCloseElement => {
+        const closeTime = +popupCloseElement.getAttribute('data-popup-close')
+
+        if (closeTime > 0) {
+            popup.addEventListener('openPopup', () => {
+                setTimeout(() => {
+                    popup.classList.remove('active')
+                    document.querySelector('.background-blur').classList.remove('active')
+                }, closeTime)
             })
+        }
+
+        popupCloseElement.addEventListener('click', event => {
+            event.preventDefault()
+            popup.classList.remove('active')
+            document.querySelector('.background-blur').classList.remove('active')
         })
-    }
+    })
+
 }
 
 function closePopupOnClickBlur() {
     if (!document.querySelector('.background-blur')) return
-
-
+    document.querySelector('.background-blur').addEventListener('click', () => {
+        document.querySelector('.popup.active').classList.remove('active')
+        document.querySelector('.background-blur').classList.remove('active')
+    })
 }
