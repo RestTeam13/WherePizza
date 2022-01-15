@@ -12,8 +12,8 @@
 
     <link rel="stylesheet" href="assets/css/style.min.css">
 
-    <link href="favicon.ico" rel="icon" type="image/x-icon">
-    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="assets/img/icon.svg" rel="icon" type="image/x-icon">
+    <link href="assets/img/icon.svg" rel="shortcut icon" type="image/x-icon">
 </head>
 <body>
 <div class="wrapper">
@@ -292,10 +292,10 @@
                     </div>
                     <div class="payment__form-title-group">
                         <p class="payment__form-title standard-title">Доставка</p>
-                        <div class="current-popup__switch-row switch swipe-btn">
+                        <div class="choose-item-popup__switch-row switch swipe-btn">
                             <div class="switch__bg"></div>
-                             <button type="button" class="current-popup__switch switch__btn active">Доставка</button>
-                             <button type="button" class="current-popup__switch switch__btn">Самовывоз</button>
+                             <button type="button" class="choose-item-popup__switch switch__btn active">Доставка</button>
+                             <button type="button" class="choose-item-popup__switch switch__btn">Самовывоз</button>
                         </div>
                     </div>
                     <div class="payment__form-part">
@@ -334,6 +334,7 @@
                             <div class="payment__form-item">
                                 <div class="payment__form-label">Ресторан*</div>
                                 <div class="custom-select custom-select_payment">
+                                    <div class="custom-select__area"></div>
                                     <div class="custom-select__header custom-select__header_payment">
                                         <p>Выберите ресторан</p>
                                         <span class="custom-select__arrow custom-select__arrow_payment">
@@ -361,52 +362,55 @@
                     </div>
                     <div class="payment__form-item">
                         <div class="payment__form-item-title">Когда выполнить заказ?</div>
-                        <div class="payment__form-radio-row">
+                        <div class="payment__form-radio-row payment__form-radio-row_time">
                             <div class="payment__form-radio-item">
-                                <input type="radio" class="payment__form-radio" name="time" id="first">
+                                <input type="radio" class="payment__form-radio" name="time" id="first" value="first" checked>
                                 <label class="payment__form-radio-label" for="first">Как можно скорее</label>
                             </div>
                             <div class="payment__form-radio-item">
-                                <input type="radio" class="payment__form-radio" name="time" id="time">
+                                <input type="radio" class="payment__form-radio" name="time" id="time" value="time">
                                 <label class="payment__form-radio-label" for="time">По времени</label>
                             </div>
-                            <div class="payment__form-radio-item payment__form-radio-item_input">
-                                <input type="text" class="payment__input payment__input_short" id="date"
-                                       placeholder="Дата">
-                                <div class="payment__input-p">
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M14.3412 1.77594H13.3368V0.938468C13.3368 0.697311 13.1492 0.5 12.92 0.5C12.6908 0.5 12.5032 0.697311 12.5032 0.938468V1.77594H8.41885V0.938468C8.41885 0.697311 8.2313 0.5 8.00208 0.5C7.77285 0.5 7.5853 0.697311 7.5853 0.938468V1.77594H3.45923V0.938468C3.45923 0.697311 3.27168 0.5 3.04246 0.5C2.81323 0.5 2.62568 0.697311 2.62568 0.938468V1.77594H1.66293C0.746027 1.77594 0 2.58711 0 3.55174V13.7461C0 14.7151 0.741859 15.5 1.66293 15.5H14.3371C15.2581 15.5 16 14.7151 16 13.7505V3.55174C16.0042 2.58711 15.2581 1.77594 14.3412 1.77594ZM15.1706 13.7461C15.1706 14.2284 14.8038 14.6187 14.3454 14.6231H14.3412H1.66293C1.20448 14.6231 0.833549 14.2328 0.833549 13.7505V13.7461V3.55174C0.833549 3.06504 1.20448 2.65288 1.66293 2.65288H2.62568V3.28866C2.62568 3.52982 2.81323 3.72713 3.04246 3.72713C3.27168 3.72713 3.45923 3.52982 3.45923 3.28866V2.65288H7.5853V3.28866C7.5853 3.52982 7.77285 3.72713 8.00208 3.72713C8.2313 3.72713 8.41885 3.52982 8.41885 3.28866V2.65288H12.5032V3.28866C12.5032 3.52982 12.6908 3.72713 12.92 3.72713C13.1492 3.72713 13.3368 3.52982 13.3368 3.28866V2.65288H14.3412C14.8038 2.65288 15.1706 3.06942 15.1706 3.55174V13.7461Z"
-                                              fill="#A5A5A5"/>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="custom-select custom-select_payment custom-select_payment-small">
-                                <div class="custom-select__header custom-select__header_payment">
-                                    <p>Время</p>
-                                    <span class="custom-select__arrow custom-select__arrow_payment">
+                           <div class="payment__form-pick-date">
+                               <div class="payment__form-radio-item payment__form-radio-item_input">
+                                   <input type="text" class="payment__input payment__input_short" id="date"
+                                          placeholder="Дата">
+                                   <div class="payment__input-p">
+                                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                           <path d="M14.3412 1.77594H13.3368V0.938468C13.3368 0.697311 13.1492 0.5 12.92 0.5C12.6908 0.5 12.5032 0.697311 12.5032 0.938468V1.77594H8.41885V0.938468C8.41885 0.697311 8.2313 0.5 8.00208 0.5C7.77285 0.5 7.5853 0.697311 7.5853 0.938468V1.77594H3.45923V0.938468C3.45923 0.697311 3.27168 0.5 3.04246 0.5C2.81323 0.5 2.62568 0.697311 2.62568 0.938468V1.77594H1.66293C0.746027 1.77594 0 2.58711 0 3.55174V13.7461C0 14.7151 0.741859 15.5 1.66293 15.5H14.3371C15.2581 15.5 16 14.7151 16 13.7505V3.55174C16.0042 2.58711 15.2581 1.77594 14.3412 1.77594ZM15.1706 13.7461C15.1706 14.2284 14.8038 14.6187 14.3454 14.6231H14.3412H1.66293C1.20448 14.6231 0.833549 14.2328 0.833549 13.7505V13.7461V3.55174C0.833549 3.06504 1.20448 2.65288 1.66293 2.65288H2.62568V3.28866C2.62568 3.52982 2.81323 3.72713 3.04246 3.72713C3.27168 3.72713 3.45923 3.52982 3.45923 3.28866V2.65288H7.5853V3.28866C7.5853 3.52982 7.77285 3.72713 8.00208 3.72713C8.2313 3.72713 8.41885 3.52982 8.41885 3.28866V2.65288H12.5032V3.28866C12.5032 3.52982 12.6908 3.72713 12.92 3.72713C13.1492 3.72713 13.3368 3.52982 13.3368 3.28866V2.65288H14.3412C14.8038 2.65288 15.1706 3.06942 15.1706 3.55174V13.7461Z"
+                                                 fill="#A5A5A5"/>
+                                       </svg>
+                                   </div>
+                               </div>
+                               <div class="custom-select custom-select_payment custom-select_payment-small">
+                                   <div class="custom-select__area"></div>
+                                   <div class="custom-select__header custom-select__header_payment">
+                                       <p>Время</p>
+                                       <span class="custom-select__arrow custom-select__arrow_payment">
                                             <svg width="16" height="10" viewBox="0 0 16 10" fill="none"
                                                  xmlns="http://www.w3.org/2000/svg"><path
                                                     d="M16 1.35014C16 1.54195 15.9289 1.73395 15.7869 1.88038L8.5142 9.3803C8.23002 9.67336 7.76984 9.67336 7.48584 9.3803L0.213135 1.88038C-0.0710456 1.58732 -0.0710456 1.11276 0.213135 0.819893C0.497316 0.527021 0.957497 0.526833 1.2415 0.819893L8.00002 7.78957L14.7585 0.819892C15.0427 0.526833 15.5029 0.526833 15.7869 0.819892C15.9289 0.966328 16 1.15833 16 1.35014Z"
                                                     fill="#A5A5A5"/></svg>
                                         </span>
-                                </div>
-                                <div class="custom-select__list custom-select__list_payment">
-                                    <div class="custom-select__list-item custom-select__list-item_payment">
-                                        <p>11:00</p>
-                                    </div>
-                                    <div class="custom-select__list-item custom-select__list-item_payment">
-                                        <p>12:00</p>
-                                    </div>
-                                </div>
-                            </div>
+                                   </div>
+                                   <div class="custom-select__list custom-select__list_payment">
+                                       <div class="custom-select__list-item custom-select__list-item_payment">
+                                           <p>11:00</p>
+                                       </div>
+                                       <div class="custom-select__list-item custom-select__list-item_payment">
+                                           <p>12:00</p>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
                         </div>
                     </div>
-                    <p class="payment__form-title standard-title">Оплата</p>
+                    <p class="payment__form-title payment__form-title_mt20 standard-title">Оплата</p>
                     <div class="payment__form-part">
                         <div class="payment__form-radio-row">
                             <div class="payment__form-radio-item">
-                                <input type="radio" class="payment__form-radio" name="card" id="cash">
+                                <input type="radio" class="payment__form-radio" name="card" id="cash" checked>
                                 <label class="payment__form-radio-label" for="cash">Наличными</label>
                             </div>
                             <div class="payment__form-radio-item">
@@ -419,7 +423,7 @@
                             </div>
                         </div>
                     </div>
-                    <p class="payment__form-title standard-title">Сдача</p>
+                    <p class="payment__form-title payment__form-title_mt20 standard-title">Сдача</p>
                     <div class="payment__form-part">
                         <div class="payment__form-radio-row">
                             <div class="payment__form-radio-item">
@@ -427,7 +431,7 @@
                                 <label class="payment__form-radio-label" for="no-remains">Без сдачи</label>
                             </div>
                             <div class="payment__form-radio-item">
-                                <input type="radio" class="payment__form-radio" name="remains" id="remains">
+                                <input type="radio" class="payment__form-radio" name="remains" id="remains" checked>
                                 <label class="payment__form-radio-label" for="remains">Сдача с</label>
                             </div>
                             <div class="payment__form-radio-item payment__form-radio-item_input payment__form-radio-item_input-long">
@@ -437,8 +441,8 @@
                             </div>
                         </div>
                     </div>
-                    <p class="payment__form-title standard-title">Комментарий</p>
-                    <div class="payment__form-part">
+                    <p class="payment__form-title payment__form-title_mt20 standard-title">Комментарий</p>
+                    <div class="payment__form-part payment__form-part_mb20">
                         <textarea class="payment__form-comment" placeholder="Есть уточнения?"></textarea>
                     </div>
                 </div>
@@ -455,8 +459,7 @@
     @@include('_footer.html')
 
 </div>
-<script src="assets/js/jquery.js"></script>
-<script src="assets/js/slick.min.js"></script>
-<script src="assets/js/script.min.js"></script>
+@@include('_popups.html')
+@@include('_scripts.html')
 </body>
 </html>

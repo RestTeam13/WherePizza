@@ -23,7 +23,7 @@
 }
 
 .footer__copyright, .footer__link {
-  font-family: SF-Pro-Display-Regular, sans-serif;
+  font-family: SF-Pro-Display, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -86,7 +86,8 @@
 }
 
 .logo_footer {
-  width: 150px;
+  width: 144px;
+  height: 80px;
   @media (max-width: 767px) {
     margin-bottom: 24px;
   }
