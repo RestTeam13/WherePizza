@@ -569,7 +569,8 @@ img {
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 135px;
+  max-width: 135px;
+  width: 10%;
   height: 104px;
   background: #ffffff;
   border: 1px solid #F0F0F0;
@@ -2964,12 +2965,13 @@ img {
 .footer {
   width: 100%;
   background: #ffffff;
-  padding: 32px calc((100% - 1290px) / 2);
+  padding: 32px calc((100% - 1330px) / 2);
   margin-top: auto;
 }
 .footer .block__content {
   display: flex;
   justify-content: space-between;
+  padding: 0 20px;
 }
 @media (max-width: 1023px) {
   .footer .block__content {

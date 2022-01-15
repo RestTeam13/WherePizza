@@ -1,12 +1,13 @@
 .footer {
   width: 100%;
   background: $white;
-  padding: 32px calc((100% - 1290px) / 2);
+  padding: 32px calc((100% - 1330px) / 2);
   margin-top: auto;
 
   .block__content {
     display: flex;
     justify-content: space-between;
+    padding: 0 20px;
     @media (max-width: 1023px) {
       flex-flow: wrap;
     }
@@ -17,9 +18,7 @@
 
   @media (max-width: 767px) {
     padding: 24px calc((100% - 1290px) / 2) 0;
-
   }
-
 }
 
 .footer__copyright, .footer__link {
