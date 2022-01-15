@@ -129,9 +129,12 @@
   }
 
   @media (max-width: 767px) {
-    top: 40px;
+    top: unset;
     border-radius: 16px 16px 0 0;
     max-height: 95vh;
+    bottom: 0;
+    max-width: 100%;
+
   }
 }
 
@@ -289,9 +292,18 @@
   }
 
   @media (max-width: 767px) {
+    max-width: 100%;
+    top: unset;
+    bottom: 0;
     max-height: 95vh;
+    height: 100%;
+    left: 0;
+    transform: scale(0) translate(0);
     .item-card__tag {
       top: 18px;
+    }
+    &.active {
+      transform: scale(1) translate(0);
     }
   }
 }
@@ -316,14 +328,13 @@
   }
   @media (max-width: 767px) {
     flex-flow: column;
-    max-height: 93vh;
     height: 100%;
     align-items: center;
     margin-right: 0;
-    max-width: 530px;
     border-radius: 16px 16px 0 0;
     justify-content: flex-start;
     overflow-y: auto;
+    overflow-x: hidden;
   }
 }
 
@@ -668,7 +679,9 @@
   }
 
   @media (max-width: 767px) {
-    top: 40px;
+    top: unset;
+    bottom: 0;
+    max-width: 100%;
     max-height: 95vh;
     border-radius: 16px 16px 0 0;
     .filter-popup__title {
@@ -844,13 +857,19 @@
   backdrop-filter: blur(0px);
   opacity: 0;
   visibility: hidden;
-  z-index: 25;
+  z-index: 60;
 
   &.active {
     backdrop-filter: blur(20px);
     opacity: 1;
     visibility: visible;
   }
+  @media (max-width: 767px) {
+    z-index: 40;
+
+  }
+
+
 }
 
 //<!-- /Blur -->

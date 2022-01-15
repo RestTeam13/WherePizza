@@ -103,6 +103,7 @@
     height: 40px;
     margin: 0 12px 0 0;
     padding: 0 12px;
+    width: 33%;
     svg {
       height: 24px;
     }
@@ -658,7 +659,6 @@
   }
 
   &.active {
-
     overflow: hidden;
   }
 }
@@ -2009,6 +2009,11 @@
     opacity: 1;
     visibility: visible;
   }
+  @media (max-width: 767px) {
+    margin: 10px 0 0 0;
+
+
+  }
 }
 
 .payment__form-comment {
@@ -2181,17 +2186,22 @@
 .account-popup {
   position: absolute;
   background: $background-gray;
-  top: 0;
+  top: 104px;
   left: 50%;
   transform: translateX(-210%);
+  height: 100%;
   display: none;
+  overflow-y: auto;
+  overflow-x: hidden;
   @media (max-width: 767px) {
     display: block;
+    width: 100%;
   }
 
   &.active {
     transform: translateX(-50%);
   }
+
 
   .order-list__item {
     margin-top: 16px;

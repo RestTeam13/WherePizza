@@ -42,10 +42,13 @@ img {
 
   &.fixed {
     position: fixed;
+    .mobile-menu {
+      height: calc(100vh - 64px);
+    }
   }
 
   @media (max-width: 767px) {
-    z-index: 50;
+    z-index: 25;
   }
 }
 
@@ -93,6 +96,9 @@ img {
   display: flex;
   width: 100%;
   padding: 0 20px;
+  @media (max-width: 767px) {
+    align-items: center;
+  }
 }
 
 .menu__location {
@@ -214,6 +220,9 @@ img {
 
   @media (max-width: 767px) {
     display: none;
+    &.active {
+      display: none;
+    }
   }
 }
 
@@ -425,10 +434,11 @@ img {
   flex-flow: column;
   background: $white;
   position: absolute;
-  top: 104px;
+  top: 100%;
   left: 0;
   width: 100%;
   z-index: 100;
+  height: calc(100vh - 104px);
   transform: translateX(100%);
   transition: ease-in-out all 0.7s;
 
@@ -456,6 +466,7 @@ img {
 
   &:last-child {
     justify-content: center;
+    margin-top: auto;
   }
 }
 

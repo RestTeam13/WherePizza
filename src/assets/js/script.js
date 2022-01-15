@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     openText()
     summary()
     openHistory()
+
     changeAccountForm()
     headerHandler()
     addTimeInputs()
@@ -117,7 +118,6 @@ function openMobileMenu() {
         document.querySelector(".menu__burger").addEventListener("click", evt => {
             document.querySelector(".menu__burger").classList.toggle("active")
             document.querySelector(".mobile-menu").classList.toggle("active")
-            document.querySelector(".background-blur").classList.toggle("active")
             document.querySelector(".header__menu").classList.add("active")
             if (!document.querySelector(".menu__burger.active")) {
                 setTimeout(function () {
@@ -204,26 +204,13 @@ function summary() {
 function openHistory() {
     if (document.querySelectorAll(".order-list__item")) {
         if (window.matchMedia("(max-width: 767px)").matches) {
-            let listItem = document.querySelectorAll(".order-list__item")
             let popup = document.querySelector(".account-popup")
             let content = document.querySelector(".block__content_account")
-            listItem.forEach(currentItem => {
-                currentItem.addEventListener("click", evt => {
-                    popup.classList.add("active")
-                    content.classList.add("active")
-                    content.style.height = getComputedStyle(popup).height
+            content.addEventListener('click', evt => {
 
-                })
-            })
-            document.querySelector('.account-popup__title-back').addEventListener("click", evt => {
-                popup.classList.remove("active")
-                content.classList.remove("active")
-                content.style.height = "unset"
             })
         }
     }
-
-
 }
 
 function changeAccountForm() {
