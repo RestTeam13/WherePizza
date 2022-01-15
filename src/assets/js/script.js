@@ -227,15 +227,16 @@ function openHistory() {
 }
 
 function changeAccountForm() {
-    if (document.querySelector(".personal-data__button-text")) {
-        let blocks = document.querySelectorAll(".account-data__list")
+    if (document.querySelector(".personal-data__btn-change")) {
+        const blocks = document.querySelectorAll(".account-data__list.account-data__list_data")
         blocks.forEach(currentBlock => {
-            currentBlock.querySelector(".personal-data__button-text").addEventListener("click", event => {
+            currentBlock.querySelector(".personal-data__btn-change").addEventListener("click", event => {
                 currentBlock.querySelectorAll(".input-text").forEach(currentInput => {
                     currentInput.removeAttribute("disabled")
                     currentInput.classList.add("active")
                 })
-                currentBlock.querySelector(".personal-data__button-text").classList.add("active")
+
+                currentBlock.querySelector(".personal-data__btn-change").classList.add("active")
                 currentBlock.querySelector(".account-data__list-btn").classList.add("active")
                 currentBlock.querySelector(".personal-data__title").classList.add("active")
                 currentBlock.querySelectorAll(".input-text__wrapper").forEach(wrapperInput => {
@@ -248,7 +249,7 @@ function changeAccountForm() {
                     currentInput.getAttribute("disabled")
                     currentInput.classList.remove("active")
                 })
-                currentBlock.querySelector(".personal-data__button-text").classList.remove("active")
+                currentBlock.querySelector(".personal-data__btn-change").classList.remove("active")
                 currentBlock.querySelector(".account-data__list-btn").classList.remove("active")
                 currentBlock.querySelector(".personal-data__title").classList.remove("active")
                 currentBlock.querySelectorAll(".input-text__wrapper").forEach(wrapperInput => {
@@ -256,6 +257,7 @@ function changeAccountForm() {
                 })
 
             })
+
         })
     }
 }
@@ -359,6 +361,9 @@ function popupsHandler() {
             event.preventDefault()
             popup.classList.add('active')
             popup.dispatchEvent(openPopupEvent)
+            if (!currentOpenPopupElement.hasAttribute('data-scroll')) {
+                document.body.style.overflow = 'hidden'
+            }
             currentOpenPopupElement.hasAttribute('data-open-blur') ? blur.classList.add('active') : null
         })
     })
@@ -381,6 +386,7 @@ function handlerClosePopupElements(popup) {
                 setTimeout(() => {
                     popup.classList.remove('active')
                     document.querySelector('.background-blur').classList.remove('active')
+                    document.body.style.overflow = ''
                 }, closeTime)
             })
         }
@@ -389,6 +395,7 @@ function handlerClosePopupElements(popup) {
             event.preventDefault()
             popup.classList.remove('active')
             document.querySelector('.background-blur').classList.remove('active')
+            document.body.style.overflow = ''
         })
     })
 
@@ -399,5 +406,6 @@ function closePopupOnClickBlur() {
     document.querySelector('.background-blur').addEventListener('click', () => {
         document.querySelector('.popup.active').classList.remove('active')
         document.querySelector('.background-blur').classList.remove('active')
+        document.body.style.overflow = ''
     })
 }

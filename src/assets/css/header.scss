@@ -68,7 +68,7 @@ img {
 .menu__row {
   display: flex;
   align-items: center;
-  padding: 10px calc((100% - 1290px) / 2);
+  padding: 10px calc((100% - 1330px) / 2);
   border-bottom: 1px solid $line-gray;
   background: $white;
   position: relative;
@@ -87,6 +87,12 @@ img {
 
 .menu__row_bottom {
   height: 64px;
+}
+
+.menu__row-wrapper{
+  display: flex;
+  width: 100%;
+  padding: 0 20px;
 }
 
 .menu__location {
