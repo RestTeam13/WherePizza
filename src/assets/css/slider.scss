@@ -220,6 +220,10 @@ justify-content: flex-start;
     background: $light-primary;
     border-radius: 6px;
     color: $orange;
+    border-color: transparent;
+    &:hover{
+      border-color: $orange;
+    }
   }
 
 }

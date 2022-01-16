@@ -1,13 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
     select()
     handlerSwitch()
-    openMobileMenu()
+    mobileMenuHandler()
     resetBtnHandler()
     startSlider()
     addTabsHandler()
     openText()
     summary()
     openHistory()
+    promoCodeHandler()
 
     changeAccountForm()
     headerHandler()
@@ -24,23 +25,24 @@ document.addEventListener('DOMContentLoaded', function () {
 function headerHandler() {
     const header = document.querySelector('.header'),
         headerTopRow = document.querySelector('.menu__row_top'),
-        headerBottomRow = headerTopRow.nextElementSibling
+        navMenu = headerTopRow.nextElementSibling.querySelector('.menu__nav')
 
     if (document.querySelector('.standalone-menu')) {
         const standaloneMenu = document.querySelector('.standalone-menu')
+
         window.addEventListener('scroll', () => {
             if (standaloneMenu.getBoundingClientRect().bottom < 0) {
                 header.classList.add('fixed')
                 headerTopRow.classList.add('hidden')
-                headerBottomRow.querySelector('.menu__nav').classList.add('active')
+                navMenu.classList.add('active')
             } else {
                 header.classList.remove('fixed')
                 headerTopRow.classList.remove('hidden')
-                headerBottomRow.querySelector('.menu__nav').classList.remove('active')
+                navMenu.classList.remove('active')
             }
         })
     } else {
-        headerBottomRow.querySelector('.menu__nav').classList.add('active')
+        navMenu.classList.add('active')
         header.classList.add('fixed')
 
         window.addEventListener('scroll', () => {
@@ -52,8 +54,6 @@ function headerHandler() {
             }
         });
     }
-
-
 }
 
 function select() {
@@ -113,20 +113,31 @@ function handlerSwitch() {
     }
 }
 
-function openMobileMenu() {
-    if (document.querySelector(".menu__burger")) {
-        document.querySelector(".menu__burger").addEventListener("click", evt => {
-            document.querySelector(".menu__burger").classList.toggle("active")
-            document.querySelector(".mobile-menu").classList.toggle("active")
-            document.querySelector(".header__menu").classList.add("active")
-            if (!document.querySelector(".menu__burger.active")) {
-                setTimeout(function () {
-                    document.querySelector(".header__menu").classList.remove("active")
+function mobileMenuHandler() {
+    if (!document.querySelector(".menu__burger")) return
 
-                }, 300)
-            }
+    document.querySelector(".menu__burger").addEventListener("click", evt => {
+        document.querySelector(".menu__burger").classList.toggle("active")
+        document.querySelector(".mobile-menu").classList.toggle("active")
+        document.querySelector(".header__menu").classList.add("active")
+        document.body.style.overflow = 'hidden'
+        if (!document.querySelector(".menu__burger.active")) {
+            setTimeout(function () {
+                document.querySelector(".header__menu").classList.remove("active")
+                document.body.style.overflow = ''
+            }, 300)
+        }
+    })
+
+    document.querySelectorAll('[data-close-mobMenu]').forEach(closeMenuBtn => {
+        closeMenuBtn.addEventListener('click', () => {
+            document.querySelector(".header__menu").classList.remove("active")
+            document.querySelector(".menu__burger").classList.remove("active")
+            document.querySelector(".mobile-menu").classList.remove("active")
+            document.body.style.overflow = ''
         })
-    }
+    })
+
 }
 
 function resetBtnHandler() {
@@ -202,51 +213,40 @@ function summary() {
 }
 
 function openHistory() {
-    if (document.querySelectorAll(".order-list__item")) {
-        if (window.matchMedia("(max-width: 767px)").matches) {
-            let popup = document.querySelector(".account-popup")
-            let content = document.querySelector(".block__content_account")
-            content.addEventListener('click', evt => {
+    if (!document.querySelectorAll(".order-list__item")) return
+    if (window.matchMedia('(max-width: 767px)').matches) {
+        const allOrderBlocks = document.querySelectorAll('.wrapper .order-list__item'),
+            popup = document.querySelector('.order-details-popup'),
+            blur = document.querySelector('.background-blur')
 
-            })
-        }
+        allOrderBlocks.forEach(orderBlock => {
+            orderBlock.setAttribute('data-popup-name', 'order-details-popup')
+            addClickListenerToOpenPopupElement(orderBlock, popup, blur)
+        })
     }
 }
 
 function changeAccountForm() {
-    if (document.querySelector(".personal-data__btn-change")) {
-        const blocks = document.querySelectorAll(".account-data__list.account-data__list_data")
-        blocks.forEach(currentBlock => {
-            currentBlock.querySelector(".personal-data__btn-change").addEventListener("click", event => {
-                currentBlock.querySelectorAll(".input-text").forEach(currentInput => {
-                    currentInput.removeAttribute("disabled")
-                    currentInput.classList.add("active")
-                })
+    if (!document.querySelector(".personal-data__btn-change")) return
 
-                currentBlock.querySelector(".personal-data__btn-change").classList.add("active")
-                currentBlock.querySelector(".account-data__list-btn").classList.add("active")
-                currentBlock.querySelector(".personal-data__title").classList.add("active")
-                currentBlock.querySelectorAll(".input-text__wrapper").forEach(wrapperInput => {
-                    wrapperInput.classList.add("active")
-                })
+    const changingBlocks = document.querySelectorAll(".account-data__list.account-data__list_data")
+    changingBlocks.forEach(currentBlock => {
+        const changeBtn = currentBlock.querySelector(".personal-data__btn-change"),
+            saveBtn = currentBlock.querySelector(".account-data__list-btn")
 
-            })
-            currentBlock.querySelector(".account-data__list-btn").addEventListener("click", evt => {
-                currentBlock.querySelectorAll(".input-text").forEach(currentInput => {
-                    currentInput.getAttribute("disabled")
-                    currentInput.classList.remove("active")
-                })
-                currentBlock.querySelector(".personal-data__btn-change").classList.remove("active")
-                currentBlock.querySelector(".account-data__list-btn").classList.remove("active")
-                currentBlock.querySelector(".personal-data__title").classList.remove("active")
-                currentBlock.querySelectorAll(".input-text__wrapper").forEach(wrapperInput => {
-                    wrapperInput.classList.remove("active")
-                })
-
-            })
-
+        changeBtn.addEventListener("click", () => {
+            currentBlock.classList.add('active')
+            currentBlock.querySelectorAll(".input-text")
+                .forEach(currentInput => currentInput.removeAttribute("disabled"))
         })
-    }
+
+        saveBtn.addEventListener("click", () => {
+            currentBlock.classList.remove('active')
+            currentBlock.querySelectorAll(".input-text")
+                .forEach(currentInput => currentInput.getAttribute("disabled"))
+        })
+    })
+
 }
 
 function addTimeInputs() {
@@ -330,29 +330,33 @@ function timerHandler() {
     })
 }
 
+function promoCodeHandler() {
+    if (!document.querySelector('.payment__promo-btn')) return
+    const promoBtn = document.querySelector('.payment__promo-btn'),
+        promoInput = document.querySelector('.payment__promo-wrapper > input'),
+        priceBlock = document.querySelector('.payment__promo-cost')
+
+    promoBtn.addEventListener('click', () => {
+        if (promoInput.value === '301202012') {
+            priceBlock.innerHTML = `Итого: 2 199₽ <span class="payment__promo-cost-new">${priceBlock.textContent}</span>`
+        }
+    })
+
+}
+
 //popups
 
 function popupsHandler() {
     if (!document.querySelector('[data-popup-name]')) return
 
-    let openPopupEvent = new Event('openPopup')
-
-    let openPopupElements = document.querySelectorAll('[data-popup-name]'),
+    const openPopupElements = document.querySelectorAll('[data-popup-name]'),
         blur = document.querySelector('.background-blur')
 
     openPopupElements.forEach(currentOpenPopupElement => {
         let popup = getPopup(currentOpenPopupElement)
         handlerClosePopupElements(popup)
 
-        currentOpenPopupElement.addEventListener('click', event => {
-            event.preventDefault()
-            popup.classList.add('active')
-            popup.dispatchEvent(openPopupEvent)
-            if (!currentOpenPopupElement.hasAttribute('data-scroll')) {
-                document.body.style.overflow = 'hidden'
-            }
-            currentOpenPopupElement.hasAttribute('data-open-blur') ? blur.classList.add('active') : null
-        })
+        addClickListenerToOpenPopupElement(currentOpenPopupElement, popup, blur)
     })
 }
 
@@ -386,6 +390,20 @@ function handlerClosePopupElements(popup) {
         })
     })
 
+}
+
+function addClickListenerToOpenPopupElement(openPopupElement, popup, blur) {
+    let openPopupEvent = new Event('openPopup')
+
+    openPopupElement.addEventListener('click', event => {
+        event.preventDefault()
+        popup.classList.add('active')
+        popup.dispatchEvent(openPopupEvent)
+        if (!openPopupElement.hasAttribute('data-scroll')) {
+            document.body.style.overflow = 'hidden'
+        }
+        openPopupElement.hasAttribute('data-open-blur') ? blur.classList.add('active') : null
+    })
 }
 
 function closePopupOnClickBlur() {
