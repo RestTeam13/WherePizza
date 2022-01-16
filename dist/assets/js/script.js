@@ -1,28 +1,76 @@
 document.addEventListener('DOMContentLoaded', function () {
-    filterBtn()
-    handlerSwitch()
-    openPopup()
-    openMobileMenu()
-    openMiniPopups()
-    resettingBtn()
-    openCart()
     select()
+    handlerSwitch()
+    mobileMenuHandler()
+    resetBtnHandler()
     startSlider()
-    swipeForm()
+    addTabsHandler()
     openText()
     summary()
     openHistory()
-    changeForm()
-    hideFirstHeaderRow()
+    promoCodeHandler()
+
+    changeAccountForm()
+    headerHandler()
+    addTimeInputs()
+    auth()
+    timerHandler()
+    addInputCountersHandler()
+    addToggleBtnsHandler()
+    popupsHandler()
+    closePopupOnClickBlur()
 })
+
+
+function headerHandler() {
+    const header = document.querySelector('.header'),
+        headerTopRow = document.querySelector('.menu__row_top'),
+        navMenu = headerTopRow.nextElementSibling.querySelector('.menu__nav')
+
+    if (document.querySelector('.standalone-menu')) {
+        const standaloneMenu = document.querySelector('.standalone-menu')
+
+        window.addEventListener('scroll', () => {
+            if (standaloneMenu.getBoundingClientRect().bottom < 0) {
+                header.classList.add('fixed')
+                headerTopRow.classList.add('hidden')
+                navMenu.classList.add('active')
+            } else {
+                header.classList.remove('fixed')
+                headerTopRow.classList.remove('hidden')
+                navMenu.classList.remove('active')
+            }
+        })
+    } else {
+        navMenu.classList.add('active')
+        header.classList.add('fixed')
+
+        window.addEventListener('scroll', () => {
+            const isTop = window.scrollY < 100
+            if (!isTop) {
+                headerTopRow.classList.add('hidden')
+            } else {
+                headerTopRow.classList.remove('hidden')
+            }
+        });
+    }
+}
 
 function select() {
     if (document.querySelectorAll(".custom-select")) {
         document.querySelectorAll(".custom-select").forEach(currentSelect => {
-            let headerSelect = currentSelect.querySelector('.custom-select__header')
-            let itemSelects = currentSelect.querySelectorAll(".custom-select__list-item > p")
+            const headerSelect = currentSelect.querySelector('.custom-select__header')
+            const itemSelects = currentSelect.querySelectorAll(".custom-select__list-item > p")
+            const area = currentSelect.querySelector('.custom-select__area')
+
+            area.addEventListener('click', evt => {
+                headerSelect.classList.remove('active')
+                area.classList.remove('active')
+            })
+
             headerSelect.addEventListener('click', evt => {
                 headerSelect.classList.toggle('active')
+                area.classList.toggle('active')
                 itemSelects.forEach(select => {
                     select.parentElement.style.display = ''
                     if (select.textContent === headerSelect.querySelector('p').textContent) {
@@ -35,63 +83,9 @@ function select() {
                 currentItem.addEventListener('click', evt => {
                     headerSelect.querySelector('p').textContent = currentItem.textContent
                     headerSelect.classList.remove('active')
+                    area.classList.remove('active')
                 })
             })
-        })
-    }
-}
-
-function openCart() {
-    if (document.querySelector(".menu__cart ")) {
-        let cartPopup = document.querySelector(".cart-popup")
-        document.querySelector(".menu__cart ").addEventListener("click", evt => {
-            cartPopup.classList.add("active")
-            document.querySelector(".background-blur").classList.add("active")
-        })
-        document.querySelector(".cart-popup").querySelector('.filter-popup__title-cross').addEventListener("click", evt => {
-            cartPopup.classList.remove("active")
-            document.querySelector(".background-blur").classList.remove("active")
-        })
-        document.querySelectorAll(".current-popup__cross_mobile").forEach(mobileCross => {
-            mobileCross.addEventListener("click", evt => {
-                cartPopup.classList.remove("active")
-                document.querySelector(".background-blur").classList.remove("active")
-            })
-        })
-    }
-}
-
-function closeFilter() {
-    if (document.querySelector(".filter-popup")) {
-        document.querySelector(".filter-popup").classList.remove("active")
-        document.querySelector(".background-blur").classList.remove("active")
-    }
-
-}
-
-function filterBtn() {
-    if (document.querySelector(".catalog__filters")) {
-
-        document.querySelectorAll(".catalog__filters").forEach(catalogBtn=>{
-            catalogBtn.addEventListener("click", evt => {
-                document.querySelector(".filter-popup").classList.add("active")
-                document.querySelector(".background-blur").classList.add("active")
-            })
-        })
-
-        document.querySelector(".filter-popup__title-cross").addEventListener("click", evt => {
-            closeFilter()
-
-        })
-        document.querySelectorAll(".current-popup__cross_mobile").forEach(mobileCross => {
-            mobileCross.addEventListener("click", evt => {
-                closeFilter()
-
-            })
-        })
-        document.querySelector(".filter-popup__button_apply").addEventListener("click", evt => {
-            closeFilter()
-
         })
     }
 }
@@ -119,69 +113,41 @@ function handlerSwitch() {
     }
 }
 
-function openPopup() {
-    if (document.querySelectorAll(".catalog__item-card")) {
-        document.querySelectorAll(".catalog__item-card").forEach(currentBtn => {
-            currentBtn.addEventListener("click", evt => {
-                document.querySelector(".current-popup").classList.add("active")
-                document.querySelector(".background-blur").classList.add("active")
+function mobileMenuHandler() {
+    if (!document.querySelector(".menu__burger")) return
 
-            })
-            document.querySelectorAll(".current-popup__cross").forEach(popupCross => {
-                popupCross.addEventListener("click", evt => {
-                    document.querySelector(".current-popup").classList.remove("active")
-                    document.querySelector(".background-blur").classList.remove("active")
-                })
-            })
-            document.querySelector('.current-popup__result-btn').addEventListener('click', evt => {
-                document.querySelector(".current-popup").classList.remove("active")
-                document.querySelector(".background-blur").classList.remove("active")
-                document.querySelector(".menu__cart-popup").classList.add("active")
-                setTimeout(function () {
-                    document.querySelector(".menu__cart-popup").classList.remove("active")
-                }, 3000)
+    document.querySelector(".menu__burger").addEventListener("click", evt => {
+        document.querySelector(".menu__burger").classList.toggle("active")
+        document.querySelector(".mobile-menu").classList.toggle("active")
+        document.querySelector(".header__menu").classList.add("active")
+        document.body.style.overflow = 'hidden'
+        if (!document.querySelector(".menu__burger.active")) {
+            setTimeout(function () {
+                document.querySelector(".header__menu").classList.remove("active")
+                document.body.style.overflow = ''
+            }, 300)
+        }
+    })
 
-
-            })
-
-        })
-    }
-}
-
-function openMobileMenu() {
-    if (document.querySelector(".menu__burger")) {
-        document.querySelector(".menu__burger").addEventListener("click", evt => {
-            document.querySelector(".menu__burger").classList.toggle("active")
-            document.querySelector(".mobile-menu").classList.toggle("active")
-            document.querySelector(".background-blur").classList.toggle("active")
-            document.querySelector(".header__menu").classList.add("active")
-            if (!document.querySelector(".menu__burger.active")) {
-                setTimeout(function () {
-                    document.querySelector(".header__menu").classList.remove("active")
-
-                }, 300)
-            }
-        })
-    }
-}
-
-function openMiniPopups() {
-    document.querySelectorAll(".toggle-btn").forEach(currentToggleBtn => {
-        currentToggleBtn.addEventListener("click", evt => {
-            currentToggleBtn.classList.toggle("active")
+    document.querySelectorAll('[data-close-mobMenu]').forEach(closeMenuBtn => {
+        closeMenuBtn.addEventListener('click', () => {
+            document.querySelector(".header__menu").classList.remove("active")
+            document.querySelector(".menu__burger").classList.remove("active")
+            document.querySelector(".mobile-menu").classList.remove("active")
+            document.body.style.overflow = ''
         })
     })
 
 }
 
-function resettingBtn() {
-    if (document.querySelector(".filter-popup__button_orange")) {
-        document.querySelector(".filter-popup__button_orange").addEventListener("click", evt => {
-            document.querySelectorAll(".filter-popup__block-item.active").forEach(activeBtns => {
-                activeBtns.classList.remove("active")
-            })
+function resetBtnHandler() {
+    if (!document.querySelector(".standard-btn[data-reset]")) return
+    document.querySelector(".standard-btn[data-reset]").addEventListener("click", () => {
+        document.querySelectorAll(".filter-popup__filter-btn.active").forEach(activeBtn => {
+            activeBtn.classList.remove("active")
         })
-    }
+    })
+
 }
 
 function startSlider() {
@@ -205,22 +171,21 @@ function startSlider() {
     )
 }
 
-function swipeForm() {
-    if (document.querySelector(".swipe-btn")) {
-        document.querySelector(".swipe-btn").addEventListener("click", evt => {
-            let formBlocks = document.querySelectorAll(".swiping-form")
-            document.querySelectorAll(".switch__btn").forEach((currentBtn, index) => {
-                if (currentBtn.classList.contains("active")) {
-                    formBlocks.forEach((currentForm, indexForm) => {
-                        currentForm.classList.remove("active")
-                        if (indexForm === index) {
-                            currentForm.classList.add("active")
-                        }
-                    })
+function addTabsHandler() {
+    if (!document.querySelector("[data-open-tab]")) return
+    const openTabsBtn = document.querySelectorAll("[data-open-tab]"),
+        allTabs = document.querySelectorAll("[data-tab]")
+
+    openTabsBtn.forEach(openTabBtn => {
+        openTabBtn.addEventListener("click", () => {
+            allTabs.forEach(tab => {
+                tab.classList.remove('active')
+                if (openTabBtn.getAttribute('data-open-tab') === tab.getAttribute('data-tab')) {
+                    tab.classList.add('active')
                 }
             })
         })
-    }
+    })
 }
 
 function openText() {
@@ -248,74 +213,204 @@ function summary() {
 }
 
 function openHistory() {
-    if (document.querySelectorAll(".order-list__item")) {
-        if (window.matchMedia("(max-width: 767px)").matches) {
-            let listItem = document.querySelectorAll(".order-list__item")
-            let popup = document.querySelector(".account-popup")
-            let content = document.querySelector(".block__content_account")
-            listItem.forEach(currentItem => {
-                currentItem.addEventListener("click", evt => {
-                    popup.classList.add("active")
-                    content.classList.add("active")
-                    content.style.height = getComputedStyle(popup).height
+    if (!document.querySelectorAll(".order-list__item")) return
+    if (window.matchMedia('(max-width: 767px)').matches) {
+        const allOrderBlocks = document.querySelectorAll('.wrapper .order-list__item'),
+            popup = document.querySelector('.order-details-popup'),
+            blur = document.querySelector('.background-blur')
 
-                })
-            })
-            document.querySelector('.account-popup__title-back').addEventListener("click", evt => {
-                popup.classList.remove("active")
-                content.classList.remove("active")
-                content.style.height = "unset"
-            })
-        }
+        allOrderBlocks.forEach(orderBlock => {
+            orderBlock.setAttribute('data-popup-name', 'order-details-popup')
+            addClickListenerToOpenPopupElement(orderBlock, popup, blur)
+        })
     }
-
-
 }
 
-function changeForm() {
-    if (document.querySelector(".personal-data__button-text")) {
-        let blocks = document.querySelectorAll(".account-data__list")
-        blocks.forEach(currentBlock => {
-            currentBlock.querySelector(".personal-data__button-text").addEventListener("click", event => {
-                currentBlock.querySelectorAll(".input-text").forEach(currentInput => {
-                    currentInput.removeAttribute("disabled")
-                    currentInput.classList.add("active")
-                })
-                currentBlock.querySelector(".personal-data__button-text").classList.add("active")
-                currentBlock.querySelector(".account-data__list-btn").classList.add("active")
-                currentBlock.querySelector(".personal-data__title").classList.add("active")
-                currentBlock.querySelectorAll(".input-text__wrapper").forEach(wrapperInput => {
-                    wrapperInput.classList.add("active")
-                })
+function changeAccountForm() {
+    if (!document.querySelector(".personal-data__btn-change")) return
 
-            })
-            currentBlock.querySelector(".account-data__list-btn").addEventListener("click", evt => {
-                currentBlock.querySelectorAll(".input-text").forEach(currentInput => {
-                    currentInput.getAttribute("disabled")
-                    currentInput.classList.remove("active")
-                })
-                currentBlock.querySelector(".personal-data__button-text").classList.remove("active")
-                currentBlock.querySelector(".account-data__list-btn").classList.remove("active")
-                currentBlock.querySelector(".personal-data__title").classList.remove("active")
-                currentBlock.querySelectorAll(".input-text__wrapper").forEach(wrapperInput => {
-                    wrapperInput.classList.remove("active")
-                })
+    const changingBlocks = document.querySelectorAll(".account-data__list.account-data__list_data")
+    changingBlocks.forEach(currentBlock => {
+        const changeBtn = currentBlock.querySelector(".personal-data__btn-change"),
+            saveBtn = currentBlock.querySelector(".account-data__list-btn")
 
-            })
+        changeBtn.addEventListener("click", () => {
+            currentBlock.classList.add('active')
+            currentBlock.querySelectorAll(".input-text")
+                .forEach(currentInput => currentInput.removeAttribute("disabled"))
         })
 
-    }
+        saveBtn.addEventListener("click", () => {
+            currentBlock.classList.remove('active')
+            currentBlock.querySelectorAll(".input-text")
+                .forEach(currentInput => currentInput.getAttribute("disabled"))
+        })
+    })
 
 }
 
-function hideFirstHeaderRow() {
-    const headerTopRow = document.querySelector('.menu__row_top')
-    window.addEventListener('scroll', () => {
-        const isTop = window.scrollY < 100
-        if (!isTop) {
-            headerTopRow.classList.add('hidden')
-        } else {
-            headerTopRow.classList.remove('hidden')
+function addTimeInputs() {
+    if (document.querySelector('.payment__form-radio-row_time')) {
+
+        document.querySelector('.payment__form-radio-row_time').querySelectorAll('input[name="time"]').forEach(radio => {
+            radio.addEventListener('click', () => {
+                radio.value === 'time' && radio.checked ? document.querySelector('.payment__form-pick-date').classList.add('active')
+                    : document.querySelector('.payment__form-pick-date').classList.remove('active')
+            })
+        })
+    }
+}
+
+function auth() {
+    if (document.querySelector('.menu__login')) {
+        const loginPopup = document.querySelector(".authorization-popup"),
+            contentBlocks = loginPopup.querySelectorAll('.authorization-content__block')
+        let timerStartEvent = new Event('startTimer')
+
+        loginPopup.querySelector('.authorization-content__button.standard-btn').addEventListener('click', () => {
+            contentBlocks[0].classList.remove('active')
+            contentBlocks[1].classList.add('active')
+            document.querySelector('[data-start-timer]').dispatchEvent(timerStartEvent)
+        })
+    }
+}
+
+function addToggleBtnsHandler() {
+    if (!document.querySelector('.toggle-btn')) return
+    document.querySelectorAll('.toggle-btn').forEach(toggleBtn => {
+        toggleBtn.addEventListener('click', () => {
+            toggleBtn.classList.toggle('active')
+        })
+    })
+}
+
+function addInputCountersHandler() {
+    if (!document.querySelector('.input-counter')) return
+
+    const allInputCounters = document.querySelectorAll('.input-counter')
+
+    allInputCounters.forEach(inputCounter => {
+        const btnMinus = inputCounter.querySelector('[data-input-minus]'),
+            btnPlus = inputCounter.querySelector('[data-input-plus]')
+        let counter = inputCounter.querySelector('.input-counter__num')
+
+        btnMinus.addEventListener('click', () => {
+            let num = +counter.textContent
+            num > 0 ? counter.textContent = --num : null
+        })
+        btnPlus.addEventListener('click', () => {
+            let num = +counter.textContent
+            counter.textContent = ++num
+        })
+    })
+}
+
+function timerHandler() {
+    if (!document.querySelector('[data-start-timer]')) return
+    const timerTextBlock = document.querySelector('[data-start-timer]')
+    let time = 59,
+        timerId = null,
+        timerEndEvent = new Event('endTimer')
+
+    function updateTimer() {
+        if (time <= 0) {
+            timerTextBlock.dispatchEvent(timerEndEvent)
+            clearInterval(timerId);
+            return
         }
-    });
+        timerTextBlock.querySelector('span').textContent = `${time}`
+        time--
+    }
+
+    timerTextBlock.addEventListener('startTimer', () => {
+        timerId = setInterval(updateTimer, 1000)
+    })
+    timerTextBlock.addEventListener('endTimer', () => {
+        timerTextBlock.innerHTML = `Отправить код ещё раз через: <button>Отправить</button>`
+    })
+}
+
+function promoCodeHandler() {
+    if (!document.querySelector('.payment__promo-btn')) return
+    const promoBtn = document.querySelector('.payment__promo-btn'),
+        promoInput = document.querySelector('.payment__promo-wrapper > input'),
+        priceBlock = document.querySelector('.payment__promo-cost')
+
+    promoBtn.addEventListener('click', () => {
+        if (promoInput.value === '301202012') {
+            priceBlock.innerHTML = `Итого: 2 199₽ <span class="payment__promo-cost-new">${priceBlock.textContent}</span>`
+        }
+    })
+
+}
+
+//popups
+
+function popupsHandler() {
+    if (!document.querySelector('[data-popup-name]')) return
+
+    const openPopupElements = document.querySelectorAll('[data-popup-name]'),
+        blur = document.querySelector('.background-blur')
+
+    openPopupElements.forEach(currentOpenPopupElement => {
+        let popup = getPopup(currentOpenPopupElement)
+        handlerClosePopupElements(popup)
+
+        addClickListenerToOpenPopupElement(currentOpenPopupElement, popup, blur)
+    })
+}
+
+function getPopup(openPopupElement) {
+    const popupName = openPopupElement.getAttribute('data-popup-name')
+    return document.querySelector(`.${popupName}`)
+}
+
+function handlerClosePopupElements(popup) {
+    if (!popup.querySelector('[data-popup-close]')) return
+    let allClosePopupElements = popup.querySelectorAll('[data-popup-close]')
+
+    allClosePopupElements.forEach(popupCloseElement => {
+        const closeTime = +popupCloseElement.getAttribute('data-popup-close')
+
+        if (closeTime > 0) {
+            popup.addEventListener('openPopup', () => {
+                setTimeout(() => {
+                    popup.classList.remove('active')
+                    document.querySelector('.background-blur').classList.remove('active')
+                    document.body.style.overflow = ''
+                }, closeTime)
+            })
+        }
+
+        popupCloseElement.addEventListener('click', event => {
+            event.preventDefault()
+            popup.classList.remove('active')
+            document.querySelector('.background-blur').classList.remove('active')
+            document.body.style.overflow = ''
+        })
+    })
+
+}
+
+function addClickListenerToOpenPopupElement(openPopupElement, popup, blur) {
+    let openPopupEvent = new Event('openPopup')
+
+    openPopupElement.addEventListener('click', event => {
+        event.preventDefault()
+        popup.classList.add('active')
+        popup.dispatchEvent(openPopupEvent)
+        if (!openPopupElement.hasAttribute('data-scroll')) {
+            document.body.style.overflow = 'hidden'
+        }
+        openPopupElement.hasAttribute('data-open-blur') ? blur.classList.add('active') : null
+    })
+}
+
+function closePopupOnClickBlur() {
+    if (!document.querySelector('.background-blur')) return
+    document.querySelector('.background-blur').addEventListener('click', () => {
+        document.querySelector('.popup.active').classList.remove('active')
+        document.querySelector('.background-blur').classList.remove('active')
+        document.body.style.overflow = ''
+    })
 }
