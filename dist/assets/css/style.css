@@ -65,6 +65,12 @@ img {
   width: 100%;
 }
 
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 .wrapper {
   position: relative;
   min-height: 100vh;
@@ -138,6 +144,10 @@ img {
 
 .menu__row_bottom {
   height: 64px;
+}
+
+.menu__row_bottom.active .menu__row-wrapper {
+  padding: 0 0 0 20px;
 }
 
 .menu__row-wrapper {
@@ -835,8 +845,8 @@ img {
 }
 
 .item-card__description {
-  margin-top: auto;
-  padding: 16px 20px 0;
+  margin-top: 16px;
+  padding: 0 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -863,6 +873,10 @@ img {
   overflow: hidden;
   -o-text-overflow: ellipsis;
      text-overflow: ellipsis;
+}
+
+.item-card__composition_nw {
+  white-space: nowrap;
 }
 
 .item-card__btn {
@@ -1627,6 +1641,7 @@ img {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  display: inline-block;
 }
 
 .payment__promo-cost .payment__promo-cost-new {
@@ -1640,7 +1655,6 @@ img {
 }
 
 .payment__promo-wrapper {
-  margin-right: 10px;
   max-width: 320px;
   position: relative;
   width: 100%;
@@ -2030,10 +2044,6 @@ img {
   margin: 20px 0 60px;
 }
 
-.payment__form-final-row .payment__promo-cost {
-  margin-right: 10px;
-}
-
 .payment__form-final-btn {
   max-width: 178px;
   width: 100%;
@@ -2351,6 +2361,12 @@ img {
   font-weight: 600;
 }
 
+.account-popup__title-back {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .account-popup__title-back:hover {
   -webkit-transform: scale(1.1);
       -ms-transform: scale(1.1);
@@ -2371,9 +2387,6 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
 /* Слайд */
@@ -2475,12 +2488,11 @@ img {
       -ms-flex-align: center;
           align-items: center;
   background: #ffffff;
-  max-width: 190px;
-  width: 100%;
+  width: 190px;
   border: 1px solid #F0F0F0;
   border-radius: 12px;
   overflow: hidden;
-  margin-right: 30px;
+  margin: 0 15px;
 }
 
 .slider__payment-item:hover {
@@ -3674,7 +3686,7 @@ img {
     display: -ms-flexbox;
     display: flex;
     margin-left: 20px;
-    width: 77%;
+    width: calc(100% - 30px);
     margin-right: 10px;
   }
 
@@ -4120,7 +4132,7 @@ img {
   }
 
   .pagination {
-    margin: 24px 31px;
+    margin: 24px auto;
   }
 
   .pagination-arrow {
@@ -4518,6 +4530,10 @@ img {
     font-size: 14px;
   }
 
+  .account-popup__title-group {
+    padding: 0;
+  }
+
   .slick-track {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
@@ -4551,7 +4567,7 @@ img {
         -ms-flex-align: center;
             align-items: center;
     padding-left: 12px;
-    margin-right: 20px;
+    margin: 0 10px;
   }
 
   .slider__payment-img {
