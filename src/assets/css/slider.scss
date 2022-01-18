@@ -1,5 +1,20 @@
 /* Слайдер */
 .slick-slider {
+  position: relative;
+
+  display: block;
+  box-sizing: border-box;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Ограничевающая оболочка */
@@ -10,6 +25,12 @@
 /* Лента слайдов */
 .slick-track {
   display: flex;
+  position: relative;
+  top: 0;
+  left: 0;
+
+  margin-left: auto;
+  margin-right: auto;
 
   @media (max-width: 767px) {
     justify-content: flex-start;
@@ -73,8 +94,6 @@
   width: 100%;
   @media (max-width: 767px) {
     padding: 0;
-
-
   }
 
   .slick-arrow {
@@ -185,7 +204,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
   }
 }
 

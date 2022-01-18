@@ -1566,8 +1566,7 @@
   font-weight: 600;
   font-size: 20px;
   color: $orange;
-  width: max-content;
-  display: inline-block;
+  white-space: nowrap;
 
   .payment__promo-cost-new {
     font-weight: 400;
