@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+
+    <title>Where pizza</title>
+
+    <link rel="stylesheet" href="assets/css/style.min.css">
+
+    <link href="assets/img/icon.svg" rel="icon" type="image/x-icon">
+    <link href="assets/img/icon.svg" rel="shortcut icon" type="image/x-icon">
+</head>
+<body>
+<div class="wrapper">
+    @@include('_header.html')
+
+    <!-- Order details -->
+    <div class="block block_first-on-page order-details-block">
+        <div class="block__content">
+            <div class="account-popup__title-group">
+                <a href="account.html" class="account-popup__title-back">
+                    <svg width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.4166 24C12.1395 24 11.8622 23.8934 11.6507 23.6804L0.817481 12.7713C0.394173 12.345 0.394173 11.6548 0.817481 11.2288L11.6507 0.319704C12.074 -0.106568 12.7595 -0.106568 13.1825 0.319704C13.6056 0.745975 13.6058 1.43625 13.1825 1.86224L3.11521 12L13.1825 22.1378C13.6058 22.5641 13.6058 23.2544 13.1825 23.6804C12.971 23.8934 12.6937 24 12.4166 24Z" fill="#EF2B51"/>
+                    </svg>
+                </a>
+                <p class="account-popup__title">Подробности заказа</p>
+            </div>
+            <div class="order-list__item">
+                <div class="order-list__item-details">
+                    <div class="order-details__svg">
+                    </div>
+                    <div class="order-details__list order-details__list_num">
+                        <p class="order-details__list-title">Заказ</p>
+                        <p class="order-details__list-text">№130312 <span>22.06.21</span></p>
+                    </div>
+                    <div class="order-details__list order-details__list_sum">
+                        <p class="order-details__list-title">Сумма заказа</p>
+                        <p class="order-details__list-text">399 ₽</p>
+                    </div>
+                    <div class="order-details__list order-details__list_status">
+                        <p class="order-details__list-title">Статус</p>
+                        <p class="order-details__list-text">Обрабатывается</p>
+                    </div>
+                    <div class="order-details__list order-details__list_pay">
+                        <p class="order-details__list-title"> Оплачено</p>
+                        <p class="order-details__list-text">Картой</p>
+                    </div>
+                    <button class="order-details__svg-button">
+                        <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 1.35014C16 1.54195 15.9289 1.73395 15.7869 1.88038L8.5142 9.3803C8.23002 9.67336 7.76984 9.67336 7.48584 9.3803L0.213135 1.88038C-0.0710456 1.58732 -0.0710456 1.11276 0.213135 0.819893C0.497316 0.527021 0.957497 0.526833 1.2415 0.819893L8.00002 7.78957L14.7585 0.819892C15.0427 0.526833 15.5029 0.526833 15.7869 0.819892C15.9289 0.966328 16 1.15833 16 1.35014Z"
+                                  fill="#EF2B51"/>
+                        </svg>
+                    </button>
+                    <hr class="order-details__line order-details__line_middle">
+                    <div class="order-details__list order-details__list_address">
+                        <p class="order-details__list-title order-details__list-title_address">Адрес</p>
+                        <p class="order-details__list-text">ул. Львовская 48/2, офис 301, 2 этаж, домофон 4801#</p>
+                    </div>
+                    <div class="order-details__pizza-list">
+                        <div class="order-details__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza1.png" alt=""></div>
+                        <div class="order-details__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza2.png" alt=""></div>
+                        <div class="order-details__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza3.png" alt=""></div>
+                    </div>
+                </div>
+                <div class="order-products">
+                    <div class="products-list">
+                        <div class="products-list__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza2.png" alt=""></div>
+                        <p class="products-list__title">Пепперони по-деревенски</p>
+                        <p class="products-list__size">Традиционное тесто, 23 см</p>
+                        <p class="products-list__quantity">1 товар</p>
+                        <p class="products-list__amount">399 ₽</p>
+                    </div>
+                    <div class="products-list">
+                        <div class="products-list__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza2.png" alt=""></div>
+                        <p class="products-list__title">Пепперони по-деревенски</p>
+                        <p class="products-list__size">Традиционное тесто, 23 см</p>
+                        <p class="products-list__quantity">1 товар</p>
+                        <p class="products-list__amount">399 ₽</p>
+                    </div>
+                    <div class="products-list">
+                        <div class="products-list__wrapper-img"><img class="order-details__img" src="assets/img/2.content/pizza2.png" alt=""></div>
+                        <p class="products-list__title">Пепперони по-деревенски</p>
+                        <p class="products-list__size">Традиционное тесто, 23 см</p>
+                        <p class="products-list__quantity">1 товар</p>
+                        <p class="products-list__amount">399 ₽</p>
+                    </div>
+                    <hr class="order-details__line">
+                    <button class="order-replay">Повторить заказ</button>
+                </div>
+            </div>
+            <div class="cart-popup__list cart-popup__list_account">
+                <div class="cart-popup__item">
+                    <div class="cart-popup__item-img">
+                        <img src="assets/img/2.content/pizza1.png" alt="">
+                    </div>
+                    <div class="cart-popup__item-group">
+                        <div class="cart-popup__item-text">
+                            <p class="cart-popup__item-name">Чикен Сладкий Чили</p>
+                            <p class="cart-popup__item-info">Традиционное тесто, 23 см</p>
+                        </div>
+                        <div class="cart-popup__item-cost">
+                            <p class="products-list__quantity">1 товар</p>
+                            <p class="cart-popup__item-cost-final">499 ₽</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="cart-popup__item">
+                    <div class="cart-popup__item-img">
+                        <img src="assets/img/2.content/pizza1.png" alt="">
+                    </div>
+                    <div class="cart-popup__item-group">
+                        <div class="cart-popup__item-text">
+                            <p class="cart-popup__item-name">Чикен Сладкий Чили</p>
+                            <p class="cart-popup__item-info">Традиционное тесто, 23 см</p>
+                        </div>
+                        <div class="cart-popup__item-cost">
+                            <p class="products-list__quantity">1 товар</p>
+                            <p class="cart-popup__item-cost-final">499 ₽</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="cart-popup__item">
+                    <div class="cart-popup__item-img">
+                        <img src="assets/img/2.content/pizza1.png" alt="">
+                    </div>
+                    <div class="cart-popup__item-group">
+                        <div class="cart-popup__item-text">
+                            <p class="cart-popup__item-name">Чикен Сладкий Чили</p>
+                            <p class="cart-popup__item-info">Традиционное тесто, 23 см</p>
+                        </div>
+                        <div class="cart-popup__item-cost">
+                            <p class="products-list__quantity">1 товар</p>
+                            <p class="cart-popup__item-cost-final">499 ₽</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Order details -->
+
+    @@include('_footer.html')
+</div>
+@@include('_popups.html')
+@@include('_scripts.html')
+</body>
+</html>

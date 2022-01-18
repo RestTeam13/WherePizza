@@ -11,10 +11,9 @@
 .slick-track {
   display: flex;
   justify-content: space-between;
-  column-gap: 10px;
-  @media (max-width: 767px) {
-justify-content: flex-start;
 
+  @media (max-width: 767px) {
+    justify-content: flex-start;
   }
 }
 
@@ -140,14 +139,10 @@ justify-content: flex-start;
   border: 1px solid #F0F0F0;
   border-radius: 12px;
   overflow: hidden;
-
-  &:nth-child(4) {
-    margin-right: 0;
-  }
+  margin-right: 30px;
 
   &:hover {
     border: 1px solid $orange;
-
   }
 
   .item-card__composition {
@@ -170,8 +165,7 @@ justify-content: flex-start;
     flex-flow: row;
     align-items: center;
     padding-left: 12px;
-
-
+    margin-right: 20px;
   }
 }
 
@@ -187,6 +181,7 @@ justify-content: flex-start;
   }
 
   @media (max-width: 767px) {
+    min-width: 60px;
     width: 60px;
     height: 60px;
     display: flex;
@@ -221,7 +216,7 @@ justify-content: flex-start;
     border-radius: 6px;
     color: $orange;
     border-color: transparent;
-    &:hover{
+    &:active{
       border-color: $orange;
     }
   }

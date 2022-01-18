@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     addTabsHandler()
     openText()
     summary()
-    openHistory()
+    openOrderHistory()
     promoCodeHandler()
 
     changeAccountForm()
@@ -28,17 +28,22 @@ function headerHandler() {
         navMenu = headerTopRow.nextElementSibling.querySelector('.menu__nav')
 
     if (document.querySelector('.standalone-menu')) {
-        const standaloneMenu = document.querySelector('.standalone-menu')
+        const standaloneMenu = document.querySelector('.standalone-menu'),
+            logo = header.querySelector('.logo')
 
         window.addEventListener('scroll', () => {
             if (standaloneMenu.getBoundingClientRect().bottom < 0) {
                 header.classList.add('fixed')
                 headerTopRow.classList.add('hidden')
                 navMenu.classList.add('active')
+                logo.querySelector('.logo__main').style.display = 'none'
+                logo.querySelector('.logo__mobile').style.display = 'unset'
             } else {
                 header.classList.remove('fixed')
                 headerTopRow.classList.remove('hidden')
                 navMenu.classList.remove('active')
+                logo.querySelector('.logo__main').style.display = ''
+                logo.querySelector('.logo__mobile').style.display = 'none'
             }
         })
     } else {
@@ -212,16 +217,16 @@ function summary() {
     }
 }
 
-function openHistory() {
+function openOrderHistory() {
     if (!document.querySelectorAll(".order-list__item")) return
     if (window.matchMedia('(max-width: 767px)').matches) {
-        const allOrderBlocks = document.querySelectorAll('.wrapper .order-list__item'),
-            popup = document.querySelector('.order-details-popup'),
-            blur = document.querySelector('.background-blur')
+        const allOrderBlocks = document.querySelectorAll('.wrapper .order-list__item')
 
         allOrderBlocks.forEach(orderBlock => {
-            orderBlock.setAttribute('data-popup-name', 'order-details-popup')
-            addClickListenerToOpenPopupElement(orderBlock, popup, blur)
+            orderBlock.setAttribute('href', 'order-details.html')
+            orderBlock.addEventListener('click', () => {
+                document.location.href = orderBlock.getAttribute('href')
+            })
         })
     }
 }
@@ -343,6 +348,7 @@ function promoCodeHandler() {
     })
 
 }
+
 
 //popups
 

@@ -369,86 +369,27 @@
                                 <label class="payment__form-radio-label" for="time">По времени</label>
                             </div>
                            <div class="payment__form-pick-date">
-                               <div class="payment__form-radio-item payment__form-radio-item_input">
-                                   <input type="text" class="payment__input payment__input_short" id="date"
-                                          placeholder="Дата">
-                                   <div class="payment__input-p" data-popup-name="popup_calendar" data-scroll>
-                                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                           <path d="M14.3412 1.77594H13.3368V0.938468C13.3368 0.697311 13.1492 0.5 12.92 0.5C12.6908 0.5 12.5032 0.697311 12.5032 0.938468V1.77594H8.41885V0.938468C8.41885 0.697311 8.2313 0.5 8.00208 0.5C7.77285 0.5 7.5853 0.697311 7.5853 0.938468V1.77594H3.45923V0.938468C3.45923 0.697311 3.27168 0.5 3.04246 0.5C2.81323 0.5 2.62568 0.697311 2.62568 0.938468V1.77594H1.66293C0.746027 1.77594 0 2.58711 0 3.55174V13.7461C0 14.7151 0.741859 15.5 1.66293 15.5H14.3371C15.2581 15.5 16 14.7151 16 13.7505V3.55174C16.0042 2.58711 15.2581 1.77594 14.3412 1.77594ZM15.1706 13.7461C15.1706 14.2284 14.8038 14.6187 14.3454 14.6231H14.3412H1.66293C1.20448 14.6231 0.833549 14.2328 0.833549 13.7505V13.7461V3.55174C0.833549 3.06504 1.20448 2.65288 1.66293 2.65288H2.62568V3.28866C2.62568 3.52982 2.81323 3.72713 3.04246 3.72713C3.27168 3.72713 3.45923 3.52982 3.45923 3.28866V2.65288H7.5853V3.28866C7.5853 3.52982 7.77285 3.72713 8.00208 3.72713C8.2313 3.72713 8.41885 3.52982 8.41885 3.28866V2.65288H12.5032V3.28866C12.5032 3.52982 12.6908 3.72713 12.92 3.72713C13.1492 3.72713 13.3368 3.52982 13.3368 3.28866V2.65288H14.3412C14.8038 2.65288 15.1706 3.06942 15.1706 3.55174V13.7461Z"
-                                                 fill="#A5A5A5"/>
-                                       </svg>
+                               <div class="custom-select custom-select_payment">
+                                   <div class="custom-select__area"></div>
+                                   <div class="custom-select__header custom-select__header_payment">
+                                       <p>Дата</p>
+                                       <span class="payment__input-p">
+                                           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                               <path d="M14.3412 1.77594H13.3368V0.938468C13.3368 0.697311 13.1492 0.5 12.92 0.5C12.6908 0.5 12.5032 0.697311 12.5032 0.938468V1.77594H8.41885V0.938468C8.41885 0.697311 8.2313 0.5 8.00208 0.5C7.77285 0.5 7.5853 0.697311 7.5853 0.938468V1.77594H3.45923V0.938468C3.45923 0.697311 3.27168 0.5 3.04246 0.5C2.81323 0.5 2.62568 0.697311 2.62568 0.938468V1.77594H1.66293C0.746027 1.77594 0 2.58711 0 3.55174V13.7461C0 14.7151 0.741859 15.5 1.66293 15.5H14.3371C15.2581 15.5 16 14.7151 16 13.7505V3.55174C16.0042 2.58711 15.2581 1.77594 14.3412 1.77594ZM15.1706 13.7461C15.1706 14.2284 14.8038 14.6187 14.3454 14.6231H14.3412H1.66293C1.20448 14.6231 0.833549 14.2328 0.833549 13.7505V13.7461V3.55174C0.833549 3.06504 1.20448 2.65288 1.66293 2.65288H2.62568V3.28866C2.62568 3.52982 2.81323 3.72713 3.04246 3.72713C3.27168 3.72713 3.45923 3.52982 3.45923 3.28866V2.65288H7.5853V3.28866C7.5853 3.52982 7.77285 3.72713 8.00208 3.72713C8.2313 3.72713 8.41885 3.52982 8.41885 3.28866V2.65288H12.5032V3.28866C12.5032 3.52982 12.6908 3.72713 12.92 3.72713C13.1492 3.72713 13.3368 3.52982 13.3368 3.28866V2.65288H14.3412C14.8038 2.65288 15.1706 3.06942 15.1706 3.55174V13.7461Z"
+                                                     fill="#A5A5A5"/>
+                                           </svg>
+                                       </span>
                                    </div>
-                               </div>
-                               <div class="popup mini-popup popup_calendar">
-                                   <div class="popup__close-area" data-popup-close></div>
-                                   <div class="popup__content">
-                                       <div class="calendar">
-                                           <p class="calendar__title">Выберите даты</p>
-                                           <div class="calendar__year">
-                                               <button type="button" class="calendar__year-btn calendar__year-btn_prev">
-                                                   <svg width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                       <path fill-rule="evenodd" clip-rule="evenodd" d="M0.149504 5.88962L5.0852 10.8803C5.28388 11.0431 5.57417 11.0398 5.76922 10.8706C5.98274 10.6856 6.00894 10.3689 5.83637 10.1528L1.26505 5.53056L5.85033 0.883436C6.0495 0.680703 6.04998 0.358403 5.85122 0.155427C5.64415 -0.0519645 5.30609 -0.051791 5.09927 0.155833L0.149504 5.16071C-0.0498378 5.36364 -0.0498311 5.68668 0.149504 5.88962Z"/>
-                                                   </svg>
-                                               </button>
-                                               <p class="calendar__year-date">Май 2021</p>
-                                               <button type="button" class="calendar__year-btn calendar__year-btn_next">
-                                                   <svg width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                       <path fill-rule="evenodd" clip-rule="evenodd" d="M0.149504 5.88962L5.0852 10.8803C5.28388 11.0431 5.57417 11.0398 5.76922 10.8706C5.98274 10.6856 6.00894 10.3689 5.83637 10.1528L1.26505 5.53056L5.85033 0.883436C6.0495 0.680703 6.04998 0.358403 5.85122 0.155427C5.64415 -0.0519645 5.30609 -0.051791 5.09927 0.155833L0.149504 5.16071C-0.0498378 5.36364 -0.0498311 5.68668 0.149504 5.88962Z"/>
-                                                   </svg>
-                                               </button>
-                                           </div>
-                                           <div class="calendar__table">
-                                               <div class="calendar__table-title-row">
-                                                   <p class="calendar__table-cell calendar__table-cell_title">пн</p>
-                                                   <p class="calendar__table-cell calendar__table-cell_title">вт</p>
-                                                   <p class="calendar__table-cell calendar__table-cell_title">ср</p>
-                                                   <p class="calendar__table-cell calendar__table-cell_title">чт</p>
-                                                   <p class="calendar__table-cell calendar__table-cell_title">пт</p>
-                                                   <p class="calendar__table-cell calendar__table-cell_title">сб</p>
-                                                   <p class="calendar__table-cell calendar__table-cell_title">вс</p>
-                                               </div>
-                                               <p class="calendar__table-cell"></p>
-                                               <p class="calendar__table-cell"></p>
-                                               <p class="calendar__table-cell"></p>
-                                               <p class="calendar__table-cell"></p>
-                                               <p class="calendar__table-cell"></p>
-                                               <p class="calendar__table-cell calendar__table-cell_inactive">1</p>
-                                               <p class="calendar__table-cell calendar__table-cell_inactive">2</p>
-                                               <p class="calendar__table-cell calendar__table-cell_inactive">3</p>
-                                               <p class="calendar__table-cell calendar__table-cell_inactive">4</p>
-                                               <p class="calendar__table-cell calendar__table-cell_inactive">5</p>
-                                               <p class="calendar__table-cell calendar__table-cell_inactive">6</p>
-                                               <p class="calendar__table-cell calendar__table-cell_inactive">7</p>
-                                               <p class="calendar__table-cell calendar__table-cell_inactive">8</p>
-                                               <p class="calendar__table-cell calendar__table-cell_inactive">9</p>
-                                               <p class="calendar__table-cell calendar__table-cell_inactive">10</p>
-                                               <b class="calendar__table-cell calendar__table-cell_active first">11</b>
-                                               <p class="calendar__table-cell calendar__table-cell_active">12</p>
-                                               <p class="calendar__table-cell calendar__table-cell_active">13</p>
-                                               <p class="calendar__table-cell calendar__table-cell_active">14</p>
-                                               <p class="calendar__table-cell calendar__table-cell_active last">15</p>
-                                               <p class="calendar__table-cell">16</p>
-                                               <p class="calendar__table-cell">17</p>
-                                               <p class="calendar__table-cell">18</p>
-                                               <p class="calendar__table-cell">19</p>
-                                               <p class="calendar__table-cell">20</p>
-                                               <p class="calendar__table-cell">21</p>
-                                               <p class="calendar__table-cell">22</p>
-                                               <p class="calendar__table-cell">23</p>
-                                               <p class="calendar__table-cell">24</p>
-                                               <p class="calendar__table-cell">25</p>
-                                               <p class="calendar__table-cell">26</p>
-                                               <p class="calendar__table-cell">27</p>
-                                               <p class="calendar__table-cell">28</p>
-                                               <p class="calendar__table-cell">29</p>
-                                               <p class="calendar__table-cell">30</p>
-                                               <p class="calendar__table-cell">31</p>
-                                           </div>
-                                           <div class="calendar__btns">
-                                               <button type="button" class="calendar__btn" data-popup-close>Отмена</button>
-                                               <button type="button" class="calendar__apply-btn standard-btn" data-popup-close>Применить</button>
-                                           </div>
+                                   <div class="custom-select__list custom-select__list_payment">
+                                       <div class="custom-select__list-item custom-select__list-item_payment">
+                                           <p>Сегодня</p>
+                                       </div>
+                                       <div class="custom-select__list-item custom-select__list-item_payment">
+                                           <p>Завтра</p>
+                                       </div>
+                                       <div class="custom-select__list-item custom-select__list-item_payment">
+                                           <p>31.01.2022</p>
                                        </div>
                                    </div>
                                </div>
