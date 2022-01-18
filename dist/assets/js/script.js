@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     headerHandler()
     addTimeInputs()
     auth()
+    addAuthNextInput()
     timerHandler()
     addInputCountersHandler()
     addToggleBtnsHandler()
@@ -278,6 +279,18 @@ function auth() {
             document.querySelector('[data-start-timer]').dispatchEvent(timerStartEvent)
         })
     }
+}
+
+function addAuthNextInput() {
+    if (!document.querySelector('.authorization-content__input-data')) return
+    const allCodeInputs = document.querySelectorAll('input.authorization-content__input-data')
+
+    allCodeInputs.forEach(codeInput => {
+        codeInput.addEventListener('keyup', () => {
+            if (codeInput.value.length === +codeInput.getAttribute('maxlength')
+                && codeInput.nextElementSibling) codeInput.nextElementSibling.focus()
+        })
+    })
 }
 
 function addToggleBtnsHandler() {
