@@ -10,7 +10,6 @@
 /* Лента слайдов */
 .slick-track {
   display: flex;
-  justify-content: space-between;
 
   @media (max-width: 767px) {
     justify-content: flex-start;
@@ -134,12 +133,11 @@
   flex-flow: column;
   align-items: center;
   background: $white;
-  max-width: 190px;
-  width: 100%;
+  width: 190px;
   border: 1px solid #F0F0F0;
   border-radius: 12px;
   overflow: hidden;
-  margin-right: 30px;
+  margin: 0 15px;
 
   &:hover {
     border: 1px solid $orange;
@@ -165,7 +163,7 @@
     flex-flow: row;
     align-items: center;
     padding-left: 12px;
-    margin-right: 20px;
+    margin: 0 10px;
   }
 }
 
@@ -216,7 +214,7 @@
     border-radius: 6px;
     color: $orange;
     border-color: transparent;
-    &:active{
+    &:active {
       border-color: $orange;
     }
   }

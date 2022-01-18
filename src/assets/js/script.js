@@ -30,7 +30,8 @@ function headerHandler() {
 
     if (document.querySelector('.standalone-menu')) {
         const standaloneMenu = document.querySelector('.standalone-menu'),
-            logo = header.querySelector('.logo')
+            logo = header.querySelector('.logo'),
+            burger = header.querySelector('.menu__burger')
 
         window.addEventListener('scroll', () => {
             if (standaloneMenu.getBoundingClientRect().bottom < 0) {
@@ -39,12 +40,16 @@ function headerHandler() {
                 navMenu.classList.add('active')
                 logo.querySelector('.logo__main').style.display = 'none'
                 logo.querySelector('.logo__mobile').style.display = 'unset'
+                burger.style.display = 'none'
+                headerTopRow.nextElementSibling.classList.add('active')
             } else {
                 header.classList.remove('fixed')
                 headerTopRow.classList.remove('hidden')
                 navMenu.classList.remove('active')
                 logo.querySelector('.logo__main').style.display = ''
                 logo.querySelector('.logo__mobile').style.display = 'none'
+                burger.style.display = ''
+                headerTopRow.nextElementSibling.classList.remove('active')
             }
         })
     } else {
@@ -163,13 +168,14 @@ function startSlider() {
             slidesToShow: 4,
             slidesToScroll: 1,
             infinite: false,
+            variableWidth: true,
             responsive: [
                 {
                     breakpoint: 768,
                     settings: {
                         arrows: false,
                         slidesToShow: 1,
-                        variableWidth: true
+
                     }
                 }
             ]
@@ -356,7 +362,7 @@ function promoCodeHandler() {
 
     promoBtn.addEventListener('click', () => {
         if (promoInput.value === '301202012') {
-            priceBlock.innerHTML = `Итого: 2 199₽ <span class="payment__promo-cost-new">${priceBlock.textContent}</span>`
+            priceBlock.innerHTML = `Итого: 2 199 ₽ <span class="payment__promo-cost-new">${priceBlock.textContent}</span>`
         }
     })
 

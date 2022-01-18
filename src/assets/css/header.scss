@@ -25,6 +25,12 @@ img {
   width: 100%;
 }
 
+input{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 .wrapper {
   position: relative;
   min-height: 100vh;
@@ -89,6 +95,11 @@ img {
 
 .menu__row_bottom {
   height: 64px;
+  &.active{
+    .menu__row-wrapper{
+      padding: 0 0 0 20px;
+    }
+  }
 }
 
 .menu__row-wrapper {
@@ -228,7 +239,7 @@ img {
       & + .standalone-menu__list{
         display: flex;
         margin-left: 20px;
-        width: 77%;
+        width: calc(100% - 30px);
         margin-right: 10px;
       }
     }

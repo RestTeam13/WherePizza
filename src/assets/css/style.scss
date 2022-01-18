@@ -453,8 +453,8 @@
 }
 
 .item-card__description {
-  margin-top: auto;
-  padding: 16px 20px 0;
+  margin-top: 16px;
+  padding: 0 20px;
   display: flex;
   flex-flow: wrap;
   align-items: center;
@@ -464,8 +464,6 @@
     margin-left: 12px;
     max-width: 214px;
     width: 100%;
-
-
   }
 }
 
@@ -493,9 +491,11 @@
     margin-top: 8px;
     line-height: 16px;
     max-height: unset;
-
-
   }
+}
+
+.item-card__composition_nw{
+  white-space: nowrap;
 }
 
 .item-card__btn {
@@ -1002,7 +1002,7 @@
   justify-content: space-between;
   margin: 5px 273px 60px 273px;
   @media(max-width: 767px) {
-    margin: 24px 31px;
+    margin: 24px auto;
   }
   @media (max-width: 350px) {
     margin: 24px 0;
@@ -1567,6 +1567,7 @@
   font-size: 20px;
   color: $orange;
   width: max-content;
+  display: inline-block;
 
   .payment__promo-cost-new {
     font-weight: 400;
@@ -1586,7 +1587,6 @@
 }
 
 .payment__promo-wrapper {
-  margin-right: 10px;
   max-width: 320px;
   position: relative;
   width: 100%;
@@ -2001,10 +2001,6 @@
   justify-content: space-between;
   margin: 20px 0 60px;
 
-  .payment__promo-cost {
-    margin-right: 10px;
-  }
-
   @media (max-width: 767px) {
     padding: 20px 0 12px;
     margin: 0;
@@ -2309,6 +2305,10 @@
   display: flex;
   align-items: center;
   padding: 0 20px;
+
+  @media (max-width: 767px) {
+    padding: 0;
+  }
 }
 
 .account-popup__title {
@@ -2319,6 +2319,7 @@
 }
 
 .account-popup__title-back {
+  display: flex;
   &:hover {
     transform: scale(1.1);
   }

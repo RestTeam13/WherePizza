@@ -54,6 +54,12 @@ img {
   width: 100%;
 }
 
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 .wrapper {
   position: relative;
   min-height: 100vh;
@@ -111,6 +117,9 @@ img {
 
 .menu__row_bottom {
   height: 64px;
+}
+.menu__row_bottom.active .menu__row-wrapper {
+  padding: 0 0 0 20px;
 }
 
 .menu__row-wrapper {
@@ -250,7 +259,7 @@ img {
   .menu__nav.active + .standalone-menu__list {
     display: flex;
     margin-left: 20px;
-    width: 77%;
+    width: calc(100% - 30px);
     margin-right: 10px;
   }
 }
@@ -992,8 +1001,8 @@ img {
 }
 
 .item-card__description {
-  margin-top: auto;
-  padding: 16px 20px 0;
+  margin-top: 16px;
+  padding: 0 20px;
   display: flex;
   flex-flow: wrap;
   align-items: center;
@@ -1036,6 +1045,10 @@ img {
     line-height: 16px;
     max-height: unset;
   }
+}
+
+.item-card__composition_nw {
+  white-space: nowrap;
 }
 
 .item-card__btn {
@@ -1526,7 +1539,7 @@ img {
 }
 @media (max-width: 767px) {
   .pagination {
-    margin: 24px 31px;
+    margin: 24px auto;
   }
 }
 @media (max-width: 350px) {
@@ -2085,6 +2098,7 @@ img {
   font-size: 20px;
   color: #EF2B51;
   width: max-content;
+  display: inline-block;
 }
 .payment__promo-cost .payment__promo-cost-new {
   font-weight: 400;
@@ -2102,7 +2116,6 @@ img {
 }
 
 .payment__promo-wrapper {
-  margin-right: 10px;
   max-width: 320px;
   position: relative;
   width: 100%;
@@ -2483,9 +2496,6 @@ img {
   justify-content: space-between;
   margin: 20px 0 60px;
 }
-.payment__form-final-row .payment__promo-cost {
-  margin-right: 10px;
-}
 @media (max-width: 767px) {
   .payment__form-final-row {
     padding: 20px 0 12px;
@@ -2767,6 +2777,11 @@ img {
   align-items: center;
   padding: 0 20px;
 }
+@media (max-width: 767px) {
+  .account-popup__title-group {
+    padding: 0;
+  }
+}
 
 .account-popup__title {
   font-size: 24px;
@@ -2774,6 +2789,9 @@ img {
   font-weight: 600;
 }
 
+.account-popup__title-back {
+  display: flex;
+}
 .account-popup__title-back:hover {
   transform: scale(1.1);
 }
@@ -2787,7 +2805,6 @@ img {
 /* Лента слайдов */
 .slick-track {
   display: flex;
-  justify-content: space-between;
 }
 @media (max-width: 767px) {
   .slick-track {
@@ -2871,12 +2888,11 @@ img {
   flex-flow: column;
   align-items: center;
   background: #ffffff;
-  max-width: 190px;
-  width: 100%;
+  width: 190px;
   border: 1px solid #F0F0F0;
   border-radius: 12px;
   overflow: hidden;
-  margin-right: 30px;
+  margin: 0 15px;
 }
 .slider__payment-item:hover {
   border: 1px solid #EF2B51;
@@ -2904,7 +2920,7 @@ img {
     flex-flow: row;
     align-items: center;
     padding-left: 12px;
-    margin-right: 20px;
+    margin: 0 10px;
   }
 }
 
