@@ -1834,6 +1834,11 @@
   display: flex;
   align-items: center;
   margin-left: 24px;
+  position: relative;
+
+  .payment__form-radio-hidden:checked + .payment__form-radio-label .payment__form-radio:before{
+    display: block;
+  }
 
   &:nth-child(1) {
     margin-left: 0;
@@ -1850,13 +1855,34 @@
 
 }
 
+.payment__form-radio-hidden{
+  position: absolute;
+  visibility: hidden;
+}
+
 .payment__form-radio {
   cursor: pointer;
-  filter: hue-rotate(130deg) saturate(2);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid $orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+  &:before{
+    content: '';
+    display: none;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: $orange;
+  }
 }
 
 .payment__form-radio-label {
-  margin-left: 8px;
+  display: flex;
+  align-items: center;
   font-size: 16px;
   cursor: pointer;
 
