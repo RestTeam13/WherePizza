@@ -65,7 +65,8 @@ img {
   width: 100%;
 }
 
-input {
+input,
+textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -144,10 +145,6 @@ input {
 
 .menu__row_bottom {
   height: 64px;
-}
-
-.menu__row_bottom.active .menu__row-wrapper {
-  padding: 0 0 0 20px;
 }
 
 .menu__row-wrapper {
@@ -1638,10 +1635,7 @@ input {
   font-weight: 600;
   font-size: 20px;
   color: #EF2B51;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  display: inline-block;
+  white-space: nowrap;
 }
 
 .payment__promo-cost .payment__promo-cost-new {
@@ -2375,6 +2369,22 @@ input {
 
 /* Слайдер */
 
+.slick-slider {
+  position: relative;
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* Ограничевающая оболочка */
 
 .slick-list {
@@ -2387,6 +2397,11 @@ input {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
+  top: 0;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Слайд */
@@ -3639,6 +3654,10 @@ input {
 }
 
 @media (max-width: 767px) {
+  .menu__row_bottom.active .menu__row-wrapper {
+    padding: 0 0 0 20px;
+  }
+
   .menu__row-wrapper {
     -webkit-box-align: center;
         -ms-flex-align: center;
